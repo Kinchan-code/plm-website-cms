@@ -1,0 +1,9 @@
+@import url("../src/Components/MobileView/Mobile.css");
+@import url("../src/Components/WebView/Web.css");
+
+* {
+  padding: 0;
+  margin: auto;
+  border: 0;
+  scroll-behavior: smooth;
+}
