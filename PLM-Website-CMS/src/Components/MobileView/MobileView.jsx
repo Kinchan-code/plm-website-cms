@@ -8,6 +8,7 @@ function MobileView() {
   return (
     <div>
       <AppShell
+        padding="0"
         styles={{
           main: {
             background:
@@ -19,7 +20,20 @@ function MobileView() {
         footer={<MobileFooter />}
         header={<MobileHeader />}
       >
-        <Text className="Mobile-Container">This is Mobile View</Text>
+        {/* <Text className="Mobile-Container">This is Mobile View</Text> */}
+        <div className="main">
+          {/* <Text className="Web-Container">This is Web View</Text> */}
+        </div>
+        <div
+          style={{ height: "100vh", backgroundColor: "#fff", padding: "1rem" }}
+        >
+          <Text fz="lg">
+            {" "}
+            Scroll Up and Down this page to see the parallax scrolling effect.
+            This div is just here to enable scrolling. Tip: Try to remove the
+            background-attachment property to remove the scrolling effect.
+          </Text>
+        </div>
       </AppShell>
     </div>
   );

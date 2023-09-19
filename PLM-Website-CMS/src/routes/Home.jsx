@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMediaQuery } from "@mantine/hooks";
 import WebView from "../Components/WebView/WebView";
 import MobileView from "../Components/MobileView/MobileView";
