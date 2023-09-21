@@ -5,6 +5,7 @@ import { useLocalStorage } from "@mantine/hooks";
 import Home from "./routes/Home";
 import Test from "./routes/Test";
 import "./App.css";
+import Test2 from "./routes/Test2";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage({
@@ -40,6 +41,14 @@ function App() {
               element={
                 <>
                   <Test></Test>
+                </>
+              }
+            />
+            <Route
+              path="/test2"
+              element={
+                <>
+                  <Test2></Test2>
                 </>
               }
             />

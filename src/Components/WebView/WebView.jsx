@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppShell,
   Button,
@@ -6,10 +6,33 @@ import {
   Text,
   useMantineTheme,
 } from "@mantine/core";
-import WebHeader from "../WebView/WebHeader";
+import WebHeader from "./WebHeader";
+import Slideshow from "../Slideshow";
 
 function WebView() {
   const theme = useMantineTheme();
+  const [containerZIndex, setContainerZIndex] = useState(1);
+  useEffect(() => {
+    // Add a scroll event listener to change the z-index of the container
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // You can adjust the threshold as needed
+      if (scrollY > 200) {
+        setContainerZIndex(0); // Bring the container below the other div
+      } else {
+        setContainerZIndex(1); // Bring the container above the other div
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       <AppShell
@@ -33,10 +56,15 @@ function WebView() {
             minHeight: "100vh",
           }}
         >
-          <div style={{ marginTop: "13rem" }}>
+          <div
+            style={{
+              marginTop: "10rem",
+              position: "fixed",
+              zIndex: containerZIndex,
+            }}
+          >
             <div style={{ alignItems: "center" }}>
               <Container>
-                {" "}
                 <Text
                   fz="4rem"
                   fw="bold"
@@ -77,18 +105,39 @@ function WebView() {
             </div>
           </div>
         </div>
-
         <div
           style={{
-            height: "100vh",
-            backgroundColor: "theme.white",
-            padding: "1rem",
+            width: "100%",
+            backgroundColor: "#efefef",
+            position: "absolute",
+            zIndex: "1",
           }}
         >
-          <>
-            {/* <Slideshow /> */}
-            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}></Text>
-          </>
+          <div style={{ height: "100vh", padding: "1rem" }}>
+            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
+              Hello
+            </Text>
+          </div>
+          <div
+            style={{
+              height: "100vh",
+              backgroundColor: "#fff",
+              padding: "1rem",
+            }}
+          >
+            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
+              Hello World
+            </Text>
+          </div>
+          <div
+            style={{
+              height: "100vh",
+              backgroundColor: "#fff",
+              padding: "1rem",
+            }}
+          >
+            <Slideshow />
+          </div>
         </div>
       </AppShell>
     </div>
