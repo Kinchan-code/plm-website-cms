@@ -1,38 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   AppShell,
   Button,
   Container,
   Text,
   useMantineTheme,
+  Image,
+  Divider,
+  SimpleGrid,
 } from "@mantine/core";
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
+import { Images } from "../Images";
 
 function WebView() {
+  const {
+    sample,
+    sample1,
+    sample2,
+    sample3,
+    sample4,
+    ex,
+    ex1,
+    ex2,
+    ex3,
+    Logo,
+  } = Images;
+
+  const slidesContentLeft = [
+    <Image src={sample} />,
+    <Image src={sample1} />,
+    <Image src={sample2} />,
+    <Image src={sample3} />,
+    <Image src={sample4} />,
+  ];
+  const slidesContentRight = [
+    <Image src={ex} />,
+    <Image src={ex1} />,
+    <Image src={ex2} />,
+    <Image src={ex3} />,
+    <Image src={Logo} />,
+  ];
   const theme = useMantineTheme();
-  const [containerZIndex, setContainerZIndex] = useState(1);
-  useEffect(() => {
-    // Add a scroll event listener to change the z-index of the container
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      // You can adjust the threshold as needed
-      if (scrollY > 200) {
-        setContainerZIndex(0); // Bring the container below the other div
-      } else {
-        setContainerZIndex(1); // Bring the container above the other div
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div>
       <AppShell
@@ -60,7 +69,7 @@ function WebView() {
             style={{
               marginTop: "10rem",
               position: "fixed",
-              zIndex: containerZIndex,
+              zIndex: 0,
             }}
           >
             <div style={{ alignItems: "center" }}>
@@ -90,7 +99,10 @@ function WebView() {
                   university.
                 </Text>
                 <div style={{ paddingLeft: "3rem" }}>
-                  <Button radius="md" style={{ backgroundColor: "#FFC60B" }}>
+                  <Button
+                    radius="md"
+                    style={{ backgroundColor: "#FFC60B", zIndex: "0" }}
+                  >
                     <Text
                       c="#000"
                       style={{
@@ -132,11 +144,28 @@ function WebView() {
           <div
             style={{
               height: "100vh",
+              minWidth: "100%",
               backgroundColor: "#fff",
               padding: "1rem",
+              zIndex: "1",
             }}
           >
-            <Slideshow />
+            <SimpleGrid cols={2} spacing="xl">
+              <div>
+                <Text fz="xl" fw="bold" ff="lato">
+                  UNIVERSITY UPDATES
+                </Text>
+                <Divider size="xl" color="#FFC60B" />
+                <Slideshow slides={slidesContentLeft} />
+              </div>
+              <div>
+                <Text fz="xl" fw="bold" ff="lato">
+                  UNIVERSITY SERVICES
+                </Text>
+                <Divider size="xl" color="#ffc60b" />
+                <Slideshow slides={slidesContentRight} />
+              </div>
+            </SimpleGrid>
           </div>
         </div>
       </AppShell>

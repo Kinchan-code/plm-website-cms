@@ -1,12 +1,32 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Container } from "@mantine/core";
+import { Container, ActionIcon } from "@mantine/core";
+import {
+  IconCircleArrowLeftFilled,
+  IconCircleArrowRightFilled,
+} from "@tabler/icons-react";
 
-function Slideshow() {
+function Slideshow({ slides }) {
+  const swiperRef = useRef(null);
+  const handleSwiper = (swiper) => {
+    swiperRef.current = swiper;
+  };
+
+  const goToPrevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const goToNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
   return (
     <>
       <div
@@ -15,34 +35,49 @@ function Slideshow() {
           margin: "auto",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
+          width: "100%",
+          height: "50vh",
         }}
       >
+        <ActionIcon
+          style={{
+            color: "#a31920",
+          }}
+          variant="light"
+          size="lg"
+          radius="lg"
+          onClick={goToPrevSlide}
+        >
+          <IconCircleArrowLeftFilled size="2rem" />
+        </ActionIcon>
         <Swiper
-          modules={[Navigation, Pagination, EffectFade, Autoplay]}
+          onSwiper={handleSwiper}
+          modules={[Navigation, Pagination, Autoplay]}
           autoplay={{ delay: 3000 }}
-          effect="fade"
-          navigation={true}
           dynamicSlides={true}
           pagination={{ dynamicBullets: true }}
+          slidesPerView={3}
+          spaceBetween={10}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Container>1</Container>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Container>2</Container>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Container>3</Container>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Container>4</Container>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Container>5</Container>
-          </SwiperSlide>
+          {slides.map((content, index) => (
+            <SwiperSlide key={index} style={{ height: "auto" }}>
+              <Container size="100rem">{content}</Container>
+            </SwiperSlide>
+          ))}
         </Swiper>
+        <ActionIcon
+          data-aos="zoom-in"
+          style={{
+            color: "#a31920",
+          }}
+          variant="light"
+          size="lg"
+          radius="lg"
+          onClick={goToNextSlide}
+        >
+          <IconCircleArrowRightFilled size="2rem" />
+        </ActionIcon>
       </div>
     </>
   );
