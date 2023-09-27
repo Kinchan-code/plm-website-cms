@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppShell,
   Button,
@@ -12,8 +12,24 @@ import {
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
 import { Images } from "../Images";
+import Announcements from "../Announcements";
 
 function WebView() {
+  const [containerHidden, setContainerHidden] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      const scrollThreshold = 600;
+      if (window.scrollY >= scrollThreshold) {
+        setContainerHidden(true);
+      } else {
+        setContainerHidden(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const {
     sample,
     sample1,
@@ -25,6 +41,10 @@ function WebView() {
     ex2,
     ex3,
     Logo,
+    pic1,
+    pic2,
+    pic3,
+    pic4,
   } = Images;
 
   const slidesContentLeft = [
@@ -42,6 +62,12 @@ function WebView() {
     <Image src={Logo} />,
   ];
   const theme = useMantineTheme();
+  const handleScrollTo = () => {
+    window.scrollTo({
+      top: 600,
+      behavior: "smooth",
+    });
+  };
   return (
     <div>
       <AppShell
@@ -67,13 +93,17 @@ function WebView() {
         >
           <div
             style={{
-              marginTop: "10rem",
+              marginTop: "13rem",
               position: "fixed",
               zIndex: 0,
             }}
           >
             <div style={{ alignItems: "center" }}>
-              <Container>
+              <Container
+                id="myContainer"
+                className={containerHidden ? "hidden-container" : ""}
+                style={{ marginLeft: "-0.5rem" }}
+              >
                 <Text
                   fz="4rem"
                   fw="bold"
@@ -115,8 +145,28 @@ function WebView() {
                 </div>
               </Container>
             </div>
+            <div
+              style={{
+                justifyContent: "center",
+                marginTop: "4rem",
+                display: "flex",
+              }}
+            >
+              <Button
+                h="5vh"
+                w="100vw"
+                c="#000"
+                onClick={handleScrollTo}
+                style={{ backgroundColor: "#fff" }}
+              >
+                <Text fw="bold" fz="lg">
+                  EXPLORE
+                </Text>
+              </Button>
+            </div>
           </div>
         </div>
+
         <div
           style={{
             width: "100%",
@@ -125,25 +175,34 @@ function WebView() {
             zIndex: "1",
           }}
         >
-          <div style={{ height: "100vh", padding: "1rem" }}>
-            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
-              Hello
-            </Text>
+          <div style={{ height: "80vh", padding: "1rem", marginTop: "2rem" }}>
+            <SimpleGrid cols={2} spacing="xl">
+              <div>
+                <Text fz="xl" fw="bold" ff="lato">
+                  UNIVERSITY UPDATES
+                </Text>
+                <Divider size="xl" color="#FFC60B" />
+                <Announcements>
+                  <Image src={pic1} />
+                  <Image src={pic2} />
+                </Announcements>
+              </div>
+              <div>
+                <Text fz="xl" fw="bold" ff="lato">
+                  UNIVERSITY SERVICES
+                </Text>
+                <Divider size="xl" color="#ffc60b" />
+                <Announcements>
+                  <Image src={pic3} />
+                  <Image src={pic4} />
+                </Announcements>
+              </div>
+            </SimpleGrid>
           </div>
+
           <div
             style={{
-              height: "100vh",
-              backgroundColor: "#fff",
-              padding: "1rem",
-            }}
-          >
-            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
-              Hello World
-            </Text>
-          </div>
-          <div
-            style={{
-              height: "100vh",
+              height: "80vh",
               minWidth: "100%",
               backgroundColor: "#fff",
               padding: "1rem",
@@ -166,6 +225,17 @@ function WebView() {
                 <Slideshow slides={slidesContentRight} />
               </div>
             </SimpleGrid>
+          </div>
+          <div
+            style={{
+              height: "100vh",
+              backgroundColor: "#fff",
+              padding: "1rem",
+            }}
+          >
+            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
+              Hello World
+            </Text>
           </div>
         </div>
       </AppShell>

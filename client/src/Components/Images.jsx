@@ -8,6 +8,10 @@ import ex1 from "../assets/ex1.jpg";
 import ex2 from "../assets/ex2.jpg";
 import ex3 from "../assets/ex3.jpg";
 import Logo from "../assets/plm.png";
+import pic1 from "../assets/AnnounceTest1.png";
+import pic2 from "../assets/AnnounceTest2.png";
+import pic3 from "../assets/AnnounceTest3.png";
+import pic4 from "../assets/AnnounceTest4.png";
 
 export const Images = {
   sample,
@@ -20,4 +24,8 @@ export const Images = {
   ex2,
   ex3,
   Logo,
+  pic1,
+  pic2,
+  pic3,
+  pic4,
 };

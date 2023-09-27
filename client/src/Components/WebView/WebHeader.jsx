@@ -42,7 +42,7 @@ function WebHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 600;
+      const show = window.scrollY > 595;
       if (show) {
         setNavBackgroundTop("HeaderSolidTop");
       } else {
@@ -60,7 +60,7 @@ function WebHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 600;
+      const show = window.scrollY > 595;
       if (show) {
         setNavBackgroundBot("HeaderSolidBot");
       } else {
@@ -121,14 +121,47 @@ function WebHeader() {
             style={{
               display: "flex",
               alignItems: "center",
+              justifyContent: "flex-end",
+              color: "#fff",
+              height: "100%",
+              paddingRight: "3rem",
+              cursor: "pointer",
+            }}
+            className={classes[navRefTop.current]}
+          >
+            <Text fz="sm" p="sm" className="menu-text">
+              STUDENTS
+            </Text>
+            <Text fz="sm" p="sm">
+              FACULTY
+            </Text>
+            <Text fz="sm" p="sm">
+              ALUMNI
+            </Text>
+            <Text fz="sm" p="sm">
+              PARTNERS
+            </Text>
+            <Text fz="sm" p="sm">
+              COMMUNITY
+            </Text>
+            <Text fz="sm" p="sm">
+              PLM EMAIL LOGIN
+            </Text>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
               justifyContent: "space-between",
               height: "100%",
               paddingRight: "2rem",
               paddingLeft: "2rem",
+              paddingTop: ".5rem",
+              paddingBottom: ".5rem",
             }}
-            className={classes[navRefTop.current]}
+            className={classes[navRefBot.current]}
           >
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", marginLeft: "1rem" }}>
               <>
                 <Image maw={250} src={logo} />
               </>
@@ -142,13 +175,17 @@ function WebHeader() {
                 alignItems: "center",
               }}
             >
-              <Menus />
+              <Menus
+                fsize="md"
+                color={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
+              />
+
               <div style={{ padding: "1rem" }}>
                 {isSearchVisible ? null : (
                   <ActionIcon
                     variant="unstyled"
                     onClick={toggleSearch}
-                    c="#fff"
+                    c={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
                   >
                     <IconSearch size="1.125rem" />
                   </ActionIcon>
@@ -175,43 +212,6 @@ function WebHeader() {
                   />
                 </div>
               ) : null}
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-around",
-              height: "100%",
-            }}
-            className={classes[navRefBot.current]}
-          >
-            <div
-              style={{
-                display: "flex",
-                cursor: "pointer",
-                color: navBackgroundBot === "HeaderSolidBot" ? "#000" : "#fff",
-                transition: "0.3s ease-in-out",
-              }}
-            >
-              <Text fz="lg" p="md">
-                Students
-              </Text>
-              <Text fz="lg" p="md">
-                Faculty
-              </Text>
-              <Text fz="lg" p="md">
-                Alumni
-              </Text>
-              <Text fz="lg" p="md">
-                Partners
-              </Text>
-              <Text fz="lg" p="md">
-                Community
-              </Text>
-              <Text fz="lg" p="md">
-                PLM Email Login
-              </Text>
             </div>
           </div>
         </div>
