@@ -21,7 +21,7 @@ function MobileHeader() {
           <div>
             {" "}
             <Drawer
-              position="top"
+              position="right"
               opened={opened}
               onClose={close}
               title="Authentication"

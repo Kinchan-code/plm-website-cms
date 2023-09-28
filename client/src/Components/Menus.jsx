@@ -31,7 +31,7 @@ function Menus({ color, fsize }) {
   }, []);
   return (
     <div>
-      <Menu shadow="md" width={250}>
+      <Menu shadow="md" width={250} className="menu">
         <Menu.Target>
           <Button
             variant="unstyled"
@@ -76,7 +76,7 @@ function Menus({ color, fsize }) {
         </Menu.Dropdown>
       </Menu>
 
-      <Menu shadow="md" width={200}>
+      <Menu shadow="md" width={200} className="menu">
         <Menu.Target>
           <Button
             variant="unstyled"
@@ -113,7 +113,7 @@ function Menus({ color, fsize }) {
         </Menu.Dropdown>
       </Menu>
 
-      <Menu shadow="md" width={200}>
+      <Menu shadow="md" width={200} className="menu">
         <Menu.Target>
           <Button
             variant="unstyled"
@@ -158,7 +158,7 @@ function Menus({ color, fsize }) {
         </Menu.Dropdown>
       </Menu>
 
-      <Menu shadow="md" width={200}>
+      <Menu shadow="md" width={200} className="menu">
         <Menu.Target>
           <Button
             variant="unstyled"
@@ -187,7 +187,7 @@ function Menus({ color, fsize }) {
         </Menu.Dropdown>
       </Menu>
 
-      <Menu shadow="md" width={200}>
+      <Menu shadow="md" width={200} className="menu">
         <Menu.Target>
           <Button
             variant="unstyled"
@@ -236,7 +236,7 @@ function Menus({ color, fsize }) {
         </Menu.Dropdown>
       </Menu>
 
-      <Menu shadow="md">
+      <Menu shadow="md" className="menu">
         <Menu.Target>
           <Button variant="unstyled" c={color}>
             <Text ff="lato" fz={fsize}>

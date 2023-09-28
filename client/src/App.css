@@ -81,6 +81,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.menu-text:hover {
-  background-color: "#ffc909";
+.menu:hover {
+  color: #f7be08;
+  transition: 0.3s ease-in-out;
 }

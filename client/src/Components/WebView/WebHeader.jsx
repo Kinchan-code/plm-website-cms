@@ -12,17 +12,36 @@ import Menus from "../Menus";
 
 const useStyles = createStyles(() => ({
   HeaderTransparentTop: {
-    backgroundColorTop: "rgba(0, 0, 0, 0.005)",
+    background: "rgba(0, 0, 0, 0.5)",
+    "& .menu-text:hover": {
+      color: "#ffc909",
+      transition: "0.3s ease-in-out",
+    },
   },
   HeaderSolidTop: {
     backgroundColor: "#a31920",
+    "& .menu-text:hover": {
+      color: "#ffc909",
+      transition: "0.3s ease-in-out",
+    },
     zIndex: 1,
   },
   HeaderTransparentBot: {
-    backgroundColor: "rgba(0, 0, 0, 0.005)",
+    background:
+      "linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0))",
+    "& .menu-text:hover": {
+      backgroundColor: "gray",
+      color: "#ffc909",
+      transition: "0.3s ease-in-out",
+    },
   },
   HeaderSolidBot: {
     backgroundColor: "#fff",
+    "& .menu-text:hover": {
+      color: "#ffc909",
+      transition: "0.3s ease-in-out",
+    },
+    boxShadow: "0 4px 4px rgba(0, 0, 0, 0.2)",
     zIndex: 1,
   },
 }));
@@ -106,14 +125,8 @@ function WebHeader() {
         style={{
           position: "fixed",
           width: "100%",
-          height: "17vh",
           margin: "auto",
           zIndex: "999",
-          boxShadow:
-            navBackgroundTop === "HeaderSolidTop" ||
-            navBackgroundBot === "HeaderSolidBot"
-              ? "0 4px 4px rgba(0, 0, 0, 0.2)"
-              : "none",
         }}
       >
         <div>
@@ -132,19 +145,19 @@ function WebHeader() {
             <Text fz="sm" p="sm" className="menu-text">
               STUDENTS
             </Text>
-            <Text fz="sm" p="sm">
+            <Text fz="sm" p="sm" className="menu-text">
               FACULTY
             </Text>
-            <Text fz="sm" p="sm">
+            <Text fz="sm" p="sm" className="menu-text">
               ALUMNI
             </Text>
-            <Text fz="sm" p="sm">
+            <Text fz="sm" p="sm" className="menu-text">
               PARTNERS
             </Text>
-            <Text fz="sm" p="sm">
+            <Text fz="sm" p="sm" className="menu-text">
               COMMUNITY
             </Text>
-            <Text fz="sm" p="sm">
+            <Text fz="sm" p="sm" className="menu-text">
               PLM EMAIL LOGIN
             </Text>
           </div>
@@ -179,7 +192,6 @@ function WebHeader() {
                 fsize="md"
                 color={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
               />
-
               <div style={{ padding: "1rem" }}>
                 {isSearchVisible ? null : (
                   <ActionIcon
