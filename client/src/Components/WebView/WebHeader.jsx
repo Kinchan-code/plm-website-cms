@@ -14,40 +14,39 @@ const useStyles = createStyles(() => ({
   HeaderTransparentTop: {
     background: "rgba(0, 0, 0, 0.5)",
     "& .menu-text:hover": {
-      color: "#ffc909",
+      color: "#d5a106",
       transition: "0.3s ease-in-out",
     },
   },
   HeaderSolidTop: {
-    backgroundColor: "#a31920",
+    backgroundColor: "#fff",
     "& .menu-text:hover": {
-      color: "#ffc909",
+      color: "#d5a106",
       transition: "0.3s ease-in-out",
     },
+    boxShadow: "0 4px 4px rgba(0, 0, 0, 0.2)",
     zIndex: 1,
   },
   HeaderTransparentBot: {
     background:
       "linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0))",
     "& .menu-text:hover": {
-      backgroundColor: "gray",
-      color: "#ffc909",
+      color: "#d5a106",
       transition: "0.3s ease-in-out",
     },
   },
   HeaderSolidBot: {
-    backgroundColor: "#fff",
+    backgroundColor: "#f9f8f8",
     "& .menu-text:hover": {
-      color: "#ffc909",
+      color: "#d5a106",
       transition: "0.3s ease-in-out",
     },
-    boxShadow: "0 4px 4px rgba(0, 0, 0, 0.2)",
-    zIndex: 1,
   },
 }));
 
 function WebHeader() {
   const { classes } = useStyles();
+  const isScrollPastCondition = window.scrollY > 595;
   const [isSearchVisible, setSearchVisible] = useState(false);
   const [navBackgroundTop, setNavBackgroundTop] = useState(
     "HeaderTransparentTop"
@@ -61,7 +60,7 @@ function WebHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 595;
+      const show = window.scrollY > 630;
       if (show) {
         setNavBackgroundTop("HeaderSolidTop");
       } else {
@@ -77,20 +76,20 @@ function WebHeader() {
   const navRefBot = useRef(navBackgroundBot);
   navRefBot.current = navBackgroundBot;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const show = window.scrollY > 595;
-      if (show) {
-        setNavBackgroundBot("HeaderSolidBot");
-      } else {
-        setNavBackgroundBot("HeaderTransparentBot");
-      }
-    };
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const show = window.scrollY > 595;
+  //     if (show) {
+  //       setNavBackgroundBot("HeaderSolidBot");
+  //     } else {
+  //       setNavBackgroundBot("HeaderTransparentBot");
+  //     }
+  //   };
+  //   document.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     document.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -134,7 +133,7 @@ function WebHeader() {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-end",
+              justifyContent: "space-between",
               color: "#fff",
               height: "100%",
               paddingRight: "3rem",
@@ -142,90 +141,95 @@ function WebHeader() {
             }}
             className={classes[navRefTop.current]}
           >
-            <Text fz="sm" p="sm" className="menu-text">
-              STUDENTS
-            </Text>
-            <Text fz="sm" p="sm" className="menu-text">
-              FACULTY
-            </Text>
-            <Text fz="sm" p="sm" className="menu-text">
-              ALUMNI
-            </Text>
-            <Text fz="sm" p="sm" className="menu-text">
-              PARTNERS
-            </Text>
-            <Text fz="sm" p="sm" className="menu-text">
-              COMMUNITY
-            </Text>
-            <Text fz="sm" p="sm" className="menu-text">
-              PLM EMAIL LOGIN
-            </Text>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              height: "100%",
-              paddingRight: "2rem",
-              paddingLeft: "2rem",
-              paddingTop: ".5rem",
-              paddingBottom: ".5rem",
-            }}
-            className={classes[navRefBot.current]}
-          >
-            <div style={{ display: "flex", marginLeft: "1rem" }}>
+            <div style={{ display: "flex", marginLeft: "2rem" }}>
               <>
-                <Image maw={250} src={logo} />
+                <Image maw={300} p="0.5rem" src={logo} />
               </>
             </div>
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+                  display: "flex",
 
+                  color: "#fff",
+                  alignItems: "center",
+                }}
+              >
+                <Menus
+                  fsize="sm"
+                  color={
+                    navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"
+                  }
+                />
+                <div style={{ padding: "1rem" }}>
+                  {isSearchVisible ? null : (
+                    <ActionIcon
+                      variant="unstyled"
+                      onClick={toggleSearch}
+                      c={
+                        navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"
+                      }
+                    >
+                      <IconSearch size="1.125rem" />
+                    </ActionIcon>
+                  )}
+                </div>
+
+                {isSearchVisible ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <TextInput
+                      p="sm"
+                      c="black"
+                      radius="lg"
+                      placeholder="Search"
+                      style={{
+                        marginLeft: "-2rem",
+                        borderBlock: "black",
+                      }}
+                      ref={searchInputRef}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          </div>
+          {!isScrollPastCondition && (
             <div
               style={{
                 display: "flex",
-                cursor: "pointer",
-                color: "#fff",
                 alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+                cursor: "pointer",
+                zIndex: "1",
               }}
+              className={classes[navRefBot.current]}
             >
-              <Menus
-                fsize="md"
-                color={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
-              />
-              <div style={{ padding: "1rem" }}>
-                {isSearchVisible ? null : (
-                  <ActionIcon
-                    variant="unstyled"
-                    onClick={toggleSearch}
-                    c={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
-                  >
-                    <IconSearch size="1.125rem" />
-                  </ActionIcon>
-                )}
-              </div>
-
-              {isSearchVisible ? (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <TextInput
-                    p="sm"
-                    c="black"
-                    radius="lg"
-                    placeholder="Search"
-                    style={{
-                      marginLeft: "-2rem",
-                      borderBlock: "black",
-                    }}
-                    ref={searchInputRef}
-                  />
-                </div>
-              ) : null}
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                STUDENTS
+              </Text>
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                FACULTY
+              </Text>
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                ALUMNI
+              </Text>
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                PARTNERS
+              </Text>
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                COMMUNITY
+              </Text>
+              <Text fz="sm" p="sm" c="#fff" className="menu-text">
+                PLM EMAIL LOGIN
+              </Text>
             </div>
-          </div>
+          )}
         </div>
       </nav>
     </>

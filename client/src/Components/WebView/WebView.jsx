@@ -8,13 +8,20 @@ import {
   Image,
   Divider,
   SimpleGrid,
+  Affix,
+  ActionIcon,
+  Transition,
+  rem,
 } from "@mantine/core";
+import { IconSquareRoundedArrowUpFilled } from "@tabler/icons-react";
+import { useWindowScroll } from "@mantine/hooks";
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
 import { Images } from "../Images";
 import Announcements from "../Announcements";
 
 function WebView() {
+  const [scroll, scrollTo] = useWindowScroll();
   const [containerHidden, setContainerHidden] = useState(false);
   useEffect(() => {
     function handleScroll() {
@@ -64,7 +71,7 @@ function WebView() {
   const theme = useMantineTheme();
   const handleScrollTo = () => {
     window.scrollTo({
-      top: 600,
+      top: 650,
       behavior: "smooth",
     });
   };
@@ -157,7 +164,7 @@ function WebView() {
                 w="100vw"
                 c="#000"
                 onClick={handleScrollTo}
-                style={{ backgroundColor: "#fff" }}
+                style={{ backgroundColor: "#f9f8f8" }}
               >
                 <Text fw="bold" fz="lg">
                   EXPLORE
@@ -238,6 +245,26 @@ function WebView() {
             </Text>
           </div>
         </div>
+        <Affix position={{ bottom: rem(20), right: rem(20) }}>
+          <Transition
+            transition="slide-up"
+            duration={100}
+            mounted={scroll.y > 0}
+          >
+            {(transitionStyles) => (
+              <ActionIcon
+                c="#022f76"
+                size="lg"
+                radius="lg"
+                variant="unstyled"
+                style={transitionStyles}
+                onClick={() => scrollTo({ y: 0 })}
+              >
+                <IconSquareRoundedArrowUpFilled size="2rem" />
+              </ActionIcon>
+            )}
+          </Transition>
+        </Affix>
       </AppShell>
     </div>
   );

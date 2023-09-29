@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Menu, Button, Text, Divider } from "@mantine/core";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 
-function Menus({ color, fsize }) {
+function Menus({ color, fsize, fweight }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [admissionsMenuOpen, setAdmissionsMenuOpen] = useState(false);
@@ -48,22 +49,26 @@ function Menus({ color, fsize }) {
               toggleAboutMenu();
             }}
           >
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               ABOUT
             </Text>
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Item>
-            <Text> University Profile </Text>
+            <Text className={isHovered ? "item" : "item-out"}>
+              University Profile
+            </Text>
           </Menu.Item>
           <Divider />
           <Menu.Item>
-            <Text> Administration </Text>
+            <Text className={isHovered ? "item" : "item-out"}>
+              Administration
+            </Text>
           </Menu.Item>
           <Divider />
           <Menu.Item>
-            <Text> Pride Hall </Text>
+            <Text className={isHovered ? "item" : "item-out"}>Pride Hall </Text>
           </Menu.Item>
           <Divider />
           <Menu.Item>
@@ -71,7 +76,7 @@ function Menus({ color, fsize }) {
           </Menu.Item>
           <Divider />
           <Menu.Item>
-            <Text> Contact </Text>
+            <Text className={isHovered ? "item" : "item-out"}> Contact </Text>
           </Menu.Item>
         </Menu.Dropdown>
       </Menu>
@@ -93,7 +98,7 @@ function Menus({ color, fsize }) {
               toggleAcademicsMenu();
             }}
           >
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               ACADEMICS
             </Text>
           </Button>
@@ -130,7 +135,7 @@ function Menus({ color, fsize }) {
               toggleAdmissionsMenu();
             }}
           >
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               ADMISSIONS
             </Text>
           </Button>
@@ -175,7 +180,7 @@ function Menus({ color, fsize }) {
               toggleResearchMenu();
             }}
           >
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               RESEARCH
             </Text>
           </Button>
@@ -204,7 +209,7 @@ function Menus({ color, fsize }) {
               toggleNewsMenu();
             }}
           >
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               NEWS
             </Text>
           </Button>
@@ -239,7 +244,7 @@ function Menus({ color, fsize }) {
       <Menu shadow="md" className="menu">
         <Menu.Target>
           <Button variant="unstyled" c={color}>
-            <Text ff="lato" fz={fsize}>
+            <Text ff="lato" fz={fsize} fw={fweight}>
               DOWNLOADS
             </Text>
           </Button>
