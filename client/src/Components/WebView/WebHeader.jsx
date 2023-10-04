@@ -5,6 +5,7 @@ import {
   ActionIcon,
   createStyles,
   TextInput,
+  Button,
 } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import logo from "../../assets/PLMLogoText.png";
@@ -156,7 +157,7 @@ function WebHeader() {
                 }}
               >
                 <Menus
-                  fsize="sm"
+                  fsize="md"
                   color={
                     navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"
                   }
@@ -207,27 +208,45 @@ function WebHeader() {
                 height: "100%",
                 cursor: "pointer",
                 zIndex: "1",
+                gap: "0rem",
               }}
               className={classes[navRefBot.current]}
             >
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                STUDENTS
-              </Text>
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                FACULTY
-              </Text>
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                ALUMNI
-              </Text>
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                PARTNERS
-              </Text>
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                COMMUNITY
-              </Text>
-              <Text fz="sm" p="sm" c="#fff" className="menu-text">
-                PLM EMAIL LOGIN
-              </Text>
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  STUDENTS
+                </Text>
+              </Button>
+
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  FACULTY
+                </Text>
+              </Button>
+
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  ALUMNI
+                </Text>
+              </Button>
+
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  PARTNERS
+                </Text>
+              </Button>
+
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  COMMUNITY
+                </Text>
+              </Button>
+
+              <Button variant="unstyled">
+                <Text fz="md" c="#fff" className="menu-text">
+                  PLM EMAIL LOGIN
+                </Text>
+              </Button>
             </div>
           )}
         </div>

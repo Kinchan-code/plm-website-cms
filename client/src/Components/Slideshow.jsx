@@ -70,7 +70,7 @@ function Slideshow({ slides }) {
         <ActionIcon
           style={{
             color: isFirstSlide ? "#ccc" : "#a31920",
-            opacity: isHovered ? 1 : 0.5,
+            opacity: isHovered ? 1 : 0,
             transition: "opacity 0.3s",
           }}
           variant="light"
@@ -100,7 +100,7 @@ function Slideshow({ slides }) {
         <ActionIcon
           style={{
             color: isLastSlide ? "#ccc" : "#a31920",
-            opacity: isHovered ? 1 : 0.5,
+            opacity: isHovered ? 1 : 0,
             transition: "opacity 0.3s",
           }}
           variant="light"

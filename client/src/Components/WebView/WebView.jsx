@@ -13,7 +13,10 @@ import {
   Transition,
   rem,
 } from "@mantine/core";
-import { IconSquareRoundedArrowUpFilled } from "@tabler/icons-react";
+import {
+  IconSquareRoundedArrowUpFilled,
+  IconHandClick,
+} from "@tabler/icons-react";
 import { useWindowScroll } from "@mantine/hooks";
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
@@ -135,41 +138,37 @@ function WebView() {
                   The Philippines' first and only chartered autonomous local
                   university.
                 </Text>
-                <div style={{ paddingLeft: "3rem" }}>
-                  <Button
-                    radius="md"
-                    style={{ backgroundColor: "#FFC60B", zIndex: "0" }}
-                  >
-                    <Text
-                      c="#000"
-                      style={{
-                        fontFamily: "Lato, sans-serif",
-                      }}
+                <div style={{ display: "flex", gap: "2rem" }}>
+                  <div style={{ paddingLeft: "3rem" }}>
+                    <Button
+                      radius="lg"
+                      style={{ backgroundColor: "#d5a106", zIndex: "0" }}
                     >
-                      Check our Program
-                    </Text>
-                  </Button>
+                      <Text fz="lg" c="#000">
+                        CHECK OUR PROGRAM
+                      </Text>
+                    </Button>
+                  </div>
+                  <div
+                    style={{
+                      justifyContent: "center",
+                      display: "flex",
+                    }}
+                  >
+                    <Button
+                      c="#022f76"
+                      radius="lg"
+                      rightIcon={<IconHandClick size="1.5rem" />}
+                      onClick={handleScrollTo}
+                      style={{ backgroundColor: "#f9f8f8" }}
+                    >
+                      <Text fw="bold" fz="lg">
+                        EXPLORE MORE
+                      </Text>
+                    </Button>
+                  </div>
                 </div>
               </Container>
-            </div>
-            <div
-              style={{
-                justifyContent: "center",
-                marginTop: "4rem",
-                display: "flex",
-              }}
-            >
-              <Button
-                h="5vh"
-                w="100vw"
-                c="#000"
-                onClick={handleScrollTo}
-                style={{ backgroundColor: "#f9f8f8" }}
-              >
-                <Text fw="bold" fz="lg">
-                  EXPLORE
-                </Text>
-              </Button>
             </div>
           </div>
         </div>

@@ -98,7 +98,7 @@ function Menus({ color, fsize, fweight }) {
               toggleAcademicsMenu();
             }}
           >
-            <Text ff="lato" fz={fsize} fw={fweight}>
+            <Text ff="lato" fz={fsize}>
               ACADEMICS
             </Text>
           </Button>
