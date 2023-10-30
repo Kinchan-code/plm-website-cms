@@ -11,7 +11,10 @@ import { IconSearch } from "@tabler/icons-react";
 import logo from "../../assets/PLMLogoText.png";
 import Menus from "../Menus";
 
+// CSS Styles for the Header
 const useStyles = createStyles(() => ({
+  // Header is divided by two sides. Top and Bottom to put the links accordingly
+  // CSS for Top side Header when Transparent
   HeaderTransparentTop: {
     background: "rgba(0, 0, 0, 0.5)",
     "& .menu-text:hover": {
@@ -19,6 +22,7 @@ const useStyles = createStyles(() => ({
       transition: "0.3s ease-in-out",
     },
   },
+  // CSS for Top side Header when Solid
   HeaderSolidTop: {
     backgroundColor: "#fff",
     "& .menu-text:hover": {
@@ -28,6 +32,7 @@ const useStyles = createStyles(() => ({
     boxShadow: "0 4px 4px rgba(0, 0, 0, 0.2)",
     zIndex: 1,
   },
+  // CSS for Bottom side Header when Transparent
   HeaderTransparentBot: {
     background:
       "linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0))",
@@ -36,6 +41,7 @@ const useStyles = createStyles(() => ({
       transition: "0.3s ease-in-out",
     },
   },
+  // CSS for Bottom side Header when Solid
   HeaderSolidBot: {
     backgroundColor: "#f9f8f8",
     "& .menu-text:hover": {
@@ -46,7 +52,9 @@ const useStyles = createStyles(() => ({
 }));
 
 function WebHeader() {
+  // To use the CSS above
   const { classes } = useStyles();
+  // This is the trigger to when the header will become solid
   const isScrollPastCondition = window.scrollY > 595;
   const [isSearchVisible, setSearchVisible] = useState(false);
   const [navBackgroundTop, setNavBackgroundTop] = useState(
@@ -59,6 +67,7 @@ function WebHeader() {
   const navRefTop = useRef(navBackgroundTop);
   navRefTop.current = navBackgroundTop;
 
+  // This is the scroll condition on what pixel does the header will change it's background
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 630;
@@ -77,21 +86,7 @@ function WebHeader() {
   const navRefBot = useRef(navBackgroundBot);
   navRefBot.current = navBackgroundBot;
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const show = window.scrollY > 595;
-  //     if (show) {
-  //       setNavBackgroundBot("HeaderSolidBot");
-  //     } else {
-  //       setNavBackgroundBot("HeaderTransparentBot");
-  //     }
-  //   };
-  //   document.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     document.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
+  // This is for the effect of the search icon on the header
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -120,6 +115,7 @@ function WebHeader() {
   const searchInputRef = useRef(null);
 
   return (
+    // This is the main Header
     <>
       <nav
         style={{
@@ -129,6 +125,7 @@ function WebHeader() {
           zIndex: "999",
         }}
       >
+        {/* This is the container of the header */}
         <div>
           <div
             style={{
@@ -144,6 +141,7 @@ function WebHeader() {
           >
             <div style={{ display: "flex", marginLeft: "2rem" }}>
               <>
+                {/* Logo  */}
                 <Image maw={300} p="0.5rem" src={logo} />
               </>
             </div>
@@ -156,12 +154,14 @@ function WebHeader() {
                   alignItems: "center",
                 }}
               >
+                {/* This is a custom links for the menus on the top header */}
                 <Menus
                   fsize="md"
                   color={
                     navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"
                   }
                 />
+                {/* Search icon */}
                 <div style={{ padding: "1rem" }}>
                   {isSearchVisible ? null : (
                     <ActionIcon
@@ -199,7 +199,10 @@ function WebHeader() {
               </div>
             </div>
           </div>
+
+          {/* This links will vanish when the scroll condition is triggered */}
           {!isScrollPastCondition && (
+            // This are the links on the bottom header
             <div
               style={{
                 display: "flex",

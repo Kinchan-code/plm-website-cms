@@ -22,10 +22,14 @@ import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
 import { Images } from "../Images";
 import Announcements from "../Announcements";
+import Footer from "../Footer";
 
 function WebView() {
+  // This are the effects that are used on this page
   const [scroll, scrollTo] = useWindowScroll();
   const [containerHidden, setContainerHidden] = useState(false);
+
+  // This is used to hide fixed text in the middle to avoid it showing on the bottom pages
   useEffect(() => {
     function handleScroll() {
       const scrollThreshold = 600;
@@ -40,6 +44,8 @@ function WebView() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // This are the images used in this page I put it in a single file to avoid many imports
   const {
     sample,
     sample1,
@@ -72,13 +78,16 @@ function WebView() {
     <Image src={Logo} />,
   ];
   const theme = useMantineTheme();
+  // This scroll effect will get triggered when you click the explore more button
   const handleScrollTo = () => {
     window.scrollTo({
       top: 650,
       behavior: "smooth",
     });
   };
+
   return (
+    // Main shell
     <div>
       <AppShell
         padding="0"
@@ -92,8 +101,10 @@ function WebView() {
                 : theme.colors.gray[0],
           },
         }}
+        // Header that is imported on another file
         header={<WebHeader />}
       >
+        {/* Main Container */}
         <div
           className="main"
           style={{
@@ -108,6 +119,7 @@ function WebView() {
               zIndex: 0,
             }}
           >
+            {/* The Big Texts in the middle */}
             <div style={{ alignItems: "center" }}>
               <Container
                 id="myContainer"
@@ -149,6 +161,7 @@ function WebView() {
                       </Text>
                     </Button>
                   </div>
+                  {/* Explore more button to quickly scroll the page on the contents */}
                   <div
                     style={{
                       justifyContent: "center",
@@ -172,7 +185,7 @@ function WebView() {
             </div>
           </div>
         </div>
-
+        {/* Main contents of the page */}
         <div
           style={{
             width: "100%",
@@ -181,11 +194,13 @@ function WebView() {
             zIndex: "1",
           }}
         >
+          {/* First content */}
           <div style={{ height: "80vh", padding: "1rem", marginTop: "2rem" }}>
             <SimpleGrid cols={2} spacing="xl">
+              {/* For Announcements */}
               <div>
                 <Text fz="xl" fw="bold" ff="lato">
-                  UNIVERSITY UPDATES
+                  ANNOUNCEMENTS
                 </Text>
                 <Divider size="xl" color="#FFC60B" />
                 <Announcements>
@@ -193,9 +208,10 @@ function WebView() {
                   <Image src={pic2} />
                 </Announcements>
               </div>
+              {/* For Press Releases */}
               <div>
                 <Text fz="xl" fw="bold" ff="lato">
-                  UNIVERSITY SERVICES
+                  PRESS RELEASES
                 </Text>
                 <Divider size="xl" color="#ffc60b" />
                 <Announcements>
@@ -205,7 +221,7 @@ function WebView() {
               </div>
             </SimpleGrid>
           </div>
-
+          {/* Second Content */}
           <div
             style={{
               height: "80vh",
@@ -216,34 +232,40 @@ function WebView() {
             }}
           >
             <SimpleGrid cols={2} spacing="xl">
+              {/* Carousel For university updates */}
               <div>
                 <Text fz="xl" fw="bold" ff="lato">
                   UNIVERSITY UPDATES
                 </Text>
                 <Divider size="xl" color="#FFC60B" />
+                {/* The Custom Carousel */}
                 <Slideshow slides={slidesContentLeft} />
               </div>
               <div>
+                {/* Carousel For university services */}
                 <Text fz="xl" fw="bold" ff="lato">
                   UNIVERSITY SERVICES
                 </Text>
                 <Divider size="xl" color="#ffc60b" />
+                {/* The Custom Carousel */}
                 <Slideshow slides={slidesContentRight} />
               </div>
             </SimpleGrid>
           </div>
+          {/* For the Footer */}
           <div
             style={{
-              height: "100vh",
+              position: "relative",
+              bottom: "0",
               backgroundColor: "#fff",
-              padding: "1rem",
+              padding: "0",
             }}
           >
-            <Text fz="lg" style={{ fontFamily: "Lato, sans-serif" }}>
-              Hello World
-            </Text>
+            {/* Imported custom footer */}
+            <Footer />
           </div>
         </div>
+        {/* For the Go to Top buttom function */}
         <Affix position={{ bottom: rem(20), right: rem(20) }}>
           <Transition
             transition="slide-up"

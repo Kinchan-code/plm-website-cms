@@ -1,14 +1,10 @@
 export const links = [
   {
-    label: "Home",
-    path: "/home",
-    subContents: [
-      { label: "Settings", path: "/settings" },
-      { label: "Settings", path: "/settings" },
+    links: [
+      { label: "Site Guide", link: "#" },
+      { label: "Privacy Policy", link: "#" },
+      { label: "Terms of Use", link: "#" },
+      { label: "Citizen's Charter", link: "#" },
     ],
-  },
-  {
-    label: "Shit",
-    path: "/shit",
   },
 ];

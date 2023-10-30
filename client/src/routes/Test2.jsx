@@ -1,187 +1,114 @@
-// import React, { useState, useEffect } from "react";
-// import { Button, Container, Text } from "@mantine/core";
+// import React from "react";
+// import { Text, Container, ActionIcon, Group, rem } from "@mantine/core";
+// import {
+//   IconBrandTwitter,
+//   IconBrandYoutube,
+//   IconBrandInstagram,
+// } from "@tabler/icons-react";
+// import { MantineLogo } from "@mantine/ds";
+// import classes from "./FooterLinks.module.css";
 
-// function Test2() {
-//   return (
-//     <div>
-//       <div className="main">
-//         <div
-//           style={{
-//             alignItems: "center",
-//             position: "fixed",
-//             zIndex: "0",
-//           }}
-//         >
-//           <Container>
-//             {" "}
-//             <Text
-//               fz="4rem"
-//               fw="bold"
-//               p="3rem"
-//               c="#fff"
-//               style={{
-//                 fontFamily: "Lato, sans-serif",
-//                 marginBottom: "-5rem",
-//               }}
-//             >
-//               Study at Pamantasan ng Lungsod ng Maynila
-//             </Text>
-//             <Text
-//               fz="1.9rem"
-//               p="3rem"
-//               c="#fff"
-//               style={{
-//                 fontFamily: "Lato, sans-serif",
-//                 marginBottom: "-2rem",
-//               }}
-//             >
-//               The Philippines' first and only chartered autonomous local
-//               university.
-//             </Text>
-//             <div style={{ paddingLeft: "3rem" }}>
-//               <Button radius="md" style={{ backgroundColor: "#FFC60B" }}>
-//                 <Text
-//                   c="#000"
-//                   style={{
-//                     fontFamily: "Lato, sans-serif",
-//                   }}
-//                 >
-//                   Check our Program
-//                 </Text>
-//               </Button>
-//             </div>
-//           </Container>
-//         </div>
+// const data = [
+//   {
+//     title: "About",
+//     links: [
+//       { label: "Features", link: "#" },
+//       { label: "Pricing", link: "#" },
+//       { label: "Support", link: "#" },
+//       { label: "Forums", link: "#" },
+//     ],
+//   },
+//   {
+//     title: "Project",
+//     links: [
+//       { label: "Contribute", link: "#" },
+//       { label: "Media assets", link: "#" },
+//       { label: "Changelog", link: "#" },
+//       { label: "Releases", link: "#" },
+//     ],
+//   },
+//   {
+//     title: "Community",
+//     links: [
+//       { label: "Join Discord", link: "#" },
+//       { label: "Follow on Twitter", link: "#" },
+//       { label: "Email newsletter", link: "#" },
+//       { label: "GitHub discussions", link: "#" },
+//     ],
+//   },
+// ];
+
+// export function FooterLinks() {
+//   const groups = data.map((group) => {
+//     const links = group.links.map((link, index) => (
+//       <Text
+//         as="a"
+//         key={index}
+//         className={classes.link}
+//         href={link.link}
+//         onClick={(event) => event.preventDefault()}
+//       >
+//         {link.label}
+//       </Text>
+//     ));
+
+//     return (
+//       <div className={classes.wrapper} key={group.title}>
+//         <Text className={classes.title}>{group.title}</Text>
+//         {links}
 //       </div>
-//       <>
-//         <div>
-//           <div
-//             style={{
-//               height: "1000vh",
-//               backgroundColor: "theme.white",
-//               padding: "1rem",
-//               position: "absolute",
-//               zIndex: "1",
-//             }}
-//           >
-//             <>
-//               <Text
-//                 fz="lg"
-//                 style={{
-//                   fontFamily: "Lato, sans-serif",
-//                 }}
-//               >
-//                 Your text content here
-//               </Text>
-//             </>
-//           </div>
+//     );
+//   });
+
+//   return (
+//     <footer className={classes.footer}>
+//       <Container className={classes.inner}>
+//         <div className={classes.logo}>
+//           <MantineLogo size={30} />
+//           <Text size="xs" c="dimmed" className={classes.description}>
+//             Build fully functional accessible web applications faster than ever
+//           </Text>
 //         </div>
-//       </>
-//     </div>
+//         <div className={classes.groups}>{groups}</div>
+//       </Container>
+//       <Container className={classes.afterFooter}>
+//         <Text c="dimmed" size="sm">
+//           © 2020 mantine.dev. All rights reserved.
+//         </Text>
+
+//         <Group
+//           gap={0}
+//           className={classes.social}
+//           justify="flex-end"
+//           wrap="nowrap"
+//         >
+//           <ActionIcon size="lg" color="gray" variant="subtle">
+//             <IconBrandTwitter
+//               style={{ width: rem(18), height: rem(18) }}
+//               stroke={1.5}
+//             />
+//           </ActionIcon>
+//           <ActionIcon size="lg" color="gray" variant="subtle">
+//             <IconBrandYoutube
+//               style={{ width: rem(18), height: rem(18) }}
+//               stroke={1.5}
+//             />
+//           </ActionIcon>
+//           <ActionIcon size="lg" color="gray" variant="subtle">
+//             <IconBrandInstagram
+//               style={{ width: rem(18), height: rem(18) }}
+//               stroke={1.5}
+//             />
+//           </ActionIcon>
+//         </Group>
+//       </Container>
+//     </footer>
 //   );
 // }
-
-// export default Test2;
-import React, { useState, useEffect } from "react";
-import { Button, Container, Text } from "@mantine/core";
+import React from "react";
 
 function Test2() {
-  const [containerZIndex, setContainerZIndex] = useState(1);
-
-  useEffect(() => {
-    // Add a scroll event listener to change the z-index of the container
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      // You can adjust the threshold as needed
-      if (scrollY > 200) {
-        setContainerZIndex(0); // Bring the container below the other div
-      } else {
-        setContainerZIndex(1); // Bring the container above the other div
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <div>
-      <div className="main">
-        <div
-          style={{
-            alignItems: "center",
-            position: "fixed",
-            zIndex: containerZIndex, // Apply dynamic z-index here
-          }}
-        >
-          <Container>
-            <Text
-              fz="4rem"
-              fw="bold"
-              p="3rem"
-              c="#fff"
-              style={{
-                fontFamily: "Lato, sans-serif",
-                marginBottom: "-5rem",
-              }}
-            >
-              Study at Pamantasan ng Lungsod ng Maynila
-            </Text>
-            <Text
-              fz="1.9rem"
-              p="3rem"
-              c="#fff"
-              style={{
-                fontFamily: "Lato, sans-serif",
-                marginBottom: "-2rem",
-              }}
-            >
-              The Philippines' first and only chartered autonomous local
-              university.
-            </Text>
-            <div style={{ paddingLeft: "3rem" }}>
-              <Button radius="md" style={{ backgroundColor: "#FFC60B" }}>
-                <Text
-                  c="#000"
-                  style={{
-                    fontFamily: "Lato, sans-serif",
-                  }}
-                >
-                  Check our Program
-                </Text>
-              </Button>
-            </div>
-          </Container>
-        </div>
-      </div>
-      <div>
-        <div
-          style={{
-            height: "1000vh",
-            width: "100vw",
-            backgroundColor: "#fff", // Fixed the background color value
-            padding: "1rem",
-            position: "absolute",
-            zIndex: "1",
-          }}
-        >
-          <Text
-            fz="lg"
-            style={{
-              fontFamily: "Lato, sans-serif",
-            }}
-          >
-            Your text content here
-          </Text>
-        </div>
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default Test2;

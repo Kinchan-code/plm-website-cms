@@ -11,29 +11,34 @@ import {
 } from "@tabler/icons-react";
 
 function Slideshow({ slides }) {
+  // This is for the Hover function where the buttons are shown when hovered
   const swiperRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isFirstSlide, setIsFirstSlide] = useState(true);
   const [isLastSlide, setIsLastSlide] = useState(false);
 
+  // This is for the prev and next buttons
   const handleSwiper = (swiper) => {
     swiperRef.current = swiper;
     setIsFirstSlide(swiper.isBeginning);
     setIsLastSlide(swiper.isEnd);
   };
 
+  // prev button
   const goToPrevSlide = () => {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();
     }
   };
 
+  // next button
   const goToNextSlide = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
     }
   };
 
+  // This is for the effect where the prev button is disabled for the first and next button for the last page
   useEffect(() => {
     const handleSlideChange = () => {
       if (swiperRef.current) {
@@ -42,6 +47,7 @@ function Slideshow({ slides }) {
       }
     };
 
+    // To check the current is the first or last slide
     if (swiperRef.current) {
       swiperRef.current.on("slideChange", handleSlideChange);
     }
@@ -54,7 +60,9 @@ function Slideshow({ slides }) {
   }, []);
 
   return (
+    // Main Carousel
     <>
+      {/* Main container */}
       <div
         style={{
           display: "flex",
@@ -64,9 +72,11 @@ function Slideshow({ slides }) {
           width: "100%",
           height: "50vh",
         }}
+        // To let the system know if the carousel is being hovered or not
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        {/* The previous button */}
         <ActionIcon
           style={{
             color: isFirstSlide ? "#ccc" : "#a31920",
@@ -81,6 +91,8 @@ function Slideshow({ slides }) {
         >
           <IconCircleArrowLeftFilled size="2rem" />
         </ActionIcon>
+
+        {/* The slideshow component that is imported from SwiperJS */}
         <Swiper
           onSwiper={handleSwiper}
           modules={[Navigation, Pagination, Autoplay]}
@@ -97,6 +109,8 @@ function Slideshow({ slides }) {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* The next button */}
         <ActionIcon
           style={{
             color: isLastSlide ? "#ccc" : "#a31920",
