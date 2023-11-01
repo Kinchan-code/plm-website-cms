@@ -3,37 +3,39 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import "./App.css";
-import Home from "./routes/Home";
-import Administration from "./routes/About/Administration";
-import Contact from "./routes/About/Contact";
-import OBE from "./routes/About/OBE";
-import PrideHall from "./routes/About/PrideHall";
-import UniversityProfile from "./routes/About/UniversityProfile";
-import Calendar from "./routes/Academics/Calendar";
-import Colleges from "./routes/Academics/Colleges";
-import CRS from "./routes/Academics/CRS";
-import CLAT from "./routes/Admissions/CLAT";
-import MCAT from "./routes/Admissions/MCAT";
-import PLMAT from "./routes/Admissions/PLMAT";
-import Scholarship from "./routes/Admissions/Scholarship";
-import Undergrad from "./routes/Admissions/Undegrad";
-import Announcements from "./routes/News/Announcements";
-import Gallery from "./routes/News/Gallery";
-import Message from "./routes/News/Message";
-import NewsLetter from "./routes/News/NewsLetter";
-import PressRelease from "./routes/News/PressRelease";
-import SpecialReports from "./routes/News/SpecialReports";
-import Theses from "./routes/Research/Theses";
-import Students from "./routes/OtherLinks/Students";
-import Faculty from "./routes/OtherLinks/Faculty";
-import Alumni from "./routes/OtherLinks/Alumni";
-import Partners from "./routes/OtherLinks/Partners";
-import Community from "./routes/OtherLinks/Community";
-import PLMEmail from "./routes/OtherLinks/PLMEmail";
-import Archive from "./routes/Archive";
-import Error from "./routes/Error";
-import Test from "./routes/Test";
-import Test2 from "./routes/Test2";
+import {
+  Home,
+  Administration,
+  Contact,
+  OBE,
+  PrideHall,
+  UniversityProfile,
+  Calendar,
+  Colleges,
+  CRS,
+  CLAT,
+  MCAT,
+  PLMAT,
+  Scholarship,
+  Undergrad,
+  Announcements,
+  Gallery,
+  Message,
+  NewsLetter,
+  PressRelease,
+  SpecialReports,
+  Theses,
+  Students,
+  Faculty,
+  Alumni,
+  Partners,
+  Community,
+  PLMEmail,
+  Archive,
+  Error,
+  Test,
+  Test2,
+} from "./routes/routes";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage({
