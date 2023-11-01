@@ -7,6 +7,7 @@ import {
   TextInput,
   Button,
 } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 import { IconSearch } from "@tabler/icons-react";
 import logo from "../../assets/PLMLogoText.png";
 import Menus from "../Menus";
@@ -52,6 +53,7 @@ const useStyles = createStyles(() => ({
 }));
 
 function WebHeader() {
+  const navigate = useNavigate();
   // To use the CSS above
   const { classes } = useStyles();
   // This is the trigger to when the header will become solid
@@ -215,37 +217,67 @@ function WebHeader() {
               }}
               className={classes[navRefBot.current]}
             >
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/students");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   STUDENTS
                 </Text>
               </Button>
 
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/faculty");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   FACULTY
                 </Text>
               </Button>
 
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/alumni");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   ALUMNI
                 </Text>
               </Button>
 
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/partners");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   PARTNERS
                 </Text>
               </Button>
 
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/community");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   COMMUNITY
                 </Text>
               </Button>
 
-              <Button variant="unstyled">
+              <Button
+                variant="unstyled"
+                onClick={() => {
+                  navigate("/plmemaillogin");
+                }}
+              >
                 <Text fz="md" c="#fff" className="menu-text">
                   PLM EMAIL LOGIN
                 </Text>

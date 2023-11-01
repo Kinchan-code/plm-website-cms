@@ -24,6 +24,12 @@ import NewsLetter from "./routes/News/NewsLetter";
 import PressRelease from "./routes/News/PressRelease";
 import SpecialReports from "./routes/News/SpecialReports";
 import Theses from "./routes/Research/Theses";
+import Students from "./routes/OtherLinks/Students";
+import Faculty from "./routes/OtherLinks/Faculty";
+import Alumni from "./routes/OtherLinks/Alumni";
+import Partners from "./routes/OtherLinks/Partners";
+import Community from "./routes/OtherLinks/Community";
+import PLMEmail from "./routes/OtherLinks/PLMEmail";
 import Archive from "./routes/Archive";
 import Error from "./routes/Error";
 import Test from "./routes/Test";
@@ -218,10 +224,50 @@ function App() {
               }
             />
             <Route
-              path="/test"
+              path="/students"
               element={
                 <>
-                  <Test></Test>
+                  <Students></Students>
+                </>
+              }
+            />
+            <Route
+              path="/faculty"
+              element={
+                <>
+                  <Faculty></Faculty>
+                </>
+              }
+            />
+            <Route
+              path="/alumni"
+              element={
+                <>
+                  <Alumni></Alumni>
+                </>
+              }
+            />
+            <Route
+              path="/partners"
+              element={
+                <>
+                  <Partners></Partners>
+                </>
+              }
+            />
+            <Route
+              path="/community"
+              element={
+                <>
+                  <Community></Community>
+                </>
+              }
+            />
+            <Route
+              path="/plmemaillogin"
+              element={
+                <>
+                  <PLMEmail></PLMEmail>
                 </>
               }
             />
@@ -230,6 +276,14 @@ function App() {
               element={
                 <>
                   <Archive></Archive>
+                </>
+              }
+            />
+            <Route
+              path="/test"
+              element={
+                <>
+                  <Test></Test>
                 </>
               }
             />
