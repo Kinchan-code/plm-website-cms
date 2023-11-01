@@ -12,6 +12,8 @@ import pic1 from "../assets/AnnounceTest1.png";
 import pic2 from "../assets/AnnounceTest2.png";
 import pic3 from "../assets/AnnounceTest3.png";
 import pic4 from "../assets/AnnounceTest4.png";
+import seal from "../assets/seal.png";
+import topview from "../assets/topview.png";
 
 export const Images = {
   sample,
@@ -28,4 +30,6 @@ export const Images = {
   pic2,
   pic3,
   pic4,
+  seal,
+  topview,
 };

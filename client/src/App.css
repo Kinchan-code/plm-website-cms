@@ -1,5 +1,6 @@
 @import url("../src/Components/MobileView/Mobile.css");
 @import url("../src/Components/WebView/Web.css");
+@import url("./Swiper.css");
 @import url("./FooterLinks.css");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;700&display=swap");
 
@@ -8,7 +9,7 @@
   margin: 0;
   border: 0;
   scroll-behavior: smooth;
-  font-family: "Lato, sans-serif";
+  font-family: "Open Sans , sans-serif";
 }
 
 .main {
@@ -35,107 +36,12 @@ body {
   padding: 0;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-next {
-  color: #000;
-}
-
-.swiper-button-prev {
-  color: #000;
-}
-
-.swiper-pagination-bullet {
-  background-color: #a31920;
-}
-
-.hidden-container {
-  display: none;
-}
-
-.transparent {
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
-}
-
-.solid {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.menu:hover {
-  color: #d5a106;
-  transition: 0.3s ease-in-out;
-}
-
-.item {
-  color: #d5a106;
-
-  transform: translateX(1rem);
-  transition: transform 0.3s ease-in-out;
-}
-
-.item-out {
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.underline {
-  display: inline-block;
-  position: relative;
-  color: #d5a106;
-}
-
-.underline::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.footlinks {
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.footerContainer {
-  background-image: url("./assets/plm.png");
-  background-attachment: fixed;
+.seal {
+  background-image: url("../src/assets/sibuyas.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: inset 0 0 0 2000px rgba(163, 25, 32, 0.8);
-  width: 100%;
-  margin: auto;
+  background-color: #fff;
+  z-index: 1;
+  box-shadow: inset 0 0 0 2000px rgb(0, 102, 153, 0.85);
 }

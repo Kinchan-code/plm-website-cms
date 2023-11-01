@@ -1,0 +1,54 @@
+.hidden-container {
+  display: none;
+}
+
+.transparent {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.solid {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.menu:hover {
+  color: #d5a106;
+  transition: 0.3s ease-in-out;
+}
+
+.item {
+  color: #d5a106;
+
+  transform: translateX(1rem);
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-out {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline {
+  display: inline-block;
+  position: relative;
+  color: #d5a106;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

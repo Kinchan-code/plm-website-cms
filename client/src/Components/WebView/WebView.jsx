@@ -21,10 +21,13 @@ import { useWindowScroll } from "@mantine/hooks";
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
 import { Images } from "../Images";
-import Announcements from "../Announcements";
+import Announcements from "../AnnouncementsLinks";
 import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
 
 function WebView() {
+  //routing
+  const navigate = useNavigate();
   // This are the effects that are used on this page
   const [scroll, scrollTo] = useWindowScroll();
   const [containerHidden, setContainerHidden] = useState(false);
@@ -61,6 +64,8 @@ function WebView() {
     pic2,
     pic3,
     pic4,
+    seal,
+    topview,
   } = Images;
 
   const slidesContentLeft = [
@@ -156,7 +161,7 @@ function WebView() {
                       radius="lg"
                       style={{ backgroundColor: "#d5a106", zIndex: "0" }}
                     >
-                      <Text fz="lg" c="#000">
+                      <Text fz="lg" fw="bold" c="#000">
                         CHECK OUR PROGRAM
                       </Text>
                     </Button>
@@ -194,7 +199,7 @@ function WebView() {
             zIndex: "1",
           }}
         >
-          {/* First content */}
+          {/* Announcements and Press Realeases */}
           <div style={{ height: "80vh", padding: "1rem", marginTop: "2rem" }}>
             <SimpleGrid cols={2} spacing="xl">
               {/* For Announcements */}
@@ -221,10 +226,10 @@ function WebView() {
               </div>
             </SimpleGrid>
           </div>
-          {/* Second Content */}
+          {/* Carousel content */}
           <div
             style={{
-              height: "80vh",
+              height: "70vh",
               minWidth: "100%",
               backgroundColor: "#fff",
               padding: "1rem",
@@ -251,6 +256,72 @@ function WebView() {
                 <Slideshow slides={slidesContentRight} />
               </div>
             </SimpleGrid>
+          </div>
+          {/* For Philippine Transparency Seal */}
+          <div className="seal">
+            {/* Main container of the content */}
+            <Container
+              p="xl"
+              size="xl"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "50vh",
+              }}
+            >
+              {/* Logo of the seal */}
+              <Image maw={250} src={seal} p="md" />
+              {/* Text about the seal */}
+              <Text fz="md" p="md" c="#fff" ta="justify">
+                PLM is compliant with the Anti-Red Tape Act (ARTA), as validated
+                by the Civil Service Commission-Malacañan Palace. Pursuant to
+                the Philippine Government’s Transparency Principle, our
+                Transparency Coordinating Council, created through
+                Administrative Order No. 2013-12. Read our Citizen's Charter
+                here. In case of complaints, please submit proof or any
+                supporting documents through this link.
+              </Text>
+            </Container>
+          </div>
+          {/* Looking for more info */}
+          <div style={{ backgroundColor: "#fff", zIndex: "1" }}>
+            {/* Main Container */}
+            <Container
+              p="xl"
+              size="xl"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {/* For the text and button  */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "5rem",
+                }}
+              >
+                <Text fz="2rem" fw="bold" ta="center">
+                  Looking for more info?
+                </Text>
+                <Button
+                  onClick={() => {
+                    navigate("/archive");
+                  }}
+                  radius="md"
+                  style={{ backgroundColor: "#006699", marginTop: "1rem" }}
+                >
+                  <Text p="lg"> Check our archive here</Text>
+                </Button>
+              </div>
+              {/* The image */}
+              <Image maw={600} src={topview} />
+            </Container>
           </div>
           {/* For the Footer */}
           <div

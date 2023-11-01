@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Menu, Button, Text, Divider } from "@mantine/core";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
+import { useNavigate } from "react-router-dom";
 
 function Menus({ color, fsize, fweight }) {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
@@ -55,27 +57,47 @@ function Menus({ color, fsize, fweight }) {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/universityprofile");
+            }}
+          >
             <Text className={isHovered ? "item" : "item-out"}>
               University Profile
             </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/administration");
+            }}
+          >
             <Text className={isHovered ? "item" : "item-out"}>
               Administration
             </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/pridehall");
+            }}
+          >
             <Text className={isHovered ? "item" : "item-out"}>Pride Hall </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/OBE");
+            }}
+          >
             <Text> Outcome-Based Education (OBE) </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/contact");
+            }}
+          >
             <Text className={isHovered ? "item" : "item-out"}> Contact </Text>
           </Menu.Item>
         </Menu.Dropdown>
@@ -104,15 +126,27 @@ function Menus({ color, fsize, fweight }) {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/colleges");
+            }}
+          >
             <Text> Colleges </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/calendar");
+            }}
+          >
             <Text> Academic Calendar </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/CRS");
+            }}
+          >
             <Text> Computerized Registration System </Text>
           </Menu.Item>
         </Menu.Dropdown>
@@ -141,23 +175,43 @@ function Menus({ color, fsize, fweight }) {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/plmat");
+            }}
+          >
             <Text> PLM Admission Test (PLMAT) </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/undergradprograms");
+            }}
+          >
             <Text> Undergraduate Programs </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/scholarship");
+            }}
+          >
             <Text> Scholarship and Financial Aid </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/mcat");
+            }}
+          >
             <Text> Medical College Admission Test </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/clat");
+            }}
+          >
             <Text> College of Law Admission Test (CLAT) </Text>
           </Menu.Item>
         </Menu.Dropdown>
@@ -186,7 +240,11 @@ function Menus({ color, fsize, fweight }) {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/thesesanddissertation");
+            }}
+          >
             <Text> Theses and Dissertation </Text>
           </Menu.Item>
         </Menu.Dropdown>
@@ -215,27 +273,51 @@ function Menus({ color, fsize, fweight }) {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/pressrelease");
+            }}
+          >
             <Text> Press Release </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/gallery");
+            }}
+          >
             <Text> Gallery </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/specialreports");
+            }}
+          >
             <Text> Special Reports </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/newsletter");
+            }}
+          >
             <Text> News Letter </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/announcements");
+            }}
+          >
             <Text> Announcements </Text>
           </Menu.Item>
           <Divider />
-          <Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/message");
+            }}
+          >
             <Text> Message from the University Presidents </Text>
           </Menu.Item>
         </Menu.Dropdown>
