@@ -1,41 +1,43 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import "./App.css";
-import {
-  Home,
-  Administration,
-  Contact,
-  OBE,
-  PrideHall,
-  UniversityProfile,
-  Calendar,
-  Colleges,
-  CRS,
-  CLAT,
-  MCAT,
-  PLMAT,
-  Scholarship,
-  Undergrad,
-  Announcements,
-  Gallery,
-  Message,
-  NewsLetter,
-  PressRelease,
-  SpecialReports,
-  Theses,
-  Students,
-  Faculty,
-  Alumni,
-  Partners,
-  Community,
-  PLMEmail,
-  Archive,
-  Error,
-  Test,
-  Test2,
-} from "./routes/routes";
+import { AllLinks } from "./routes/routes";
+
+// import {
+//   Home,
+//   Administration,
+//   Contact,
+//   OBE,
+//   PrideHall,
+//   UniversityProfile,
+//   Calendar,
+//   Colleges,
+//   CRS,
+//   CLAT,
+//   MCAT,
+//   PLMAT,
+//   Scholarship,
+//   Undergrad,
+//   Announcements,
+//   Gallery,
+//   Message,
+//   NewsLetter,
+//   PressRelease,
+//   SpecialReports,
+//   Theses,
+//   Students,
+//   Faculty,
+//   Alumni,
+//   Partners,
+//   Community,
+//   PLMEmail,
+//   Archive,
+//   Error,
+//   Test,
+//   Test2,
+// } from "./routes/routes";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage({
@@ -56,8 +58,9 @@ function App() {
         withNormalizeCSS
       >
         <BrowserRouter>
-          <Routes>
-            <Route
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              {/* <Route
               path="/"
               element={
                 <>
@@ -304,8 +307,30 @@ function App() {
                   <Error></Error>
                 </>
               }
-            />
-          </Routes>
+            /> */}
+
+              {/* {AllLinks.map((link, index) => (
+                <Route
+                  key={index}
+                  path={link.path}
+                  exact
+                  element={link.component}
+                />
+              )).flat()} */}
+
+              {AllLinks.map((links) =>
+                links.map((data, index) => {
+                  return (
+                    <Route
+                      key={index}
+                      path={data.path}
+                      element={data.component}
+                    />
+                  );
+                })
+              ).flat()}
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </MantineProvider>
     </ColorSchemeProvider>
