@@ -66,7 +66,7 @@ function Slideshow({ slides }) {
       <div
         style={{
           display: "flex",
-          margin: "auto",
+          marginTop: "2rem",
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
@@ -97,15 +97,15 @@ function Slideshow({ slides }) {
           onSwiper={handleSwiper}
           modules={[Navigation, Pagination, Autoplay]}
           autoplay={{ delay: 3000 }}
-          dynamicSlides={true}
+          dynamicslides="true"
           pagination={{ dynamicBullets: true }}
           slidesPerView={2}
           spaceBetween={10}
           className="mySwiper"
         >
           {slides.map((content, index) => (
-            <SwiperSlide key={index} style={{ height: "auto" }}>
-              <Container>{content}</Container>
+            <SwiperSlide key={index}>
+              <Container p="lg">{content}</Container>
             </SwiperSlide>
           ))}
         </Swiper>

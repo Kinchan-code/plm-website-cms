@@ -59,7 +59,7 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/universityprofile");
+              navigate("/about/university-profile");
             }}
           >
             <Text className={isHovered ? "item" : "item-out"}>
@@ -69,7 +69,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/administration");
+              navigate("/about/administration");
             }}
           >
             <Text className={isHovered ? "item" : "item-out"}>
@@ -79,7 +79,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/pridehall");
+              navigate("/about/pride-hall");
             }}
           >
             <Text className={isHovered ? "item" : "item-out"}>Pride Hall </Text>
@@ -87,7 +87,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/OBE");
+              navigate("/about/obe");
             }}
           >
             <Text> Outcome-Based Education (OBE) </Text>
@@ -95,7 +95,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/contact");
+              navigate("/about/contact");
             }}
           >
             <Text className={isHovered ? "item" : "item-out"}> Contact </Text>
@@ -128,7 +128,7 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/colleges");
+              navigate("/academics/colleges");
             }}
           >
             <Text> Colleges </Text>
@@ -136,7 +136,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/calendar");
+              navigate("/academics/calendar");
             }}
           >
             <Text> Academic Calendar </Text>
@@ -144,7 +144,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/CRS");
+              navigate("/academics/crs");
             }}
           >
             <Text> Computerized Registration System </Text>
@@ -177,7 +177,7 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/plmat");
+              navigate("/admissions/plmat");
             }}
           >
             <Text> PLM Admission Test (PLMAT) </Text>
@@ -185,7 +185,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/undergradprograms");
+              navigate("/admissions/undergradprograms");
             }}
           >
             <Text> Undergraduate Programs </Text>
@@ -193,7 +193,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/scholarship");
+              navigate("/admissions/scholarship");
             }}
           >
             <Text> Scholarship and Financial Aid </Text>
@@ -201,7 +201,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/mcat");
+              navigate("/admissions/mcat");
             }}
           >
             <Text> Medical College Admission Test </Text>
@@ -209,7 +209,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/clat");
+              navigate("/admissions/clat");
             }}
           >
             <Text> College of Law Admission Test (CLAT) </Text>
@@ -242,7 +242,7 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/thesesanddissertation");
+              navigate("/research/theses-and-dissertation");
             }}
           >
             <Text> Theses and Dissertation </Text>
@@ -275,7 +275,7 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/pressrelease");
+              navigate("/news/press-release");
             }}
           >
             <Text> Press Release </Text>
@@ -283,7 +283,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/gallery");
+              navigate("/news/gallery");
             }}
           >
             <Text> Gallery </Text>
@@ -291,7 +291,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/specialreports");
+              navigate("/news/special-reports");
             }}
           >
             <Text> Special Reports </Text>
@@ -299,7 +299,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/newsletter");
+              navigate("/news/news-letter");
             }}
           >
             <Text> News Letter </Text>
@@ -307,7 +307,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/announcements");
+              navigate("/news/announcements");
             }}
           >
             <Text> Announcements </Text>
@@ -315,7 +315,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/message");
+              navigate("/news/message");
             }}
           >
             <Text> Message from the University Presidents </Text>
@@ -325,7 +325,13 @@ function Menus({ color, fsize, fweight }) {
 
       <Menu shadow="md" className="menu">
         <Menu.Target>
-          <Button variant="unstyled" c={color}>
+          <Button
+            variant="unstyled"
+            c={color}
+            onClick={() => {
+              navigate("/downloads");
+            }}
+          >
             <Text ff="lato" fz={fsize} fw={fweight}>
               DOWNLOADS
             </Text>

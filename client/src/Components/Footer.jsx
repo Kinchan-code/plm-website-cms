@@ -7,44 +7,49 @@ import {
   IconMailFilled,
 } from "@tabler/icons-react";
 import logo from "../assets/PLMLogoText1.png";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
     title: "Quick Links",
     links: [
-      { label: "Contact Us", link: "#" },
-      { label: "Scholarships", link: "#" },
-      { label: "Academic Calendar", link: "#" },
-      { label: "University Map", link: "#" },
+      { label: "Contact Us", link: "/contact-us" },
+      {
+        label: "Scholarships",
+        link: "/admissions/scholarship-and-financial-aid",
+      },
+      { label: "Academic Calendar", link: "/academics/calendar" },
+      { label: "University Map", link: "/university-map" },
     ],
   },
   {
     title: "‎ ",
     links: [
-      { label: "Archive", link: "#" },
-      { label: "Careers", link: "#" },
-      { label: "Procurement", link: "#" },
+      { label: "Archive", link: "/archive" },
+      { label: "Careers", link: "/careers" },
+      { label: "Procurement", link: "/procurement" },
     ],
   },
   {
     title: "News",
     links: [
-      { label: "Join Discord", link: "#" },
-      { label: "Follow on Twitter", link: "#" },
-      { label: "Email newsletter", link: "#" },
-      { label: "GitHub discussions", link: "#" },
+      { label: "Press Releases", link: "/news/press-release" },
+      { label: "Special Reports", link: "/news/special-reports" },
+      { label: "Announcements", link: "/news/announcements" },
+      { label: "Gallery", link: "/news/gallery" },
     ],
   },
 ];
 
 const footerLinks = [
-  { label: "Site Guide", link: "#" },
-  { label: "Privacy Policy", link: "#" },
-  { label: "Terms of Use", link: "#" },
-  { label: "Citizen's Charter", link: "#" },
+  { label: "Site Guide", link: "/site-guide" },
+  { label: "Privacy Policy", link: "/privacy-policy" },
+  { label: "Terms of Use", link: "terms-of-use" },
+  { label: "Citizen's Charter", link: "citizens-charter" },
 ];
 
 function Footer() {
+  const navigate = useNavigate();
   const footerLinkElements = footerLinks.map((link, index) => (
     <Text
       as="a"
@@ -61,7 +66,10 @@ function Footer() {
         cursor: "pointer",
       }}
       href={link.link}
-      onClick={(event) => event.preventDefault()}
+      onClick={(event) => {
+        event.preventDefault();
+        navigate(link.link);
+      }}
     >
       {link.label}
     </Text>
@@ -81,7 +89,10 @@ function Footer() {
           cursor: "pointer",
         }}
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => {
+          event.preventDefault();
+          navigate(link.link);
+        }}
       >
         {link.label}
       </Text>
@@ -135,7 +146,7 @@ function Footer() {
               display: "flex",
               justifyContent: "space-between",
 
-              "@media (maxWidth: $mantine-breakpoint-sm)": {
+              "@media (maxWidth: $mantineBreakpointSm)": {
                 flexDirection: "column",
                 alignItems: "center",
               },
@@ -144,7 +155,7 @@ function Footer() {
             <div
               style={{
                 maxWidth: "12.5rem",
-                "@media (maxWidth: $mantine-breakpoint-sm)": {
+                "@media (maxWidth: $mantineBreakpointSm)": {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -166,7 +177,7 @@ function Footer() {
                 style={{
                   marginTop: "0.313",
 
-                  "@media (maxWidth: $mantine-breakpoint-sm)": {
+                  "@media (maxWidth: $mantineBreakpointSm)": {
                     marginTop: "var(--mantine-spacing-xs)",
                     textAlign: "center",
                   },
@@ -181,7 +192,7 @@ function Footer() {
                 display: "flex",
                 flexWrap: "wrap",
 
-                "@media (maxWidth: $mantine-breakpoint-sm)": {
+                "@media (maxWidth: $mantineBreakpointSm)": {
                   display: "none",
                 },
               }}
@@ -207,7 +218,7 @@ function Footer() {
               borderTop:
                 "rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4))",
 
-              "@media (max-width: $mantine-breakpoint-sm)": {
+              "@media (maxWidth: $mantineBreakpointSm)": {
                 flexDirection: "column",
               },
             }}
@@ -226,23 +237,54 @@ function Footer() {
             <Group
               gap={0}
               style={{
-                "@media (max-width: $mantine-breakpoint-sm)": {
+                "@media (maxWidth: $mantineBreakpointSm)": {
                   marginTop: "var(--mantine-spacing-xs)",
                 },
               }}
               justify="flex-end"
               wrap="nowrap"
             >
-              <ActionIcon size="sm" color="#fff" variant="light">
+              <ActionIcon
+                size="sm"
+                color="#fff"
+                variant="light"
+                onClick={() => {
+                  window.open("https://www.facebook.com/PLM.Haribon", "_blank");
+                }}
+              >
                 <IconBrandFacebookFilled />
               </ActionIcon>
-              <ActionIcon size="sm" color="#fff" variant="light">
+              <ActionIcon
+                size="sm"
+                color="#fff"
+                variant="light"
+                onClick={() => {
+                  window.open("https://twitter.com/PLM_Manila", "_blank");
+                }}
+              >
                 <IconBrandTwitterFilled />
               </ActionIcon>
-              <ActionIcon size="sm" color="#fff" variant="light">
+              <ActionIcon
+                size="sm"
+                color="#fff"
+                variant="light"
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A15097268&keywords=pamantasan%20ng%20lungsod%20ng%20maynila&origin=RICH_QUERY_SUGGESTION&position=0&searchId=93b8881c-843a-49c2-95b8-ea6b6f58f9ae&sid=n%3Am&spellCorrectionEnabled=false",
+                    "_blank"
+                  );
+                }}
+              >
                 <IconBrandLinkedin />
               </ActionIcon>
-              <ActionIcon size="sm" color="#fff" variant="light">
+              <ActionIcon
+                size="sm"
+                color="#fff"
+                variant="light"
+                onClick={() => {
+                  window.open("mailto:info@plm.edu.ph", "_blank");
+                }}
+              >
                 <IconMailFilled />
               </ActionIcon>
             </Group>

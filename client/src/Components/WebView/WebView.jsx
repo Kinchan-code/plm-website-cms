@@ -160,6 +160,9 @@ function WebView() {
                     <Button
                       radius="lg"
                       style={{ backgroundColor: "#d5a106", zIndex: "0" }}
+                      onClick={() => {
+                        navigate("/admissions/undegrad-programs");
+                      }}
                     >
                       <Text fz="lg" fw="bold" c="#000">
                         CHECK OUR PROGRAM
@@ -229,11 +232,14 @@ function WebView() {
           {/* Carousel content */}
           <div
             style={{
+              display: "flex",
               height: "70vh",
               minWidth: "100%",
               backgroundColor: "#fff",
               padding: "1rem",
               zIndex: "1",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <SimpleGrid cols={2} spacing="xl">

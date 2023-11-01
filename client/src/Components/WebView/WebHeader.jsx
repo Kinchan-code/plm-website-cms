@@ -275,7 +275,7 @@ function WebHeader() {
               <Button
                 variant="unstyled"
                 onClick={() => {
-                  navigate("/plmemaillogin");
+                  navigate("/plm-email-login");
                 }}
               >
                 <Text fz="md" c="#fff" className="menu-text">
