@@ -7,9 +7,11 @@ const Contact = lazy(() => import("./About/Contact"));
 const OBE = lazy(() => import("./About/OBE"));
 const PrideHall = lazy(() => import("./About/PrideHall"));
 const UniversityProfile = lazy(() => import("./About/UniversityProfile"));
-const Calendar = lazy(() => import("./Academics/Calendar"));
-const Colleges = lazy(() => import("./Academics/Colleges"));
-const CRS = lazy(() => import("./Academics/CRS"));
+const AcademicsShell = lazy(() => import("./Academics/AcademicsShell"));
+// const Overview = lazy(() => import("./Academics/Overview"));
+// const Calendar = lazy(() => import("./Academics/Calendar"));
+// const Colleges = lazy(() => import("./Academics/Colleges"));
+// const CRS = lazy(() => import("./Academics/CRS"));
 const CLAT = lazy(() => import("./Admissions/CLAT"));
 const MCAT = lazy(() => import("./Admissions/MCAT"));
 const PLMAT = lazy(() => import("./Admissions/PLMAT"));
@@ -49,9 +51,11 @@ export const AllLinks = [
   { component: OBE, path: "/about/obe" },
   { component: PrideHall, path: "/about/pride-hall" },
   { component: UniversityProfile, path: "/about/university-profile" },
-  { component: Calendar, path: "/academics/calendar" },
-  { component: Colleges, path: "/academics/colleges" },
-  { component: CRS, path: "/academics/crs" },
+  { component: AcademicsShell, path: "/academics" },
+  // { component: Overview, path: "/academics/academic-overview" },
+  // { component: Calendar, path: "/academics/calendar" },
+  // { component: Colleges, path: "/academics/colleges" },
+  // { component: CRS, path: "/academics/crs" },
   { component: CLAT, path: "/admissions/clat" },
   { component: MCAT, path: "/admissions/mcat" },
   { component: PLMAT, path: "/admissions/plmat" },

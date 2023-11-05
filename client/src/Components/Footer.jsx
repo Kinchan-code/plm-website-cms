@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, ActionIcon, Group, Image, Divider, Box } from "@mantine/core";
 import {
-  IconBrandTwitterFilled,
   IconBrandFacebookFilled,
   IconBrandLinkedin,
   IconMailFilled,
+  IconBrandX,
 } from "@tabler/icons-react";
 import logo from "../assets/PLMLogoText1.png";
 import { useNavigate } from "react-router-dom";
@@ -246,8 +246,6 @@ function Footer() {
             >
               <ActionIcon
                 size="sm"
-                color="#fff"
-                variant="light"
                 onClick={() => {
                   window.open("https://www.facebook.com/PLM.Haribon", "_blank");
                 }}
@@ -256,18 +254,14 @@ function Footer() {
               </ActionIcon>
               <ActionIcon
                 size="sm"
-                color="#fff"
-                variant="light"
                 onClick={() => {
                   window.open("https://twitter.com/PLM_Manila", "_blank");
                 }}
               >
-                <IconBrandTwitterFilled />
+                <IconBrandX />
               </ActionIcon>
               <ActionIcon
                 size="sm"
-                color="#fff"
-                variant="light"
                 onClick={() => {
                   window.open(
                     "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A15097268&keywords=pamantasan%20ng%20lungsod%20ng%20maynila&origin=RICH_QUERY_SUGGESTION&position=0&searchId=93b8881c-843a-49c2-95b8-ea6b6f58f9ae&sid=n%3Am&spellCorrectionEnabled=false",
@@ -279,8 +273,6 @@ function Footer() {
               </ActionIcon>
               <ActionIcon
                 size="sm"
-                color="#fff"
-                variant="light"
                 onClick={() => {
                   window.open("mailto:info@plm.edu.ph", "_blank");
                 }}

@@ -151,7 +151,6 @@ function WebHeader() {
               <div
                 style={{
                   display: "flex",
-
                   color: "#fff",
                   alignItems: "center",
                 }}

@@ -1,114 +1,95 @@
-// import React from "react";
-// import { Text, Container, ActionIcon, Group, rem } from "@mantine/core";
-// import {
-//   IconBrandTwitter,
-//   IconBrandYoutube,
-//   IconBrandInstagram,
-// } from "@tabler/icons-react";
-// import { MantineLogo } from "@mantine/ds";
-// import classes from "./FooterLinks.module.css";
+import React, { useState, useEffect } from "react";
+import { Menu, Button, Text, Divider } from "@mantine/core";
+import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
+import { useNavigate } from "react-router-dom";
 
-// const data = [
-//   {
-//     title: "About",
-//     links: [
-//       { label: "Features", link: "#" },
-//       { label: "Pricing", link: "#" },
-//       { label: "Support", link: "#" },
-//       { label: "Forums", link: "#" },
-//     ],
-//   },
-//   {
-//     title: "Project",
-//     links: [
-//       { label: "Contribute", link: "#" },
-//       { label: "Media assets", link: "#" },
-//       { label: "Changelog", link: "#" },
-//       { label: "Releases", link: "#" },
-//     ],
-//   },
-//   {
-//     title: "Community",
-//     links: [
-//       { label: "Join Discord", link: "#" },
-//       { label: "Follow on Twitter", link: "#" },
-//       { label: "Email newsletter", link: "#" },
-//       { label: "GitHub discussions", link: "#" },
-//     ],
-//   },
-// ];
+const menuItems = [
+  {
+    text: "ABOUT",
+    items: [
+      { text: "University Profile", link: "/about/university-profile" },
+      { text: "Administration", link: "/about/administration" },
+      { text: "Pride Hall", link: "/about/pride-hall" },
+      { text: "Outcome-Based Education (OBE)", link: "/about/obe" },
+      { text: "Contact", link: "/about/contact" },
+    ],
+  },
+  // Define other menu items similarly
+];
 
-// export function FooterLinks() {
-//   const groups = data.map((group) => {
-//     const links = group.links.map((link, index) => (
-//       <Text
-//         as="a"
-//         key={index}
-//         className={classes.link}
-//         href={link.link}
-//         onClick={(event) => event.preventDefault()}
-//       >
-//         {link.label}
-//       </Text>
-//     ));
+function Menus({ color, fsize, fweight, onMenuItemClick }) {
+  const navigate = useNavigate();
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [MenuOpen, setMenuOpen] = useState(false);
 
-//     return (
-//       <div className={classes.wrapper} key={group.title}>
-//         <Text className={classes.title}>{group.title}</Text>
-//         {links}
-//       </div>
-//     );
-//   });
+  const handleMouseEnter = (index) => {
+    setHoveredItem(index);
+  };
 
-//   return (
-//     <footer className={classes.footer}>
-//       <Container className={classes.inner}>
-//         <div className={classes.logo}>
-//           <MantineLogo size={30} />
-//           <Text size="xs" c="dimmed" className={classes.description}>
-//             Build fully functional accessible web applications faster than ever
-//           </Text>
-//         </div>
-//         <div className={classes.groups}>{groups}</div>
-//       </Container>
-//       <Container className={classes.afterFooter}>
-//         <Text c="dimmed" size="sm">
-//           © 2020 mantine.dev. All rights reserved.
-//         </Text>
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
 
-//         <Group
-//           gap={0}
-//           className={classes.social}
-//           justify="flex-end"
-//           wrap="nowrap"
-//         >
-//           <ActionIcon size="lg" color="gray" variant="subtle">
-//             <IconBrandTwitter
-//               style={{ width: rem(18), height: rem(18) }}
-//               stroke={1.5}
-//             />
-//           </ActionIcon>
-//           <ActionIcon size="lg" color="gray" variant="subtle">
-//             <IconBrandYoutube
-//               style={{ width: rem(18), height: rem(18) }}
-//               stroke={1.5}
-//             />
-//           </ActionIcon>
-//           <ActionIcon size="lg" color="gray" variant="subtle">
-//             <IconBrandInstagram
-//               style={{ width: rem(18), height: rem(18) }}
-//               stroke={1.5}
-//             />
-//           </ActionIcon>
-//         </Group>
-//       </Container>
-//     </footer>
-//   );
-// }
-import React from "react";
+  const toggleMenu = () => setMenuOpen(!MenuOpen);
 
-function Test2() {
-  return <div></div>;
+  useEffect(() => {
+    const closeMenus = () => {
+      setMenuOpen(false);
+    };
+
+    document.addEventListener("click", closeMenus);
+
+    return () => {
+      document.removeEventListener("click", closeMenus);
+    };
+  }, []);
+  return (
+    <div>
+      {menuItems.map((menuItem, index) => (
+        <Menu shadow="md" width={250} className="menu" key={index}>
+          <Menu.Target>
+            <Button
+              variant="unstyled"
+              c={color}
+              rightIcon={
+                MenuOpen ? (
+                  <IconChevronUp size="1rem" />
+                ) : (
+                  <IconChevronDown size="1rem" />
+                )
+              }
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleMenu();
+              }}
+            >
+              <Text ff="lato" fz={fsize} fw={fweight}>
+                {menuItem.text}
+              </Text>
+            </Button>
+          </Menu.Target>
+          <Menu.Dropdown>
+            {menuItem.items.map((item, itemIndex) => (
+              <Menu.Item
+                key={itemIndex}
+                onClick={() => {
+                  navigate(item.link);
+                }}
+              >
+                <Text
+                  className={hoveredItem === index ? "item" : "item-out"}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {item.text}
+                </Text>
+              </Menu.Item>
+            ))}
+          </Menu.Dropdown>
+        </Menu>
+      ))}
+    </div>
+  );
 }
 
-export default Test2;
+export default Menus;

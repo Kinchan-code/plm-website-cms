@@ -128,7 +128,14 @@ function Menus({ color, fsize, fweight }) {
         <Menu.Dropdown>
           <Menu.Item
             onClick={() => {
-              navigate("/academics/colleges");
+              navigate("/academics");
+            }}
+          >
+            <Text> Academic Overview </Text>
+          </Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              navigate("/academics");
             }}
           >
             <Text> Colleges </Text>
@@ -136,7 +143,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/academics/calendar");
+              navigate("/academics");
             }}
           >
             <Text> Academic Calendar </Text>
@@ -144,7 +151,7 @@ function Menus({ color, fsize, fweight }) {
           <Divider />
           <Menu.Item
             onClick={() => {
-              navigate("/academics/crs");
+              navigate("/academics");
             }}
           >
             <Text> Computerized Registration System </Text>

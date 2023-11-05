@@ -1,7 +1,6 @@
 import cx from "clsx";
-import { useState } from "react";
-import { Box, Text, Group, Divider, createStyles } from "@mantine/core";
-import { IconListSearch } from "@tabler/icons-react";
+import React, { useState } from "react";
+import { Box, Text, Divider, createStyles } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -38,38 +37,27 @@ const useStyles = createStyles((theme) => ({
     position: "absolute",
     left: "calc((.625rem) / -2 + 0.063rem)",
   },
+  subLinksContainer: {
+    maxHeight: 0,
+    overflow: "hidden",
+    transition: "max-height 0.3s ease",
+  },
 }));
 
-const links = [
-  { label: "Academic Overview", link: "#usage", order: 1 },
-  {
-    label: "Colleges",
-    link: "#position",
-    order: 1,
-    subLinks: [
-      { label: "Architecture and Urban Planning", link: "#sublink1" },
-      { label: "PLM Business School", link: "#sublink2" },
-      { label: "Education", link: "#sublink2" },
-      { label: "Engineering", link: "#sublink1" },
-      { label: "Humanities, Arts and Social Sciences", link: "#sublink2" },
-      { label: "College of Nursing", link: "#sublink2" },
-      { label: "Physical Therapy", link: "#sublink1" },
-      { label: "College of Science", link: "#sublink2" },
-      { label: "College of Law", link: "#sublink2" },
-      { label: "Graduate School of Law", link: "#sublink1" },
-      { label: "College of Medicine", link: "#sublink2" },
-      { label: "School of Government", link: "#sublink2" },
-      { label: "School of Public Health", link: "#sublink2" },
-    ],
-  },
-  { label: "Academic Calendar", link: "#overlays", order: 1 },
-  { label: "Computer Registration System", link: "#focus", order: 1 },
-];
-
-function Test() {
+function Navigation({ links, onLinkClick }) {
   const { classes } = useStyles();
   const [active, setActive] = useState(2);
   const [activeSublink, setActiveSublink] = useState(null);
+
+  const handleLinkClick = (index) => {
+    setActive(index);
+    setActiveSublink(null);
+    onLinkClick(links[index].label);
+  };
+
+  const handleSublinkClick = (sublinkIndex) => {
+    setActiveSublink(sublinkIndex);
+  };
 
   const items = links.map((item, index) => (
     <div key={item.label}>
@@ -80,6 +68,7 @@ function Test() {
           event.preventDefault();
           setActive(index);
           setActiveSublink(null);
+          handleLinkClick(index);
         }}
         key={item.label}
         className={cx(classes.link, { [classes.linkActive]: active === index })}
@@ -91,6 +80,12 @@ function Test() {
         className={cx(classes.subLinksContainer, {
           [classes.subLinksCollapsed]: active !== index,
         })}
+        style={{
+          maxHeight:
+            active === index && item.subLinks
+              ? `${item.subLinks.length * 2.375}rem`
+              : 0,
+        }}
       >
         {active === index &&
           item.subLinks &&
@@ -100,13 +95,13 @@ function Test() {
               component="a"
               href={subLink.link}
               key={subLink.label}
-              // className={cx(classes.link, classes.subLink)}
               className={cx(classes.link, classes.subLink, {
                 [classes.linkActive]: activeSublink === subIndex,
               })}
               onClick={(event) => {
                 event.preventDefault();
                 setActiveSublink(subIndex);
+                handleSublinkClick(subIndex);
               }}
               style={{ paddingLeft: `calc(${item.order} * 4rem` }}
             >
@@ -121,9 +116,9 @@ function Test() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         height: "100vh",
+        width: "100%",
+        marginLeft: "2rem",
       }}
     >
       <div className={classes.root}>
@@ -137,7 +132,7 @@ function Test() {
           <div
             className={classes.indicator}
             style={{
-              transform: `translateY(calc(${active} * 2.375rem + 0.875rem`,
+              transform: `translateY(calc(${active} * 2.375rem + 0.875rem)`,
             }}
           />
           {items}
@@ -146,4 +141,5 @@ function Test() {
     </div>
   );
 }
-export default Test;
+
+export default Navigation;
