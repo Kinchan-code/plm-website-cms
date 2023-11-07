@@ -3,27 +3,121 @@ import { Menu, Button, Text, Divider } from "@mantine/core";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 
-function Menus({ color, fsize, fweight }) {
-  const navigate = useNavigate();
-  const [isHovered, setIsHovered] = useState(false);
-  const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
-  const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
-  const [admissionsMenuOpen, setAdmissionsMenuOpen] = useState(false);
-  const [researchMenuOpen, setResearchMenuOpen] = useState(false);
-  const [newsMenuOpen, setNewsMenuOpen] = useState(false);
+const menuItems = [
+  {
+    text: "ABOUT",
+    items: [
+      { text: "University Profile", link: "/about/university-profile" },
+      { text: "Administration", link: "/about/administration" },
+      { text: "Pride Hall", link: "/about/pride-hall" },
+      { text: "Outcome-Based Education (OBE)", link: "/about/obe" },
+      { text: "Contact", link: "/about/contact" },
+    ],
+  },
+  {
+    text: "ACADEMICS",
+    items: [
+      { text: "Academic Overview", link: "/academics" },
+      { text: "Colleges", link: "/academics" },
+      { text: "Academic Calendar", link: "/academics" },
+      { text: "Computerized Registration System (CRS)", link: "/academics" },
+    ],
+  },
+  {
+    text: "ADMISSIONS",
+    items: [
+      {
+        text: "PLM Admission Test (PLMAT)",
+        link: "/admissions/plmat",
+      },
+      {
+        text: "Undergraduate Programs",
+        link: "/admissions/undergrad-programs",
+      },
+      {
+        text: "Scholarship and Financial Aid",
+        link: "/admissions/scholarship-and-financial-aid",
+      },
+      {
+        text: "Medical College Admission Test (MCAT)",
+        link: "/admissions/mcat",
+      },
+      {
+        text: "College of Law Admission Test (CLAT)",
+        link: "/admissions/clat",
+      },
+    ],
+  },
+  {
+    text: "RESEARCH",
+    items: [
+      {
+        text: "Theses and Dissertation",
+        link: "/research/theses-and-dissertation",
+      },
+    ],
+  },
+  {
+    text: "NEWS",
+    items: [
+      {
+        text: "Press Release",
+        link: "/news/press-release",
+      },
+      {
+        text: "Gallery",
+        link: "/news/gallery",
+      },
+      {
+        text: "Special Reports",
+        link: "/news/special-reports",
+      },
+      {
+        text: "News Letter",
+        link: "/news/news-letter",
+      },
+      {
+        text: "Announcements",
+        link: "/news/announcements",
+      },
+      {
+        text: "Message from the University President",
+        link: "/news/message",
+      },
+    ],
+  },
+  {
+    text: "DOWNLOADS",
+    link: "/downloads",
+  },
+];
 
-  const toggleAboutMenu = () => setAboutMenuOpen(!aboutMenuOpen);
-  const toggleAcademicsMenu = () => setAcademicsMenuOpen(!academicsMenuOpen);
-  const toggleAdmissionsMenu = () => setAdmissionsMenuOpen(!admissionsMenuOpen);
-  const toggleResearchMenu = () => setResearchMenuOpen(!researchMenuOpen);
-  const toggleNewsMenu = () => setNewsMenuOpen(!newsMenuOpen);
+function Menus({ color, fsize, fweight, onMenuItemClick }) {
+  const navigate = useNavigate();
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [MenuOpen, setMenuOpen] = useState(Array(menuItems.length).fill(false));
+
+  const handleMouseEnter = (index) => {
+    setHoveredItem(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
+  const toggleMenu = (index) => {
+    if (menuItems[index].items) {
+      const updatedMenuOpen = MenuOpen.map((state, i) => i === index);
+      setMenuOpen(updatedMenuOpen);
+    } else {
+      // If it doesn't have submenu items, navigate to its link
+      navigate(menuItems[index].link);
+    }
+  };
+
   useEffect(() => {
     const closeMenus = () => {
-      setAboutMenuOpen(false);
-      setAcademicsMenuOpen(false);
-      setAdmissionsMenuOpen(false);
-      setResearchMenuOpen(false);
-      setNewsMenuOpen(false);
+      setMenuOpen(Array(menuItems.length).fill(false));
     };
 
     document.addEventListener("click", closeMenus);
@@ -32,319 +126,66 @@ function Menus({ color, fsize, fweight }) {
       document.removeEventListener("click", closeMenus);
     };
   }, []);
+
+  const navigateToAcademics = (subLink) => {
+    navigate("/academics/" + subLink); // Navigate to the AcademicShell route with the specific sublink
+  };
+
   return (
     <div>
-      <Menu shadow="md" width={250} className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            rightIcon={
-              aboutMenuOpen ? (
-                <IconChevronUp size="1rem" />
-              ) : (
-                <IconChevronDown size="1rem" />
-              )
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleAboutMenu();
-            }}
-          >
-            <Text ff="lato" fz={fsize} fw={fweight}>
-              ABOUT
-            </Text>
-          </Button>
-        </Menu.Target>
-        <Menu.Dropdown>
-          <Menu.Item
-            onClick={() => {
-              navigate("/about/university-profile");
-            }}
-          >
-            <Text className={isHovered ? "item" : "item-out"}>
-              University Profile
-            </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/about/administration");
-            }}
-          >
-            <Text className={isHovered ? "item" : "item-out"}>
-              Administration
-            </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/about/pride-hall");
-            }}
-          >
-            <Text className={isHovered ? "item" : "item-out"}>Pride Hall </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/about/obe");
-            }}
-          >
-            <Text> Outcome-Based Education (OBE) </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/about/contact");
-            }}
-          >
-            <Text className={isHovered ? "item" : "item-out"}> Contact </Text>
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
-
-      <Menu shadow="md" width={200} className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            rightIcon={
-              academicsMenuOpen ? (
-                <IconChevronUp size="1rem" />
-              ) : (
-                <IconChevronDown size="1rem" />
-              )
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleAcademicsMenu();
-            }}
-          >
-            <Text ff="lato" fz={fsize}>
-              ACADEMICS
-            </Text>
-          </Button>
-        </Menu.Target>
-        <Menu.Dropdown>
-          <Menu.Item
-            onClick={() => {
-              navigate("/academics");
-            }}
-          >
-            <Text> Academic Overview </Text>
-          </Menu.Item>
-          <Menu.Item
-            onClick={() => {
-              navigate("/academics");
-            }}
-          >
-            <Text> Colleges </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/academics");
-            }}
-          >
-            <Text> Academic Calendar </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/academics");
-            }}
-          >
-            <Text> Computerized Registration System </Text>
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
-
-      <Menu shadow="md" width={200} className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            rightIcon={
-              admissionsMenuOpen ? (
-                <IconChevronUp size="1rem" />
-              ) : (
-                <IconChevronDown size="1rem" />
-              )
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleAdmissionsMenu();
-            }}
-          >
-            <Text ff="lato" fz={fsize} fw={fweight}>
-              ADMISSIONS
-            </Text>
-          </Button>
-        </Menu.Target>
-        <Menu.Dropdown>
-          <Menu.Item
-            onClick={() => {
-              navigate("/admissions/plmat");
-            }}
-          >
-            <Text> PLM Admission Test (PLMAT) </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/admissions/undergradprograms");
-            }}
-          >
-            <Text> Undergraduate Programs </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/admissions/scholarship");
-            }}
-          >
-            <Text> Scholarship and Financial Aid </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/admissions/mcat");
-            }}
-          >
-            <Text> Medical College Admission Test </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/admissions/clat");
-            }}
-          >
-            <Text> College of Law Admission Test (CLAT) </Text>
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
-
-      <Menu shadow="md" width={200} className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            rightIcon={
-              researchMenuOpen ? (
-                <IconChevronUp size="1rem" />
-              ) : (
-                <IconChevronDown size="1rem" />
-              )
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleResearchMenu();
-            }}
-          >
-            <Text ff="lato" fz={fsize} fw={fweight}>
-              RESEARCH
-            </Text>
-          </Button>
-        </Menu.Target>
-        <Menu.Dropdown>
-          <Menu.Item
-            onClick={() => {
-              navigate("/research/theses-and-dissertation");
-            }}
-          >
-            <Text> Theses and Dissertation </Text>
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
-
-      <Menu shadow="md" width={200} className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            rightIcon={
-              newsMenuOpen ? (
-                <IconChevronUp size="1rem" />
-              ) : (
-                <IconChevronDown size="1rem" />
-              )
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleNewsMenu();
-            }}
-          >
-            <Text ff="lato" fz={fsize} fw={fweight}>
-              NEWS
-            </Text>
-          </Button>
-        </Menu.Target>
-        <Menu.Dropdown>
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/press-release");
-            }}
-          >
-            <Text> Press Release </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/gallery");
-            }}
-          >
-            <Text> Gallery </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/special-reports");
-            }}
-          >
-            <Text> Special Reports </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/news-letter");
-            }}
-          >
-            <Text> News Letter </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/announcements");
-            }}
-          >
-            <Text> Announcements </Text>
-          </Menu.Item>
-          <Divider />
-          <Menu.Item
-            onClick={() => {
-              navigate("/news/message");
-            }}
-          >
-            <Text> Message from the University Presidents </Text>
-          </Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
-
-      <Menu shadow="md" className="menu">
-        <Menu.Target>
-          <Button
-            variant="unstyled"
-            c={color}
-            onClick={() => {
-              navigate("/downloads");
-            }}
-          >
-            <Text ff="lato" fz={fsize} fw={fweight}>
-              DOWNLOADS
-            </Text>
-          </Button>
-        </Menu.Target>
-      </Menu>
+      {menuItems.map((menuItem, index) => (
+        <Menu shadow="md" width={250} className="menu" key={index}>
+          <Menu.Target>
+            <Button
+              variant="unstyled"
+              c={color}
+              rightIcon={
+                menuItems[index].items ? (
+                  MenuOpen[index] ? (
+                    <IconChevronUp size="1rem" />
+                  ) : (
+                    <IconChevronDown size="1rem" />
+                  )
+                ) : null
+              }
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleMenu(index);
+              }}
+            >
+              <Text ff="lato" fz={fsize} fw={fweight}>
+                {menuItem.text}
+              </Text>
+            </Button>
+          </Menu.Target>
+          <Menu.Dropdown>
+            {menuItem.items &&
+              menuItem.items.map((item, itemIndex) => (
+                <Menu.Item
+                  key={itemIndex}
+                  onClick={() => {
+                    // navigate(item.link);
+                    // toggleMenu(index);
+                    if (menuItem.text === "Colleges") {
+                      navigateToAcademics("colleges"); // Handle the "Colleges" click
+                    } else {
+                      navigate(item.link);
+                    }
+                    toggleMenu(index);
+                  }}
+                >
+                  <Text
+                    className={hoveredItem === itemIndex ? "item" : "item-out"}
+                    onMouseEnter={() => handleMouseEnter(itemIndex)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {item.text}
+                  </Text>
+                </Menu.Item>
+              ))}
+          </Menu.Dropdown>
+        </Menu>
+      ))}
     </div>
   );
 }

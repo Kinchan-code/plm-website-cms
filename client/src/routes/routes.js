@@ -87,5 +87,4 @@ export const AllLinks = [
   { component: Error, path: "/error" },
   { component: Test, path: "/test" },
   { component: Test2, path: "/test2" },
-  {},
 ];

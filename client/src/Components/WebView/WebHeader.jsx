@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { IconSearch } from "@tabler/icons-react";
 import logo from "../../assets/PLMLogoText.png";
 import Menus from "../Menus";
+import SearchBar from "../Searchbar";
 
 // CSS Styles for the Header
 const useStyles = createStyles(() => ({
@@ -58,7 +59,6 @@ function WebHeader() {
   const { classes } = useStyles();
   // This is the trigger to when the header will become solid
   const isScrollPastCondition = window.scrollY > 595;
-  const [isSearchVisible, setSearchVisible] = useState(false);
   const [navBackgroundTop, setNavBackgroundTop] = useState(
     "HeaderTransparentTop"
   );
@@ -87,34 +87,6 @@ function WebHeader() {
 
   const navRefBot = useRef(navBackgroundBot);
   navRefBot.current = navBackgroundBot;
-
-  // This is for the effect of the search icon on the header
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        isSearchVisible &&
-        searchInputRef.current &&
-        !searchInputRef.current.contains(event.target)
-      ) {
-        closeSearch();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isSearchVisible]);
-
-  const toggleSearch = () => {
-    setSearchVisible(!isSearchVisible);
-  };
-
-  const closeSearch = () => {
-    setSearchVisible(false);
-  };
-
-  const searchInputRef = useRef(null);
 
   return (
     // This is the main Header
@@ -164,39 +136,10 @@ function WebHeader() {
                 />
                 {/* Search icon */}
                 <div style={{ padding: "1rem" }}>
-                  {isSearchVisible ? null : (
-                    <ActionIcon
-                      variant="unstyled"
-                      onClick={toggleSearch}
-                      c={
-                        navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"
-                      }
-                    >
-                      <IconSearch size="1.125rem" />
-                    </ActionIcon>
-                  )}
+                  <SearchBar
+                    c={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
+                  />
                 </div>
-
-                {isSearchVisible ? (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <TextInput
-                      p="sm"
-                      c="black"
-                      radius="lg"
-                      placeholder="Search"
-                      style={{
-                        marginLeft: "-2rem",
-                        borderBlock: "black",
-                      }}
-                      ref={searchInputRef}
-                    />
-                  </div>
-                ) : null}
               </div>
             </div>
           </div>

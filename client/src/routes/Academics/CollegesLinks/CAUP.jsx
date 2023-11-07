@@ -17,7 +17,7 @@ function CAUP() {
       <Text>Architecture and Urban Planning</Text>
       <Button
         onClick={() => {
-          navigate("/academic-overview");
+          navigate("/academics");
         }}
       >
         Back

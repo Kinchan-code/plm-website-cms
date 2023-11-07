@@ -44,19 +44,29 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Navigation({ links, onLinkClick }) {
+function Navigation({ links, onLinkClick, onSublinkClick, title }) {
   const { classes } = useStyles();
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
   const [activeSublink, setActiveSublink] = useState(null);
 
   const handleLinkClick = (index) => {
     setActive(index);
-    setActiveSublink(null);
+    // setActiveSublink(null);
+    // onLinkClick(links[index].label);
+
+    if (links[index].label === "Colleges" && links[index].subLinks) {
+      setActiveSublink(links[index].subLinks[0].label);
+      onSublinkClick(links[index].subLinks[0].label);
+    } else {
+      setActiveSublink(null);
+    }
+
     onLinkClick(links[index].label);
   };
 
-  const handleSublinkClick = (sublinkIndex) => {
-    setActiveSublink(sublinkIndex);
+  const handleSublinkClick = (sublinkLabel) => {
+    setActiveSublink(sublinkLabel);
+    onSublinkClick(sublinkLabel);
   };
 
   const items = links.map((item, index) => (
@@ -72,7 +82,7 @@ function Navigation({ links, onLinkClick }) {
         }}
         key={item.label}
         className={cx(classes.link, { [classes.linkActive]: active === index })}
-        style={{ paddingLeft: `calc(${item.order} * 2rem` }}
+        style={{ paddingLeft: `calc(${item.order} * 2rem)` }}
       >
         {item.label}
       </Box>
@@ -90,18 +100,18 @@ function Navigation({ links, onLinkClick }) {
         {active === index &&
           item.subLinks &&
           item.subLinks.length > 0 &&
-          item.subLinks.map((subLink, subIndex) => (
+          item.subLinks.map((subLink) => (
             <Box
               component="a"
               href={subLink.link}
               key={subLink.label}
               className={cx(classes.link, classes.subLink, {
-                [classes.linkActive]: activeSublink === subIndex,
+                [classes.linkActive]: activeSublink === subLink.label,
               })}
               onClick={(event) => {
                 event.preventDefault();
-                setActiveSublink(subIndex);
-                handleSublinkClick(subIndex);
+                setActiveSublink(subLink.label);
+                handleSublinkClick(subLink.label);
               }}
               style={{ paddingLeft: `calc(${item.order} * 4rem` }}
             >
@@ -124,7 +134,7 @@ function Navigation({ links, onLinkClick }) {
       <div className={classes.root}>
         <div style={{ marginBottom: "0.5rem" }}>
           <Text fz="xl" fw="bold" mb="sm" ff="Open Sans, sans serif">
-            ACADEMICS
+            {title}
           </Text>
           <Divider size="lg" />
         </div>

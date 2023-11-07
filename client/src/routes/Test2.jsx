@@ -1,95 +1,74 @@
-import React, { useState, useEffect } from "react";
-import { Menu, Button, Text, Divider } from "@mantine/core";
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import {
+  AppShell,
+  Navbar,
+  Header,
+  Footer,
+  Aside,
+  Text,
+  MediaQuery,
+  Burger,
+  useMantineTheme,
+} from "@mantine/core";
 
-const menuItems = [
-  {
-    text: "ABOUT",
-    items: [
-      { text: "University Profile", link: "/about/university-profile" },
-      { text: "Administration", link: "/about/administration" },
-      { text: "Pride Hall", link: "/about/pride-hall" },
-      { text: "Outcome-Based Education (OBE)", link: "/about/obe" },
-      { text: "Contact", link: "/about/contact" },
-    ],
-  },
-  // Define other menu items similarly
-];
-
-function Menus({ color, fsize, fweight, onMenuItemClick }) {
-  const navigate = useNavigate();
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const [MenuOpen, setMenuOpen] = useState(false);
-
-  const handleMouseEnter = (index) => {
-    setHoveredItem(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
-  const toggleMenu = () => setMenuOpen(!MenuOpen);
-
-  useEffect(() => {
-    const closeMenus = () => {
-      setMenuOpen(false);
-    };
-
-    document.addEventListener("click", closeMenus);
-
-    return () => {
-      document.removeEventListener("click", closeMenus);
-    };
-  }, []);
+export default function AppShellDemo() {
+  const theme = useMantineTheme();
+  const [opened, setOpened] = useState(false);
   return (
-    <div>
-      {menuItems.map((menuItem, index) => (
-        <Menu shadow="md" width={250} className="menu" key={index}>
-          <Menu.Target>
-            <Button
-              variant="unstyled"
-              c={color}
-              rightIcon={
-                MenuOpen ? (
-                  <IconChevronUp size="1rem" />
-                ) : (
-                  <IconChevronDown size="1rem" />
-                )
-              }
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleMenu();
-              }}
-            >
-              <Text ff="lato" fz={fsize} fw={fweight}>
-                {menuItem.text}
-              </Text>
-            </Button>
-          </Menu.Target>
-          <Menu.Dropdown>
-            {menuItem.items.map((item, itemIndex) => (
-              <Menu.Item
-                key={itemIndex}
-                onClick={() => {
-                  navigate(item.link);
-                }}
-              >
-                <Text
-                  className={hoveredItem === index ? "item" : "item-out"}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {item.text}
-                </Text>
-              </Menu.Item>
-            ))}
-          </Menu.Dropdown>
-        </Menu>
-      ))}
-    </div>
+    <AppShell
+      styles={{
+        main: {
+          background:
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[8]
+              : theme.colors.gray[0],
+        },
+      }}
+      navbarOffsetBreakpoint="sm"
+      asideOffsetBreakpoint="sm"
+      navbar={
+        <Navbar
+          p="md"
+          hiddenBreakpoint="sm"
+          hidden={!opened}
+          width={{ sm: 200, lg: 300 }}
+        >
+          <Text>Application navbar</Text>
+        </Navbar>
+      }
+      aside={
+        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+          <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+            <Text>Application sidebar</Text>
+          </Aside>
+        </MediaQuery>
+      }
+      footer={
+        <Footer height={60} p="md">
+          Application footer
+        </Footer>
+      }
+      header={
+        <Header height={{ base: 50, md: 70 }} p="md">
+          <div
+            style={{ display: "flex", alignItems: "center", height: "100%" }}
+          >
+            <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+              <Burger
+                opened={opened}
+                onClick={() => setOpened((o) => !o)}
+                size="sm"
+                color={theme.colors.gray[6]}
+                mr="xl"
+              />
+            </MediaQuery>
+
+            <Text>Application header</Text>
+          </div>
+        </Header>
+      }
+    >
+      <Text>Resize app to see responsive navbar in action</Text>
+    </AppShell>
   );
 }
-
-export default Menus;
