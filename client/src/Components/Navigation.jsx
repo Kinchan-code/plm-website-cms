@@ -51,16 +51,7 @@ function Navigation({ links, onLinkClick, onSublinkClick, title }) {
 
   const handleLinkClick = (index) => {
     setActive(index);
-    // setActiveSublink(null);
-    // onLinkClick(links[index].label);
-
-    if (links[index].label === "Colleges" && links[index].subLinks) {
-      setActiveSublink(links[index].subLinks[0].label);
-      onSublinkClick(links[index].subLinks[0].label);
-    } else {
-      setActiveSublink(null);
-    }
-
+    setActiveSublink(null);
     onLinkClick(links[index].label);
   };
 

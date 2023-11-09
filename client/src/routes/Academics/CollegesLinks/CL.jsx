@@ -1,28 +1,26 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import Introduction from "../../../Components/Introduction";
 import { useNavigate } from "react-router-dom";
 
-function CL() {
+function CL({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>College of Law</Text>
-      <Button
-        onClick={() => {
-          navigate("/academic-overview");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <Introduction content="The College of Law is among the the top 10 law schools based on the 2018 bar examination. It received a 51.61% passing rate in 2018 bar exams, which is higher than the 22.07% national passing rate." />
+    </Box>
   );
 }
 

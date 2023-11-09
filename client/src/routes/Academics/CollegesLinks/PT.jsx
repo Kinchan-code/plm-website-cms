@@ -1,28 +1,26 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import Introduction from "../../../Components/Introduction";
 import { useNavigate } from "react-router-dom";
 
-function PT() {
+function PT({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Physical Theraphy</Text>
-      <Button
-        onClick={() => {
-          navigate("/academic-overview");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <Introduction content="The college is proud of the quality of its faculty members who possess extensive clinical experience and educational background in their specialization. They bring insights from theory, practice, and research to help shape the careers of all our students." />
+    </Box>
   );
 }
 

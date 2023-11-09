@@ -1,28 +1,30 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import Introduction from "../../../Components/Introduction";
 import { useNavigate } from "react-router-dom";
 
-function CM() {
+function CM({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>College of Medicine</Text>
-      <Button
-        onClick={() => {
-          navigate("/academic-overview");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <Introduction
+        content="The College of Medicine accepts applicants for incoming first year medical students who will enter in the first semester of the following school year. Lateral entrees from other medical schools are not entertained. Previous applicants may not apply. 
+"
+        otherContent="The MCAT applications are opened in November of each year, but applicants may already present their documents to the College staff for evaluation as early as August, so that the applicants are afforded ample time to produce necessary documents that are currently not in their possession."
+      />
+    </Box>
   );
 }
 

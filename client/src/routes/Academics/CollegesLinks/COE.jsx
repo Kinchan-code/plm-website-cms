@@ -1,28 +1,26 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import Introduction from "../../../Components/Introduction";
 import { useNavigate } from "react-router-dom";
 
-function COE() {
+function COE({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>College of Engineering</Text>
-      <Button
-        onClick={() => {
-          navigate("/academic-overview");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <Introduction content="College Engineering offers a comprehensive education in engineering disciplines. PLM's engineering programs typically emphasize theory, practical skills, and a strong commitment to addressing the unique challenges of the local community." />
+    </Box>
   );
 }
 

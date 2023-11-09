@@ -1,29 +1,53 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import {
+  Image,
+  Text,
+  SimpleGrid,
+  Divider,
+  Box,
+  Container,
+} from "@mantine/core";
+import Introduction from "../../Components/Introduction";
+import { colleges } from "./links";
 import { useNavigate } from "react-router-dom";
 
-function Colleges() {
+function Colleges({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Colleges</Text>
-      <Button
-        onClick={() => {
-          navigate("/");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        {" "}
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <div>
+        <Text p="xs" fz="lg" fw="bold">
+          Quality education meets compassion
+        </Text>
+        <Text p="xs" ta="justify">
+          Whether you choose to do in the corporate work, non-government or
+          government work or anything in between, you're guaranteed to possess
+          both the technical skills and compassion that truly sets PLM graduates
+          apart from the rest.
+        </Text>
+      </div>
+      <Container p="lg">
+        <SimpleGrid cols={3} p="lg">
+          {colleges.map((college) => (
+            <div key={college.name}>
+              <Image maw={500} src={college.image} />
+            </div>
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Box>
   );
 }
 

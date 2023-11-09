@@ -28,7 +28,23 @@ function App() {
     >
       {/* Mantine theme provider */}
       <MantineProvider
-        theme={{ colorScheme }}
+        theme={{
+          colorScheme,
+          colors: {
+            color: [
+              "#FFFFFF",
+              "#f9f8f8",
+              "#f7f7f7",
+              "#000000",
+              "#A31920",
+              "#FFC909",
+              "#ffc60b",
+              "#d5a106",
+              "#0087ca",
+              "#022f76",
+            ],
+          },
+        }}
         withGlobalStyles
         withNormalizeCSS
       >

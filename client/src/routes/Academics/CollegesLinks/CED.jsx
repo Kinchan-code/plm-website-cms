@@ -1,28 +1,27 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function CED() {
+function CED({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>College of Education</Text>
-      <Button
-        onClick={() => {
-          navigate("/academic-overview");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <Introduction content="The College of Education was formed out of reorganization and merging of colleges that were approved by the Board of Regents on June 4, 2015. It aspires to be one of the country's centers of excellence in Teacher Education. It is committed to produce globally empowered quality graduates who are proactive and catalysts of social transformation." />
+    </Box>
   );
 }
 
