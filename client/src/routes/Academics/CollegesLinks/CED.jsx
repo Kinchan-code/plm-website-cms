@@ -4,7 +4,7 @@ import Introduction from "../../../Components/Introduction";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function CED({ selectedLink }) {
+function CED({ selectedSublink }) {
   const navigate = useNavigate();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -16,11 +16,14 @@ function CED({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
-      <Introduction content="The College of Education was formed out of reorganization and merging of colleges that were approved by the Board of Regents on June 4, 2015. It aspires to be one of the country's centers of excellence in Teacher Education. It is committed to produce globally empowered quality graduates who are proactive and catalysts of social transformation." />
+      <Introduction
+        src={pic}
+        content="The College of Education was formed out of reorganization and merging of colleges that were approved by the Board of Regents on June 4, 2015. It aspires to be one of the country's centers of excellence in Teacher Education. It is committed to produce globally empowered quality graduates who are proactive and catalysts of social transformation."
+      />
     </Box>
   );
 }

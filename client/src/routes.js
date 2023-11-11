@@ -1,48 +1,52 @@
 // This are all the routes of this system. I put them all here to make the code more readable in app.jsx.
 import { lazy } from "react";
 
-const Home = lazy(() => import("./Home"));
-const Administration = lazy(() => import("./About/Administration"));
-const Contact = lazy(() => import("./About/Contact"));
-const OBE = lazy(() => import("./About/OBE"));
-const PrideHall = lazy(() => import("./About/PrideHall"));
-const UniversityProfile = lazy(() => import("./About/UniversityProfile"));
-const AcademicsShell = lazy(() => import("./Academics/AcademicsShell"));
+const Home = lazy(() => import("./routes/Home"));
+const Administration = lazy(() => import("./routes/About/Administration"));
+const Contact = lazy(() => import("./routes/About/Contact"));
+const OBE = lazy(() => import("./routes/About/OBE"));
+const PrideHall = lazy(() => import("./routes/About/PrideHall"));
+const UniversityProfile = lazy(() =>
+  import("./routes/About/UniversityProfile")
+);
+const AcademicsShell = lazy(() => import("./routes/Academics/AcademicsShell"));
 // const Overview = lazy(() => import("./Academics/Overview"));
 // const Calendar = lazy(() => import("./Academics/Calendar"));
 // const Colleges = lazy(() => import("./Academics/Colleges"));
 // const CRS = lazy(() => import("./Academics/CRS"));
-const CLAT = lazy(() => import("./Admissions/CLAT"));
-const MCAT = lazy(() => import("./Admissions/MCAT"));
-const PLMAT = lazy(() => import("./Admissions/PLMAT"));
-const Scholarship = lazy(() => import("./Admissions/Scholarship"));
-const Undegrad = lazy(() => import("./Admissions/Undegrad"));
-const Announcements = lazy(() => import("./News/Announcements"));
-const Gallery = lazy(() => import("./News/Gallery"));
-const Message = lazy(() => import("./News/Message"));
-const NewsLetter = lazy(() => import("./News/NewsLetter"));
-const PressRelease = lazy(() => import("./News/PressRelease"));
-const SpecialReports = lazy(() => import("./News/SpecialReports"));
-const Theses = lazy(() => import("./Research/Theses"));
-const Downloads = lazy(() => import("./Downloads"));
-const Students = lazy(() => import("./OtherLinks/Students"));
-const Faculty = lazy(() => import("./OtherLinks/Faculty"));
-const Alumni = lazy(() => import("./OtherLinks/Alumni"));
-const Partners = lazy(() => import("./OtherLinks/Partners"));
-const Community = lazy(() => import("./OtherLinks/Community"));
-const PLMEmail = lazy(() => import("./OtherLinks/PLMEmail"));
-const ContactUs = lazy(() => import("./FooterRoutes/ContactUs"));
-const Careers = lazy(() => import("./FooterRoutes/Careers"));
-const Procurement = lazy(() => import("./FooterRoutes/Procurement"));
-const UniversityMap = lazy(() => import("./FooterRoutes/UniversityMap"));
-const SiteGuide = lazy(() => import("./FooterRoutes/SiteGuide"));
-const PrivacyPolicy = lazy(() => import("./FooterRoutes/PrivacyPolicy"));
-const TermsOfUse = lazy(() => import("./FooterRoutes/TermsOfUse"));
-const CitizensCharter = lazy(() => import("./FooterRoutes/CitizensCharter"));
-const Archive = lazy(() => import("./Archive"));
-const Error = lazy(() => import("./Error"));
-const Test = lazy(() => import("./Test"));
-const Test2 = lazy(() => import("./Test2"));
+const CLAT = lazy(() => import("./routes/Admissions/CLAT"));
+const MCAT = lazy(() => import("./routes/Admissions/MCAT"));
+const PLMAT = lazy(() => import("./routes/Admissions/PLMAT"));
+const Scholarship = lazy(() => import("./routes/Admissions/Scholarship"));
+const Undegrad = lazy(() => import("./routes/Admissions/Undegrad"));
+const Announcements = lazy(() => import("./routes/News/Announcements"));
+const Gallery = lazy(() => import("./routes/News/Gallery"));
+const Message = lazy(() => import("./routes/News/Message"));
+const NewsLetter = lazy(() => import("./routes/News/NewsLetter"));
+const PressRelease = lazy(() => import("./routes/News/PressRelease"));
+const SpecialReports = lazy(() => import("./routes/News/SpecialReports"));
+const Theses = lazy(() => import("./routes/Research/Theses"));
+const Downloads = lazy(() => import("./routes/Downloads"));
+const Students = lazy(() => import("./routes/OtherLinks/Students"));
+const Faculty = lazy(() => import("./routes/OtherLinks/Faculty"));
+const Alumni = lazy(() => import("./routes/OtherLinks/Alumni"));
+const Partners = lazy(() => import("./routes/OtherLinks/Partners"));
+const Community = lazy(() => import("./routes/OtherLinks/Community"));
+const PLMEmail = lazy(() => import("./routes/OtherLinks/PLMEmail"));
+const ContactUs = lazy(() => import("./routes/FooterRoutes/ContactUs"));
+const Careers = lazy(() => import("./routes/FooterRoutes/Careers"));
+const Procurement = lazy(() => import("./routes/FooterRoutes/Procurement"));
+const UniversityMap = lazy(() => import("./routes/FooterRoutes/UniversityMap"));
+const SiteGuide = lazy(() => import("./routes/FooterRoutes/SiteGuide"));
+const PrivacyPolicy = lazy(() => import("./routes/FooterRoutes/PrivacyPolicy"));
+const TermsOfUse = lazy(() => import("./routes/FooterRoutes/TermsOfUse"));
+const CitizensCharter = lazy(() =>
+  import("./routes/FooterRoutes/CitizensCharter")
+);
+const Archive = lazy(() => import("./routes/Archive"));
+const Error = lazy(() => import("./routes/Error"));
+const Test = lazy(() => import("./routes/Test"));
+const Test2 = lazy(() => import("./routes/Test2"));
 
 export const AllLinks = [
   { component: Home, path: "/" },

@@ -15,7 +15,6 @@ function Nav({ color, style }) {
             justifyContent: "space-between",
             marginLeft: "2rem",
             marginRight: "2rem",
-            zIndex: "999",
           }}
         >
           <Image
@@ -28,7 +27,7 @@ function Nav({ color, style }) {
         </div>
       </nav>
       {/* Add a placeholder element to prevent content from jumping */}
-      <div style={{ height: "30vh" }}></div>
+      {/* <div style={{ height: "30vh" }}></div> */}
     </div>
   );
 }

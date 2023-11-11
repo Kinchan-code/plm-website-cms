@@ -8,7 +8,7 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import "./App.css";
-import { AllLinks } from "./routes/routes";
+import { AllLinks } from "./routes";
 
 // Mantine provider is not yet final so don't mind it muna
 

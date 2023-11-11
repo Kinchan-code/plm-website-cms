@@ -118,7 +118,7 @@ function Navigation({ links, onLinkClick, onSublinkClick, title }) {
       style={{
         display: "flex",
         height: "100vh",
-        width: "100%",
+        width: "20vw",
         marginLeft: "2rem",
       }}
     >

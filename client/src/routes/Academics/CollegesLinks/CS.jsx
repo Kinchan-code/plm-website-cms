@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function CS({ selectedLink }) {
+function CS({ selectedSublink }) {
   const navigate = useNavigate();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -15,11 +16,12 @@ function CS({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
       <Introduction
+        src={pic}
         content="The College of Science is one of the esteemed colleges of the university which has produced board topnotchers, leaders in the national and international levels. It used to be part of the College of Arts and Science, until the Board of Regents approved its 
 proposed separation in 2002. By 2015, it offered the programs BS Psychology, MA Psychology, 
 and MS in Mathematics Education."

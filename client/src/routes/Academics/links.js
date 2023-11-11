@@ -135,6 +135,7 @@ export const links = [
   },
 ];
 
+//CAUP
 export const timelineItems = [
   {
     title: "JUNE 2001",
@@ -157,15 +158,18 @@ export const timelineItems = [
       "The college has board topnotchers in its roster. They are Arch. Lili-Anne Reyes, topnotcher, August 2019 Special Professional Licensure Exam (SPLE); Arch. Marlou B. Campaner, topnotcher, June 1998 board exam; Arch. Aldous Y. Olbes, top 2, June 2017 board exam; Arch. Michael Raye M. Tadeo, top 4, January 2018 board exam; and Arch. Alnie Khayzer P. Hayudini, top 10, January 2016 board exam.",
   },
 ];
+
 export const accordionItems = [
   {
     value: "Undergraduate Program",
     title: "Undergraduate Program",
+    hasBullets: true,
     content: "Bachelor of Science in Architecture",
   },
   {
     value: "Governing Spirit",
     title: "Governing Spirit",
+    hasBullets: true,
     content: [
       "Creation of an immediate evaluation platform focusing on industry-driven variables",
       "Establishment of a research-oriented mentorship practices highly adaptable to young but inquisitive minds",
@@ -175,8 +179,13 @@ export const accordionItems = [
   {
     value: "Graduate",
     title: "Graduate Do Matter",
-    content:
-      "Although quite a small college, its graduates really do matter. Architecture, many would like to believe, is a career reserved only for the rich. PLM proved them wrong and until this day, the famous Intramuros refuge for Manila's poor has maintained a reputation of academic dominance and excellence in higher education. With almost 100% of its graduates passing the licensure examinations, the college plays a major role in transforming old Manila into a network of micro-communities, planning satellite activity centers in pocket parks and idle open spaces, as well as establishing a blue print of maximum tolerable dwelling patterns in congested barangays in the City. Other placers would soon follow the likes of Architects Ricardo A. Reyes and Patrick N. Rodriguez. In the June 2005 Board Exam for Architecture, PLM was ranked 4th out of 60 architecture schools nationwide with Marc Rhojel C. Cortez placing 5th in the top ten column of successful examinees. January 2007 produced another board topnotcher in Rafael Banaag III (9th place) with 81% passing rate against a national rate of 36%. As of October 2008, a total of 405 student spread into seventeen (17) batches, or an average of 23.8 students per year, graduated from the program. The first group of 10 graduates completed the program in 1992. Two years after (PRC requires that a graduate prior to taking a board exam has to undergo a 2-year diversified industry exposure), PLM produced its first Architect led by Architect Antonio G. Sevilla Jr. who maintains a very successful Architect's Consultancy and Construction Services Office. Based on the records of the Professional Regulations Commision (PRC), PLM has sustained a record of consistently good performance in as far as the percentage of candidates passing the board exam. Back in 1998, Mr. Marlou B. Campaner, a 1996 graduate whose mother works as a casual employee at the Manila City Hall and whose father labors the road of the city with his tricycle topped that year's June Examination. Placing 1st among the more than 1000 examinees was a solid proof that PLM can easily dominate any arena given an equal chance. Architect Campaner is now among the leading lights in the City Planning and Development Office of the City of Manila.",
+    hasBullets: false,
+    content: [
+      "Although quite a small college, its graduates really do matter. Architecture, many would like to believe, is a career reserved only for the rich. PLM proved them wrong and until this day, the famous Intramuros refuge for Manila's poor has maintained a reputation of academic dominance and excellence in higher education. With almost 100% of its graduates passing the licensure examinations, the college plays a major role in transforming old Manila into a network of micro-communities, planning satellite activity centers in pocket parks and idle open spaces, as well as establishing a blue print of maximum tolerable dwelling patterns in congested barangays in the City.",
+      "Other placers would soon follow the likes of Architects Ricardo A. Reyes and Patrick N. Rodriguez. In the June 2005 Board Exam for Architecture, PLM was ranked 4th out of 60 architecture schools nationwide with Marc Rhojel C. Cortez placing 5th in the top ten column of successful examinees. January 2007 produced another board topnotcher in Rafael Banaag III (9th place) with 81% passing rate against a national rate of 36%.",
+      "As of October 2008, a total of 405 student spread into seventeen (17) batches, or an average of 23.8 students per year, graduated from the program. The first group of 10 graduates completed the program in 1992. Two years after (PRC requires that a graduate prior to taking a board exam has to undergo a 2-year diversified industry exposure), PLM produced its first Architect led by Architect Antonio G. Sevilla Jr. who maintains a very successful Architect's Consultancy and Construction Services Office.",
+      "Based on the records of the Professional Regulations Commision (PRC), PLM has sustained a record of consistently good performance in as far as the percentage of candidates passing the board exam. Back in 1998, Mr. Marlou B. Campaner, a 1996 graduate whose mother works as a casual employee at the Manila City Hall and whose father labors the road of the city with his tricycle topped that year's June Examination. Placing 1st among the more than 1000 examinees was a solid proof that PLM can easily dominate any arena given an equal chance. Architect Campaner is now among the leading lights in the City Planning and Development Office of the City of Manila.",
+    ],
   },
 ];
 
@@ -184,6 +193,96 @@ export const CaupBusinessCardData = {
   collegeName: " COLLEGE OF ARCHITECTURE AND URBAN PLANNING",
   deanName: "Arch. Jared Aaron R. Cruz",
   deanTitle: "Dean, College of Architecture and Urban Planning",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "caup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+//PLMBS
+export const PLMBStimelineItems = [
+  {
+    title: "JUNE 2001",
+    content:
+      "In June of 2001, the College of Architecture and Urban Planning (CAUP) was established to help transform the City of Manila back into a vibrant, world-class tourist destination.",
+  },
+  {
+    title: "ESTABLISHMENT OF COLLEGE",
+    content:
+      "Before the establishment of the college, Bachelor of Science in Architecture was offered under the College of Engineering and Architecture. The course was first offered by the university in 1987.",
+  },
+  {
+    title: "ORIENTATION",
+    content:
+      "Training in the College of Architecture and Urban Planning is more like a job than studying. Given this orientation, the College has earned the trust and confidence of its peers and leaders. The architecture program continues to relish in its own place within the university. The College prides itself of reaping numerous honors and citations for PLM, both in local and national arena. These achievements are the result of a strong partnership built around team spirit unique in PLM.",
+  },
+  {
+    title: "BOARD TOPNOTCHER",
+    content:
+      "The college has board topnotchers in its roster. They are Arch. Lili-Anne Reyes, topnotcher, August 2019 Special Professional Licensure Exam (SPLE); Arch. Marlou B. Campaner, topnotcher, June 1998 board exam; Arch. Aldous Y. Olbes, top 2, June 2017 board exam; Arch. Michael Raye M. Tadeo, top 4, January 2018 board exam; and Arch. Alnie Khayzer P. Hayudini, top 10, January 2016 board exam.",
+  },
+];
+
+export const PLMBSAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: false,
+    content: [
+      {
+        title: "Bachelor of Science in Accountancy (BSA)",
+        text: [
+          "Bachelor of Science in Accountancy program provides students with a general accounting education that will prepare them in pursuing a career in Accountancy. This program complies with the issuance of the International Federation of Accountants (IFAC) for the Internationa Education Standards that complies with the competencies framework of professional accountants.",
+          "Graduates of this program are qualified to undergo assessments leading to certifications in Accountancy given by the Professional Regulation Commission - Board of Accountancy (PRC -BOA)and other global professional Accountancy organizations.",
+          "Graduates are highly encouraged to continuously pursue professional development and lifelong learning in an objective and ethical manner to serve the public interest.",
+        ],
+      },
+      {
+        title:
+          "Bachelor of Science in Business Administration major in Financial Management (BSBA-FM)",
+        text: [
+          "The program aims to develop globally competitive, socially responsible and ethical finance executives. Graduates become fully equipped with skills and knowledge in different areas of finance such funds and cash management, investors and banking relations, loans and credit, banking, investments, capital market, financial analysis, strategic financial planning, risk management, and other relevant functions in finance in various industries.",
+        ],
+      },
+      {
+        title:
+          "Bachelor of Science in Business Administration major in Marketing Management (BSBA-MM)",
+        text: [
+          "The program prepares graduates for careers in marketing, market research, advertising and public relations. The curriculum provides the graduates with both technical skills and competencies required in the field but also the flexible mindset that is necessary to stay competitive in a constantly changing business environment. It covers the areas of sales management, brand, distribution, e-commerce, franchising, retailing, advertising and sales promotion, and integrated marketing communications.",
+        ],
+      },
+      {
+        title:
+          "Bachelor of Science in Business Administration major in Operations Management (BSBA-OM)",
+        text: [
+          "The Bachelor of Science in Business Administration major in Operations Management (BSBA-OM) program prepares students to manage the operations of manufacturing, agri-business, and service enterprises. The program curriculum covers all aspects of operations within the organization, including the management of purchases, inventory, production and service quality, logistics, supply chain, and distribution.",
+        ],
+      },
+    ],
+  },
+  {
+    value: "Graduate Program",
+    title: "Graduate Program",
+    hasBullets: false,
+    content: "",
+  },
+];
+
+export const PLMBSBusinessCardData = {
+  collegeName: " PLM Business School",
+  deanName: "Bernard R. Letrero",
+  deanTitle: "Dean, PLM Business School",
   contactInfo: {
     text: "We'd love to hear from you! Please feel free to contact us with any questions.",
     location: {

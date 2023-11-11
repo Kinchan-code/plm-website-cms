@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function PH({ selectedLink }) {
+function PH({ selectedSublink }) {
   const navigate = useNavigate();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -15,11 +16,14 @@ function PH({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
-      <Introduction content="The Pamantasan ng Lungsod ng Maynila School of Public Health is envisioned as a recognized leader in public health education both locally and internationally. It strives to nurture ethical, professional, forward-looking leaders in health care who will confidently blend knowledge and practice to bring real-world solutions to ensure health for all." />
+      <Introduction
+        src={pic}
+        content="The Pamantasan ng Lungsod ng Maynila School of Public Health is envisioned as a recognized leader in public health education both locally and internationally. It strives to nurture ethical, professional, forward-looking leaders in health care who will confidently blend knowledge and practice to bring real-world solutions to ensure health for all."
+      />
     </Box>
   );
 }

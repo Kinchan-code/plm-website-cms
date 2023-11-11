@@ -12,12 +12,12 @@ function CMSCard({ title, content, bgColor, height }) {
       withBorder
     >
       <Card.Section style={{ display: "flex", alignItems: "center" }}>
-        <Text fz="xl" fw="bold" p="md">
+        <Text fz="xl" fw="bold" p="lg">
           {title}
         </Text>
       </Card.Section>
       <Blockquote p="md">
-        <>{content}</>
+        <Text>{content}</Text>
       </Blockquote>
     </Card>
   );

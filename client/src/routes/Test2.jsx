@@ -4,14 +4,15 @@ import {
   Navbar,
   Header,
   Footer,
-  Aside,
   Text,
   MediaQuery,
   Burger,
   useMantineTheme,
 } from "@mantine/core";
+import Navigation from "../Components/Navigation";
+import { links } from "./Academics/links";
 
-export default function AppShellDemo() {
+function Test2() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
@@ -24,51 +25,11 @@ export default function AppShellDemo() {
               : theme.colors.gray[0],
         },
       }}
-      navbarOffsetBreakpoint="sm"
-      asideOffsetBreakpoint="sm"
-      navbar={
-        <Navbar
-          p="md"
-          hiddenBreakpoint="sm"
-          hidden={!opened}
-          width={{ sm: 200, lg: 300 }}
-        >
-          <Text>Application navbar</Text>
-        </Navbar>
-      }
-      aside={
-        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-          <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-            <Text>Application sidebar</Text>
-          </Aside>
-        </MediaQuery>
-      }
-      footer={
-        <Footer height={60} p="md">
-          Application footer
-        </Footer>
-      }
-      header={
-        <Header height={{ base: 50, md: 70 }} p="md">
-          <div
-            style={{ display: "flex", alignItems: "center", height: "100%" }}
-          >
-            <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-              <Burger
-                opened={opened}
-                onClick={() => setOpened((o) => !o)}
-                size="sm"
-                color={theme.colors.gray[6]}
-                mr="xl"
-              />
-            </MediaQuery>
-
-            <Text>Application header</Text>
-          </div>
-        </Header>
-      }
+      navbar={<Navigation title="ACADEMICS" links={links} />}
     >
       <Text>Resize app to see responsive navbar in action</Text>
     </AppShell>
   );
 }
+
+export default Test2;

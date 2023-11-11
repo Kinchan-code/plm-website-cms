@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, Text, Box, Divider, Space } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function GSL({ selectedLink }) {
+function GSL({ selectedSublink }) {
   const navigate = useNavigate();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -15,11 +16,12 @@ function GSL({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
       <Introduction
+        src={pic}
         content="On July 7, 2004, the Graduate School of Law was formally launched as the second graduate school of school of law in the Philippines. On July 29, 2004, the Board of Regents by virtue of BOR Resolution No. 2686 approved the offering of the graduate program of Master of Laws."
         otherContent="The PLM's Graduate School of Law provides legal education to lawyers and non-lawyers who have obtained their first law degree in any college or university in the country offering either a Bachelor of Laws or Juris Doctor program. It aims to attract in its fold both lawyers and non-lawyers, including judges, prosecutors, practitioners, and those employed in the government and private service.
 

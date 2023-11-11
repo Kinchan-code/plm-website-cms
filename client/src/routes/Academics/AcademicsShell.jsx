@@ -32,8 +32,9 @@ function AcademicsShell() {
   const handleScroll = () => {
     if (academicsTextRef.current) {
       const rect = academicsTextRef.current.getBoundingClientRect();
+
       setIsSolidBackground(
-        rect.top <= window.innerHeight && rect.bottom >= 110
+        rect.top <= window.innerHeight && rect.bottom >= 170
       );
     }
   };
@@ -46,28 +47,28 @@ function AcademicsShell() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const findComponentByLabel = (label) =>
-    links
-      .flatMap((link) => link.subLinks || [])
-      .find((sublink) => sublink.label === label)?.component;
 
   return (
     <div style={{ overflow: "hidden" }}>
+      <Nav
+        style={{
+          backgroundColor: isSolidBackground ? "transparent" : "#fff",
+          boxShadow: isSolidBackground
+            ? "none"
+            : "0 4px 4px rgba(0, 0, 0, 0.2)",
+        }}
+        backgroundColor
+        color={isSolidBackground ? "color.0" : "color.9"}
+      />
       <div className="Header">
-        <Nav
-          style={{
-            backgroundColor: isSolidBackground ? "transparent" : "#fff",
-            boxShadow: isSolidBackground
-              ? "none"
-              : "0 4px 4px rgba(0, 0, 0, 0.2)",
-            zIndex: 1000,
-          }}
-          backgroundColor
-          color={isSolidBackground ? "color.0" : "color.9"}
-        />
         <div
-          ref={academicsTextRef}
-          style={{ display: "flex", marginLeft: "3rem", marginTop: "-2rem" }}
+          style={{
+            display: "flex",
+            marginLeft: "3rem",
+            marginTop: "10rem",
+            position: "fixed",
+            zIndex: 0,
+          }}
         >
           <Divider size="md" color="#FFC60B" orientation="vertical" />
           <Space w="sm" />
@@ -76,82 +77,91 @@ function AcademicsShell() {
           </Text>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center ",
-          padding: "1rem",
-        }}
-      >
-        <div style={{ display: "flex", padding: "1rem" }}>
-          <Text fz="lg" ff="Open Sans">
-            Home
-          </Text>
-          <Space w="sm" />
-          <Text c="gray">⚬</Text>
-          <Space w="sm" />
-          <Text fz="lg" ff="Open Sans">
-            Academics
-          </Text>
-          <Space w="sm" />
-          <Text c="gray">⚬</Text>
-          <Space w="sm" />
-          <Text fz="lg" ff="Open Sans">
-            {selectedLink} {/* Show the selected link here */}
-          </Text>
-          {selectedSublink && (
-            <>
-              <Space w="sm" />
-              <Text c="gray">⚬</Text>
-              <Space w="sm" />
-              <Text fz="lg" ff="Open Sans">
-                {selectedSublink}
-              </Text>
-            </>
-          )}
+      <div style={{ backgroundColor: "#fff", width: "100%", zIndex: "2" }}>
+        <div
+          ref={academicsTextRef}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center ",
+            padding: "1rem",
+          }}
+        >
+          <div style={{ display: "flex", padding: "1rem" }}>
+            <Text fz="lg" ff="Open Sans">
+              Home
+            </Text>
+            <Space w="sm" />
+            <Text c="gray">⚬</Text>
+            <Space w="sm" />
+            <Text fz="lg" ff="Open Sans">
+              Academics
+            </Text>
+            <Space w="sm" />
+            <Text c="gray">⚬</Text>
+            <Space w="sm" />
+            <Text fz="lg" ff="Open Sans">
+              {selectedLink} {/* Show the selected link here */}
+            </Text>
+            {selectedSublink && (
+              <>
+                <Space w="sm" />
+                <Text c="gray">⚬</Text>
+                <Space w="sm" />
+                <Text fz="lg" ff="Open Sans">
+                  {selectedSublink}
+                </Text>
+              </>
+            )}
+          </div>
+
+          <Divider />
         </div>
-
-        <Divider />
-      </div>
-      <div>
-        <Grid columns={24}>
-          <Grid.Col span={6}>
-            <Container>
-              <Navigation
-                title="ACADEMICS"
-                links={links}
-                onLinkClick={handleLinkClick}
-                onSublinkClick={handleSublinkClick}
-                selectedSublink={selectedSublink}
-              />
-            </Container>
-            {/* Place Navigation component in the first column */}
-          </Grid.Col>
-          <Grid.Col span={18}>
-            <ScrollArea h={700} type="never">
+        <div style={{ height: "150vh" }}>
+          <Grid columns={24}>
+            <Grid.Col span={6}>
               <Container>
-                {/* Render content based on the selected link */}
-                {selectedLink === "Academic Overview" && (
-                  <Overview selectedLink={selectedLink} />
-                )}
-                {selectedLink === "Colleges" && selectedSublink === null && (
-                  <Colleges selectedLink={selectedLink} />
-                )}
-
-                {findComponentByLabel(selectedSublink) &&
-                  React.createElement(findComponentByLabel(selectedSublink))}
-
-                {selectedLink === "Academic Calendar" && (
-                  <Calendar selectedLink={selectedLink} />
-                )}
-                {selectedLink === "Computer Registration System" && (
-                  <CRS selectedLink={selectedLink} />
-                )}
+                <Navigation
+                  title="ACADEMICS"
+                  links={links}
+                  onLinkClick={handleLinkClick}
+                  onSublinkClick={handleSublinkClick}
+                  selectedSublink={selectedSublink}
+                />
               </Container>
-            </ScrollArea>
-          </Grid.Col>
-        </Grid>
+              {/* Place Navigation component in the first column */}
+            </Grid.Col>
+            <Grid.Col span={18}>
+              <ScrollArea h={1000} type="never">
+                <Container>
+                  {/* Render content based on the selected link */}
+                  {links.map((link) => {
+                    if (link.label === selectedLink) {
+                      if (selectedSublink) {
+                        const sublinkComponent = link.subLinks.find(
+                          (sublink) => sublink.label === selectedSublink
+                        )?.component;
+
+                        if (sublinkComponent) {
+                          return React.createElement(sublinkComponent, {
+                            selectedLink,
+                            selectedSublink,
+                          });
+                        }
+                      } else {
+                        return React.createElement(link.component, {
+                          selectedLink,
+                          selectedSublink,
+                        });
+                      }
+                    }
+                    return null;
+                  })}
+                </Container>
+              </ScrollArea>
+            </Grid.Col>
+          </Grid>
+        </div>
       </div>
       <Footer />
     </div>

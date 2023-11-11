@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
-import { Text, Box, Divider, Space, List } from "@mantine/core";
+import { Text, Box, Divider, Space, List, Grid } from "@mantine/core";
 import CMSAccordion from "../../../Components/Accordion";
 import CMSTimeline from "../../../Components/Timeline";
 import CMSCard from "../../../Components/Card";
 import BusinessCard from "../../../Components/BusinessCard";
 import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { timelineItems, accordionItems, CaupBusinessCardData } from "../links";
 import { useNavigate } from "react-router-dom";
 
-function CAUP({ selectedLink }) {
+function CAUP({ selectedSublink }) {
   const navigate = useNavigate();
-  const uppercasedLink = selectedLink.toUpperCase();
+  const title = selectedSublink.toUpperCase();
 
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -22,49 +23,43 @@ function CAUP({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          College of {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
       <div style={{ display: "flex" }}>
         <Introduction
+          src={pic}
           content=" The College of Architecture and Urban Planning at PLM offers various
           degree programs, emphasizing design, theory, and practical skills to
           prepare students for careers in these fields. The college prioritizes
           creativity, sustainability, and innovative urban development."
         />
       </div>
-      <div style={{ padding: "2rem" }}>
+      <div style={{ padding: "1rem" }}>
         <CMSAccordion items={accordionItems} />
       </div>
       <Space h="lg" />
-      <div style={{ padding: "2rem" }}>
+      <div>
         <div
+          style={{
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "center",
+          }}
+        >
+          <Text fz="lg" fw="bold" p="lg">
+            MORE ABOUT COLLEGE OF {title}
+          </Text>
+        </div>
+        <Grid
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Text fz="lg" fw="bold" p="lg">
-            MORE ABOUT COLLEGE OF {uppercasedLink}
-          </Text>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "50vh",
-            }}
-          >
+          <Grid.Col span={5}>
             <CMSCard
               title="VISION"
               bgColor="color.2"
@@ -77,16 +72,9 @@ function CAUP({ selectedLink }) {
                 </Text>
               }
             />
-          </div>
+          </Grid.Col>
           <Space w="xl" />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "50vh",
-            }}
-          >
+          <Grid.Col span={5}>
             <CMSCard
               title="MISSION"
               bgColor="color.2"
@@ -95,11 +83,11 @@ function CAUP({ selectedLink }) {
                 <List type="ordered">
                   <List.Item>
                     <Text>
-                      Transforming mindsets to highly competitive outlooks.{" "}
+                      Transforming mindsets to highly competitive outlooks.
                     </Text>
                   </List.Item>
                   <List.Item>
-                    <Text>
+                    <Text p="xs">
                       Create values mutually beneficial to students and the
                       institution by providing opportunities of borderless
                       cooperation.
@@ -114,8 +102,8 @@ function CAUP({ selectedLink }) {
                 </List>
               }
             />
-          </div>
-        </div>
+          </Grid.Col>
+        </Grid>
         <Space w="xl" />
         <div
           style={{

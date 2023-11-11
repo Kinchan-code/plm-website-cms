@@ -28,15 +28,13 @@ function Colleges({ selectedLink }) {
       </div>
       <Divider c="#eeee" size="md" />
       <div>
-        <Text p="xs" fz="lg" fw="bold">
-          Quality education meets compassion
-        </Text>
-        <Text p="xs" ta="justify">
-          Whether you choose to do in the corporate work, non-government or
+        <Introduction
+          title="Quality Education meets Compassion"
+          otherContent=" Whether you choose to do in the corporate work, non-government or
           government work or anything in between, you're guaranteed to possess
           both the technical skills and compassion that truly sets PLM graduates
-          apart from the rest.
-        </Text>
+          apart from the rest."
+        />
       </div>
       <Container p="lg">
         <SimpleGrid cols={3} p="lg">

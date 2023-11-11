@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
-function CL({ selectedLink }) {
+function CL({ selectedSublink }) {
   const navigate = useNavigate();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
@@ -15,11 +16,14 @@ function CL({ selectedLink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedLink}
+          {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
-      <Introduction content="The College of Law is among the the top 10 law schools based on the 2018 bar examination. It received a 51.61% passing rate in 2018 bar exams, which is higher than the 22.07% national passing rate." />
+      <Introduction
+        src={pic}
+        content="The College of Law is among the the top 10 law schools based on the 2018 bar examination. It received a 51.61% passing rate in 2018 bar exams, which is higher than the 22.07% national passing rate."
+      />
     </Box>
   );
 }
