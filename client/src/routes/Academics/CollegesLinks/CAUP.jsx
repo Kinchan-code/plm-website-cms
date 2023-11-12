@@ -53,17 +53,18 @@ function CAUP({ selectedSublink }) {
           </Text>
         </div>
         <Grid
+          columns={24}
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Grid.Col span={5}>
+          <Grid.Col span={11}>
             <CMSCard
               title="VISION"
               bgColor="color.2"
-              height="50vh"
+              height="60vh"
               content={
                 <Text>
                   It will become a partner of choice as an active provider of
@@ -73,12 +74,11 @@ function CAUP({ selectedSublink }) {
               }
             />
           </Grid.Col>
-          <Space w="xl" />
-          <Grid.Col span={5}>
+          <Grid.Col span={11}>
             <CMSCard
               title="MISSION"
               bgColor="color.2"
-              height="50vh"
+              height="60vh"
               content={
                 <List type="ordered">
                   <List.Item>
@@ -87,7 +87,7 @@ function CAUP({ selectedSublink }) {
                     </Text>
                   </List.Item>
                   <List.Item>
-                    <Text p="xs">
+                    <Text>
                       Create values mutually beneficial to students and the
                       institution by providing opportunities of borderless
                       cooperation.

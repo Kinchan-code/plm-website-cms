@@ -51,13 +51,14 @@ function PLMBS({ selectedSublink }) {
         </Text>
       </div>
       <Grid
+        columns={20}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Grid.Col span={5}>
+        <Grid.Col span={9}>
           <CMSCard
             title="VISION"
             bgColor="color.2"
@@ -72,7 +73,7 @@ function PLMBS({ selectedSublink }) {
           />
         </Grid.Col>
         <Space w="xl" />
-        <Grid.Col span={5}>
+        <Grid.Col span={9}>
           <CMSCard
             title="MISSION"
             bgColor="color.2"

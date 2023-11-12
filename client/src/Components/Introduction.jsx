@@ -36,9 +36,17 @@ function Introduction({ description, content, otherContent, title, src }) {
       )}
       {otherContent && (
         <div>
-          <Text p="xs" ta="justify">
-            {otherContent}
-          </Text>
+          {Array.isArray(otherContent) ? (
+            otherContent.map((paragraph, index) => (
+              <Text key={index} p="xs" ta="justify">
+                {paragraph}
+              </Text>
+            ))
+          ) : (
+            <Text p="xs" ta="justify">
+              {otherContent}
+            </Text>
+          )}
         </div>
       )}
     </>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import CMSAccordion from "../../../Components/Accordion";
+import BusinessCard from "../../../Components/BusinessCard";
+import { CMAccordionItems, CMBusinessCardData } from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +29,12 @@ function CM({ selectedSublink }) {
 "
         otherContent="The MCAT applications are opened in November of each year, but applicants may already present their documents to the College staff for evaluation as early as August, so that the applicants are afforded ample time to produce necessary documents that are currently not in their possession."
       />
+      <div style={{ padding: "1rem" }}>
+        <CMSAccordion items={CMAccordionItems} />
+      </div>
+      <div>
+        <BusinessCard {...CMBusinessCardData} />
+      </div>
     </Box>
   );
 }

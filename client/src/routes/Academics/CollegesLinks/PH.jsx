@@ -1,6 +1,9 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import CMSAccordion from "../../../Components/Accordion";
+import BusinessCard from "../../../Components/BusinessCard";
+import { PHAccordionItems, PHBusinessCardData } from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +27,12 @@ function PH({ selectedSublink }) {
         src={pic}
         content="The Pamantasan ng Lungsod ng Maynila School of Public Health is envisioned as a recognized leader in public health education both locally and internationally. It strives to nurture ethical, professional, forward-looking leaders in health care who will confidently blend knowledge and practice to bring real-world solutions to ensure health for all."
       />
+      <div style={{ padding: "1rem" }}>
+        <CMSAccordion items={PHAccordionItems} />
+      </div>
+      <div>
+        <BusinessCard {...PHBusinessCardData} />
+      </div>
     </Box>
   );
 }

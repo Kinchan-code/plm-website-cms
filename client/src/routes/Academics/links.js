@@ -30,6 +30,8 @@ import CM from "./CollegesLinks/CM";
 import SG from "./CollegesLinks/SG";
 import PH from "./CollegesLinks/PH";
 
+//Academics
+// Academic Overview
 export const texts = [
   {
     content:
@@ -69,6 +71,7 @@ export const texts = [
   },
 ];
 
+//Images
 export const colleges = [
   { name: "CAUP", image: CAUPimg },
   { name: "PLMBS", image: PLMBSimg },
@@ -85,6 +88,7 @@ export const colleges = [
   { name: "PH", image: PHimg },
 ];
 
+// Links for Navigation
 export const links = [
   {
     label: "Academic Overview",
@@ -159,21 +163,28 @@ export const timelineItems = [
   },
 ];
 
+// Caup Accordion
 export const accordionItems = [
   {
     value: "Undergraduate Program",
     title: "Undergraduate Program",
     hasBullets: true,
-    content: "Bachelor of Science in Architecture",
+    content: [{ text: "Bachelor of Science in Architecture" }],
   },
   {
     value: "Governing Spirit",
     title: "Governing Spirit",
     hasBullets: true,
     content: [
-      "Creation of an immediate evaluation platform focusing on industry-driven variables",
-      "Establishment of a research-oriented mentorship practices highly adaptable to young but inquisitive minds",
-      "Adoption of a consultative planning policy discernable to industry-based professionals and dynamic academic partners",
+      {
+        text: "Creation of an immediate evaluation platform focusing on industry-driven variables",
+      },
+      {
+        text: "Establishment of a research-oriented mentorship practices highly adaptable to young but inquisitive minds",
+      },
+      {
+        text: "Adoption of a consultative planning policy discernable to industry-based professionals and dynamic academic partners",
+      },
     ],
   },
   {
@@ -181,14 +192,24 @@ export const accordionItems = [
     title: "Graduate Do Matter",
     hasBullets: false,
     content: [
-      "Although quite a small college, its graduates really do matter. Architecture, many would like to believe, is a career reserved only for the rich. PLM proved them wrong and until this day, the famous Intramuros refuge for Manila's poor has maintained a reputation of academic dominance and excellence in higher education. With almost 100% of its graduates passing the licensure examinations, the college plays a major role in transforming old Manila into a network of micro-communities, planning satellite activity centers in pocket parks and idle open spaces, as well as establishing a blue print of maximum tolerable dwelling patterns in congested barangays in the City.",
-      "Other placers would soon follow the likes of Architects Ricardo A. Reyes and Patrick N. Rodriguez. In the June 2005 Board Exam for Architecture, PLM was ranked 4th out of 60 architecture schools nationwide with Marc Rhojel C. Cortez placing 5th in the top ten column of successful examinees. January 2007 produced another board topnotcher in Rafael Banaag III (9th place) with 81% passing rate against a national rate of 36%.",
-      "As of October 2008, a total of 405 student spread into seventeen (17) batches, or an average of 23.8 students per year, graduated from the program. The first group of 10 graduates completed the program in 1992. Two years after (PRC requires that a graduate prior to taking a board exam has to undergo a 2-year diversified industry exposure), PLM produced its first Architect led by Architect Antonio G. Sevilla Jr. who maintains a very successful Architect's Consultancy and Construction Services Office.",
-      "Based on the records of the Professional Regulations Commision (PRC), PLM has sustained a record of consistently good performance in as far as the percentage of candidates passing the board exam. Back in 1998, Mr. Marlou B. Campaner, a 1996 graduate whose mother works as a casual employee at the Manila City Hall and whose father labors the road of the city with his tricycle topped that year's June Examination. Placing 1st among the more than 1000 examinees was a solid proof that PLM can easily dominate any arena given an equal chance. Architect Campaner is now among the leading lights in the City Planning and Development Office of the City of Manila.",
+      {
+        text: "Although quite a small college, its graduates really do matter. Architecture, many would like to believe, is a career reserved only for the rich. PLM proved them wrong and until this day, the famous Intramuros refuge for Manila's poor has maintained a reputation of academic dominance and excellence in higher education. With almost 100% of its graduates passing the licensure examinations, the college plays a major role in transforming old Manila into a network of micro-communities, planning satellite activity centers in pocket parks and idle open spaces, as well as establishing a blue print of maximum tolerable dwelling patterns in congested barangays in the City.",
+      },
+      {
+        text: "Other placers would soon follow the likes of Architects Ricardo A. Reyes and Patrick N. Rodriguez. In the June 2005 Board Exam for Architecture, PLM was ranked 4th out of 60 architecture schools nationwide with Marc Rhojel C. Cortez placing 5th in the top ten column of successful examinees. January 2007 produced another board topnotcher in Rafael Banaag III (9th place) with 81% passing rate against a national rate of 36%.",
+      },
+
+      {
+        text: "As of October 2008, a total of 405 student spread into seventeen (17) batches, or an average of 23.8 students per year, graduated from the program. The first group of 10 graduates completed the program in 1992. Two years after (PRC requires that a graduate prior to taking a board exam has to undergo a 2-year diversified industry exposure), PLM produced its first Architect led by Architect Antonio G. Sevilla Jr. who maintains a very successful Architect's Consultancy and Construction Services Office.",
+      },
+      {
+        text: "Based on the records of the Professional Regulations Commision (PRC), PLM has sustained a record of consistently good performance in as far as the percentage of candidates passing the board exam. Back in 1998, Mr. Marlou B. Campaner, a 1996 graduate whose mother works as a casual employee at the Manila City Hall and whose father labors the road of the city with his tricycle topped that year's June Examination. Placing 1st among the more than 1000 examinees was a solid proof that PLM can easily dominate any arena given an equal chance. Architect Campaner is now among the leading lights in the City Planning and Development Office of the City of Manila.",
+      },
     ],
   },
 ];
 
+// Caup Business Card
 export const CaupBusinessCardData = {
   collegeName: " COLLEGE OF ARCHITECTURE AND URBAN PLANNING",
   deanName: "Arch. Jared Aaron R. Cruz",
@@ -210,7 +231,8 @@ export const CaupBusinessCardData = {
   },
 };
 
-//PLMBS
+// PLMBS
+// PLMBS Timeline
 export const PLMBStimelineItems = [
   {
     title: "JUNE 2001",
@@ -234,6 +256,7 @@ export const PLMBStimelineItems = [
   },
 ];
 
+// PLMBS Accordion
 export const PLMBSAccordionItems = [
   {
     value: "Undergraduate Program",
@@ -279,8 +302,9 @@ export const PLMBSAccordionItems = [
   },
 ];
 
+// PLMBS Business Card
 export const PLMBSBusinessCardData = {
-  collegeName: " PLM Business School",
+  collegeName: " PLM BUSINESS SCHOOL",
   deanName: "Bernard R. Letrero",
   deanTitle: "Dean, PLM Business School",
   contactInfo: {
@@ -292,6 +316,703 @@ export const PLMBSBusinessCardData = {
     email: {
       title: "Email",
       text: "plmbsgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CED
+// CED Accordion
+export const CEDAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Bachelor of Elementary Education (Generalist) (BEEd)",
+      },
+      {
+        text: "Bachelor of Early Childhood Education (BECEd)",
+      },
+      {
+        text: "Bachelor of Special Needs Education (Generalist) (BSNEd)",
+      },
+      {
+        text: "Bachelor of Secondary Education major in English (BSEd-Eng)",
+      },
+      {
+        text: "Bachelor of Secondary Education major in Filipino (BSEd-Fil)",
+      },
+      {
+        text: "Bachelor of Secondary Education major Mathematics (BSEd-Math)",
+      },
+      {
+        text: "Bachelor of Secondary Education major in Sciences (BSEd-Sciences)",
+      },
+      {
+        text: "Bachelor of Secondary Education major in Social Studies (BSEd-SS)",
+      },
+      {
+        text: "Bachelor of Physical Education (BPE)",
+      },
+    ],
+  },
+  {
+    value: "Post-Graduate Program",
+    title: "Post-Graduate Program",
+    hasBullets: false,
+    content: "",
+  },
+];
+
+// CED Business Card
+export const CEDBusinessCardData = {
+  collegeName: "COLLEGE OF EDUCATION",
+  deanName: "Dr. Jimmy M. Romero",
+  deanTitle: "Dean, College of Education",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "cedgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// COE
+// COE Accordion
+export const COEAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Bachelor of Science in Chemical Engineering",
+      },
+      {
+        text: "Bachelor of Science in Civil Engineering",
+      },
+      {
+        text: "Bachelor of Science in Computer Engineering",
+      },
+      {
+        text: "Bachelor of Science in Computer Science",
+      },
+      {
+        text: "Bachelor of Science in Electrical Engineering",
+      },
+      {
+        text: "Bachelor of Science in Electronics Engineering",
+      },
+      {
+        text: "Bachelor of Science in Information Technology",
+      },
+      {
+        text: "Bachelor of Science in Manufacturing Engineering",
+      },
+      {
+        text: "Bachelor of Science in Mechanical Engineering",
+      },
+    ],
+  },
+  {
+    value: "Graduate Program",
+    title: "Graduate Program",
+    hasBullets: false,
+    content: "",
+  },
+];
+
+// COE Timeline
+export const COEtimelineItems = [
+  {
+    title: "ESTABLISHMENT OF THE COLLEGE (JULY 1, 1969)",
+    content:
+      "With the conviction of providing quality education and offering technical manual skills in the field of technology, the College of Engineering of the Pamantasan ng Lungsod ng Maynila was established on July 1, 1969 - six years after the late Mayor Antonio F. Villegas founded the university.",
+  },
+  {
+    title: "ORGANIZATIONAL STRUCTURE AND DIVISIONS",
+    content:
+      "Originally under the College of Arts and Letters, the main trust of the college was to provide technical, industrial, vocational education to PLM students alongside the humanistic courses to prepare them for promoting out technology under two divisions:",
+    subcontent: [
+      "Division of Engineering and Technology, encompassing departments like Civil, Mechanical, Electrical, Sanitary, Chemical, Naval, and Industrial Engineering.",
+      "Division of Technical and Vocational Education, covering departments such as Electronics, Wood Working, Metal Works, Automotive Works, Ceramics, Graphics Arts, and Teacher Education in Arts and Trades.",
+    ],
+    hasBullets: true,
+  },
+  {
+    title: "ACADEMIC PROGRAM EVOLUTION",
+    content:
+      "Obtaining a degree in this college then, required the student to finish a six-year ladderized program which was later reduced to a five year scheme during the term of former PLM President Consuelo Blanco who felt the imperative need of the engineering graduates to constitute the country's labor pool.",
+  },
+  {
+    title: "LEGACY AND COMMITMENT",
+    content:
+      "The College of Engineering stands committed to upholding the legacy conceived by Mayor Villegas and the late Mayor Arsenio H. Lacson by providing its present batch of Engineering students with quality education which is responsive to the needs of the time.",
+  },
+];
+
+// COE Business Card
+export const COEBusinessCardData = {
+  collegeName: "COLLEGE OF ENGINEERING",
+  deanName: "Engr. Juan C. Tallara, Jr.",
+  deanTitle: "Dean, College of Engineering",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "cet_group@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CHASS
+// CHASS Accordion
+export const CHASSAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Bachelor of Arts in Communication (BAC)",
+      },
+      {
+        text: "Bachelor of Arts in Public Relations (BAPR)",
+      },
+      {
+        text: "Bachelor of Science in Social Work (BSSW)",
+      },
+      {
+        text: "Bachelor of Music in Music Performance (BMMP)",
+      },
+      {
+        text: "Master of Arts in Communication Management (MACM)",
+      },
+    ],
+  },
+  {
+    value: "Graduate Program",
+    title: "Graduate Program",
+    hasBullets: false,
+    content: "",
+  },
+];
+
+// CHASS Business Card
+export const CHASSBusinessCardData = {
+  collegeName: "COLLEGE OF HUMANITIES, ARTS, AND SOCIAL SCIENCES",
+  deanName: "Danilo S. Cortez, Jr.",
+  deanTitle: "Dean, College of Humanities, Arts, and Social Sciences",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CN
+// CN Timeline
+export const CNtimelineItems = [
+  {
+    title: "ESTABLISHMENT OF THE COLLEGE (1967-1969)",
+    content:
+      "In 1967, a study entitled Manila - Its Needs and Resources indicated that despite the physical proximity to the people, the 41 health centers under the supervision of Manila Health Department had not gained the people's confidence. To resolve this, a community-oriented College of Nursing was established in the summer of 1969. Ms. Valentina Patacsil was appointed as college secretary by former PLM President Dr. Benito F. Reyes. Under Ms. Patacsil's guidance, 29 students were chosen to be the first nursing scholars of PLM from a long list of prospective nursing students who were enrolled in the two-year Associate in Arts course.",
+  },
+  {
+    title: "LEADERSHIP AND EARLY ACHIEVEMENTS (1969-1972)",
+    content:
+      "On July 1, 1969, Mrs. Mary Vita B. Jackson was appointed as its dean. Four years later, 27 of these scholars passed the board examination given in April 1972, including Rosalinda Taguiam Palad who was the 9th placer. Since then, more PLM graduates have distinguished themselves not only as placers in the nursing board examinations, but more importantly as effective nurse practitioners in the Philippines and abroad. To date, it has produced 188 board topnotchers and board placers.",
+  },
+  {
+    title: "GRADUATE ACHIEVEMENTS AND CLINICAL PRACTICE",
+    content:
+      "Nursing students undergo clinical practice at the Ospital ng Maynila Medical Center, Philippine General Hospital, and other tertiary level health agencies in Metro Manila. Graduating students are assigned in rural areas and provinces as well.",
+  },
+  {
+    title: "COMMUNITY IMMERSION PROGRAM (CIP)",
+    content:
+      "The Community Immersion Program (CIP) of the College of Nursing provides opportunities for the students to live and work with the less privileged families of these communities. Through these experiences, students are exposed to the realities of life and motivates them to voluntarily work in the aim of helping the people to be more health conscious, socially aware, and self-reliant. At the end, they are given the chance to really feel the pulse of community work.",
+  },
+];
+
+// CN Business Card
+export const CNBusinessCardData = {
+  collegeName: "COLLEGE OF NURSING",
+  deanName: "Dr. David Paul R. Ramos",
+  deanTitle: "Dean, College of Nursing",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CPT
+// CPT Accordion
+export const CPTAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Bachelor of Science in Physical Therapy",
+      },
+    ],
+  },
+  {
+    value: "Graduate Program",
+    title: "Graduate Program",
+    hasBullets: true,
+    content: [{ text: "Master of Science in Physical Therapy" }],
+  },
+];
+
+// CPT Timeline
+export const CPTtimelineItems = [
+  {
+    title: "ESTABLISHMENT OF THE COLLEGE (1993)",
+    content:
+      "Established in 1993, the College of Physical Therapy (CPT) is among the country's best learning institutions for Physical Therapy based on its licensure exam performance.",
+  },
+];
+
+// CPT Business Card
+export const CPTBusinessCardData = {
+  collegeName: "COLLEGE OF PHYSICAL THERAPY",
+  deanName: "Alan P. Magpantay",
+  deanTitle: "Dean, College of Physical Therapy",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CS
+// CS Accordion
+export const CSAccordionItems = [
+  {
+    value: "Undergraduate Program",
+    title: "Undergraduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Bachelor of Science in Biology",
+        content: [
+          {
+            text: "Major in Cell and Molecular Biology",
+          },
+          { text: "Major in Ecology" },
+          { text: "Major in Medical Biology" },
+        ],
+        hasBullets: true,
+      },
+      {
+        text: "Bachelor of Science in Chemistry",
+      },
+      {
+        text: "Bachelor of Science in Mathematics",
+      },
+      {
+        text: "Bachelor of Science in Psychology",
+      },
+    ],
+  },
+  {
+    value: "Graduate Program",
+    title: "Graduate Program",
+    hasBullets: true,
+    content: [
+      {
+        text: "Master of Arts in Psychology",
+        content: [
+          {
+            text: "Major in Clinical Psychology",
+          },
+          { text: "Major in Industrial Psychology" },
+        ],
+        hasBullets: true,
+      },
+    ],
+  },
+];
+
+// CS Business Card
+export const CSBusinessCardData = {
+  collegeName: "COLLEGE OF SCIENCE",
+  deanName: "Aileen I. Atienza, Ph.D.",
+  deanTitle: "Dean, College of Science",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CL
+// CL Accordion
+export const CLAccordionItems = [
+  {
+    value: "Program",
+    title: "Program",
+    content: [{ text: "Juris Doctor" }],
+    hasBullets: true,
+  },
+];
+
+// CL Business Card
+export const CLBusinessCardData = {
+  collegeName: "COLLEGE OF LAW",
+  deanName: "Atty. Magelio S. Arboladura",
+  deanTitle: "Dean, College of Law",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// GSL
+// GSL Accordion
+export const GSLAccordionItems = [
+  {
+    value: "Program",
+    title: "Program",
+    content: [{ text: "Master of Laws" }],
+    hasBullets: true,
+  },
+];
+
+// GSL Business Card
+export const GSLBusinessCardData = {
+  collegeName: "GRADUATE SCHOOL OF LAW",
+  deanName: "Justice Hector L. Hofileña (Ret.)",
+  deanTitle: "Dean, Graduate School of Law",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// CM
+// CM Accordion
+export const CMAccordionItems = [
+  {
+    value: "Academic Preparations",
+    title: "Academic Preparations",
+    hasBullets: true,
+    orderedList: true,
+    content: [
+      {
+        text: "He/She must be a holder of Bachelor’s Degree conferred upon by a duly recognized education institution",
+      },
+      {
+        text: "He/She must have earned credits in the following areas, and must have satisfied the required minimum numbers of units in the subject specifically enumerated herein:",
+        hasBullets: true,
+        content: [
+          {
+            text: "Sciences: 35 units",
+          },
+          { text: "Chemistry: 10 units" },
+          { text: "Inorganic Chemistry: 5 units" },
+          { text: "Organic Chemistry/Biochemistry: 5 units" },
+          {
+            text: "Natural Sciences: 15 units (5 units should at least be Comparative Vertebrate Anatomy or Human Anatomy and Physiology",
+          },
+          { text: "Physics: 5 units" },
+          { text: "Microbiology or Elem. Genetics: 5 units" },
+          { text: "Mathematics: 6 units" },
+          { text: "Algebra: 3 units" },
+          { text: "Elementary Statistics/Biostatistics: 3 units" },
+          { text: "Language and Communication: 9 units" },
+          { text: "Social Sciences: 9 units" },
+          {
+            text: "(Political Science, Psychology, Sociology, History, Anthropology)Humanities: 3 units",
+          },
+          { text: "(Art Appreciation, Logic, Philosophy)" },
+        ],
+      },
+    ],
+  },
+  {
+    value: "How to apply: (NEW! Ref.: College of Medicine)",
+    title: "How to apply: (NEW! Ref.: College of Medicine)",
+    hasBullets: true,
+    orderedList: true,
+    content: [
+      {
+        text: "Submit original and duplicate copies of the following for initial screening:",
+        hasBullets: true,
+        content: [
+          { text: "Birth Certificate (NSO copy)" },
+          { text: "Official Transcript of Record/Special Order No." },
+        ],
+      },
+      {
+        text: "Letters of certification of Good Moral Character",
+        hasBullets: true,
+        content: [
+          {
+            text: "Certificate of General Weighted Average from the Registrar/College",
+          },
+          { text: "Diploma/Certificate of Graduation" },
+          { text: "NMAT Result" },
+          {
+            text: "Manila Voter's ID/Voter's Certification issued by the COMELEC (for applicants who are residents of Manila only)",
+          },
+          {
+            text: "Student's residence certificate (cedula)",
+          },
+          { text: "Baranggay Clearance in the place of residence" },
+          { text: "NBI Clearance" },
+          { text: "Any other document to prove Manila residency" },
+          {
+            text: "Parent's latest Income Tax Return (ITR) and/or Affidavit of Support and ITR of benefactor",
+          },
+          { text: "Enrollment form for supplemental subjects required" },
+          { text: "Self-addressed stamped envelope" },
+          { text: "Long brown envelope and long file folder" },
+        ],
+      },
+      {
+        text: "If qualified to take MCAT, get certification from the college and pay MCAT fee at the Cashier's Office.",
+      },
+      {
+        text: "Get application form and MCAT permit at the College of Medicine office.",
+      },
+      {
+        text: "Take the MCAT exam as scheduled and present yourself for interview. Interview schedule will be given after the MCAT exam.",
+        hasBullets: true,
+        content: [
+          {
+            text: "Note: Application will not be processed unless documents are completed.",
+          },
+          {
+            text: "The Dean reserves the right to invalidate the result of the MCAT if the applicant has not satisfactorily met the admission criteria and has not complied with all the above requirements, in which case the applicants shall be denied admission to the College of Medicine.",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+// CM Business Card
+export const CMBusinessCardData = {
+  collegeName: "COLLEGE OF MEDICINE",
+  deanName: "Dr. Rose Anna Banal",
+  deanTitle: "Dean, College of Medicine",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// SG
+// SG Accordion
+export const SGAccordionItems = [
+  {
+    value: "Programs",
+    title: "Programs",
+    content: [
+      { text: "Professionalization Program for Public Procurement" },
+      {
+        text: "Master in Government Management",
+      },
+      {
+        text: "Doctor of Government Management",
+      },
+    ],
+    hasBullets: true,
+  },
+];
+
+// SG Business Card
+export const SGBusinessCardData = {
+  collegeName: "SCHOOL OF GOVERNMENT",
+  deanName: "Noemi C. Gocuyo",
+  deanTitle: "Dean, School of Government",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
+    },
+    phone: {
+      title: "Contact Numbers",
+      text: "(+63) 000-000-0000",
+    },
+  },
+};
+
+// PH
+// PH Accordion
+export const PHAccordionItems = [
+  {
+    value: "Programs",
+    title: "Programs",
+    content: [
+      { text: "Certificate in Public Health" },
+      {
+        text: "Master of Public Health",
+      },
+    ],
+    hasBullets: true,
+  },
+  {
+    value: "Special Program",
+    title: "Special Program",
+    content: [{ text: "Public Health Learning Series" }],
+    hasBullets: true,
+  },
+  {
+    value: "How to apply: (NEW! Ref.: College of Medicine)",
+    title: "How to apply: (NEW! Ref.: College of Medicine)",
+    hasBullets: true,
+    orderedList: true,
+    content: [
+      {
+        text: "Applicant should be a graduate of an accredited school of medicine or other health sciences like nursing, physical therapy, dentistry, veterinary medicine, etc. or at least a baccalaureate degree in science, or other courses upon the evaluation and approval of the Admissions Committee.",
+      },
+      {
+        text: "At least one year experience in a public health institution or organization or any related field (which can be waived upon the recommendation of the Admissions Committee depending on its evaluation of the applicant’s credentials)",
+      },
+      {
+        text: "Accomplished Application Form",
+      },
+      {
+        text: "Transcript of Records (Certified True Copy)",
+      },
+      {
+        text: "Certificate of Graduation from any recognized institution of higher learning (Certified True Copy)",
+      },
+      {
+        text: "NSO/PSA Birth Certificate",
+      },
+      {
+        text: "3 pc. 2”x2” ID photos with white background",
+      },
+      {
+        hasBullets: true,
+        text: "Payment of application fee",
+        content: [{ text: "Download the application form." }],
+      },
+    ],
+  },
+];
+
+// PH Business Card
+export const PHBusinessCardData = {
+  collegeName: "SCHOOL OF PUBLIC HEALTH",
+  deanName: "Phylis C. Rio, MD, MHA",
+  deanTitle: "Dean, School of Public Health",
+  contactInfo: {
+    text: "We'd love to hear from you! Please feel free to contact us with any questions.",
+    location: {
+      title: "Office Location",
+      text: "(Location of the Building)",
+    },
+    email: {
+      title: "Email",
+      text: "chassgroup@plm.edu.ph",
     },
     phone: {
       title: "Contact Numbers",

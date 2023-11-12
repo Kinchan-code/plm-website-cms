@@ -1,11 +1,21 @@
 import React from "react";
-import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import { Space, Text, Box, Divider, Grid } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import CMSAccordion from "../../../Components/Accordion";
+import CMSCard from "../../../Components/Card";
+import CMSTimeline from "../../../Components/Timeline";
+import BusinessCard from "../../../Components/BusinessCard";
+import {
+  CPTAccordionItems,
+  CPTtimelineItems,
+  CPTBusinessCardData,
+} from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
 function PT({ selectedSublink }) {
   const navigate = useNavigate();
+  const title = selectedSublink.toUpperCase();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
       <div
@@ -16,7 +26,7 @@ function PT({ selectedSublink }) {
         }}
       >
         <Text size="1.5rem" fw="bold" p="xs">
-          {selectedSublink}
+          College of {selectedSublink}
         </Text>
       </div>
       <Divider c="#eeee" size="md" />
@@ -24,6 +34,75 @@ function PT({ selectedSublink }) {
         src={pic}
         content="The college is proud of the quality of its faculty members who possess extensive clinical experience and educational background in their specialization. They bring insights from theory, practice, and research to help shape the careers of all our students."
       />
+      <div style={{ padding: "1rem" }}>
+        <CMSAccordion items={CPTAccordionItems} />
+      </div>
+      <Space h="lg" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
+        }}
+      >
+        <Text fz="lg" fw="bold" p="lg">
+          MORE ABOUT COLLEGE OF {title}
+        </Text>
+      </div>
+      <Grid
+        columns={40}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Grid.Col span={19}>
+          <CMSCard
+            title="VISION"
+            bgColor="color.2"
+            height="70vh"
+            content={
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <Text ta="start">
+                  To be a pioneering institution in physical therapy education,
+                  setting global standards for excellence, innovation, and
+                  compassionate care.
+                </Text>
+              </div>
+            }
+          />
+        </Grid.Col>
+        <Grid.Col span={19}>
+          <CMSCard
+            title="MISSION"
+            bgColor="color.2"
+            height="70vh"
+            content={
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <Text>
+                  To educate and empower future physical therapists, enhancing
+                  well-being and mobility while advancing the field through
+                  research and community service.
+                </Text>
+              </div>
+            }
+          />
+        </Grid.Col>
+      </Grid>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "left",
+          alignItems: "center",
+          padding: "2rem",
+        }}
+      >
+        <CMSTimeline title="HISTORY" items={CPTtimelineItems} />
+      </div>
+      <div>
+        <BusinessCard {...CPTBusinessCardData} />
+      </div>
     </Box>
   );
 }

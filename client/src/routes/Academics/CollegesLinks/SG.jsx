@@ -1,6 +1,9 @@
 import React from "react";
 import { Image, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
+import CMSAccordion from "../../../Components/Accordion";
+import BusinessCard from "../../../Components/BusinessCard";
+import { SGAccordionItems, SGBusinessCardData } from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +27,12 @@ function SG({ selectedSublink }) {
         src={pic}
         content="The School of Government offers undergraduate and post-graduate programs that aim to make students able professionals and managers in the public sector."
       />
+      <div style={{ padding: "1rem" }}>
+        <CMSAccordion items={SGAccordionItems} />
+      </div>
+      <div>
+        <BusinessCard {...SGBusinessCardData} />
+      </div>
     </Box>
   );
 }
