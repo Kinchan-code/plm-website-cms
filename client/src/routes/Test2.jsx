@@ -1,35 +1,26 @@
-import { useState } from "react";
-import {
-  AppShell,
-  Navbar,
-  Header,
-  Footer,
-  Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from "@mantine/core";
-import Navigation from "../Components/Navigation";
-import { links } from "./Academics/links";
+import React from "react";
+import { Accordion, Container, Text } from "@mantine/core";
+import Test from "./Test";
 
 function Test2() {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
   return (
-    <AppShell
-      styles={{
-        main: {
-          background:
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[8]
-              : theme.colors.gray[0],
-        },
-      }}
-      navbar={<Navigation title="ACADEMICS" links={links} />}
-    >
-      <Text>Resize app to see responsive navbar in action</Text>
-    </AppShell>
+    <Container>
+      <Accordion variant="default">
+        <Accordion.Item value="Board Exam">
+          <Accordion.Control>
+            <Text fw="bold">Board Examination Performance</Text>
+          </Accordion.Control>
+          <Accordion.Panel style={{ display: "flex", flexDirection: "column" }}>
+            <Text p="md">
+              The college has repeatedly garnered a 100% or above the national
+              passing rate in the Physical Therapist board exam, producing two
+              to multiple topnotchers per exam.
+            </Text>
+            <Test />
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
+    </Container>
   );
 }
-
 export default Test2;

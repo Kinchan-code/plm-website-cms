@@ -139,6 +139,149 @@ export const links = [
   },
 ];
 
+// Table
+// For column headers
+// PT Table
+export const columns = [
+  { key: "date", header: "DATE/YEAR" },
+  { key: "rate", header: "NATIONAL PASSING RATE" },
+  { key: "plm", header: "PLM'S PASSING RATE" },
+  { key: "rank", header: "SCHOOL RANKING" },
+  {
+    key: "board",
+    header: "BOARD TOPNOTCHERS",
+    useBullets: true,
+    textAlign: "left",
+  },
+];
+
+// for table contents
+export const elements = [
+  {
+    date: "August 2019",
+    rate: "64.57%",
+    plm: "100%",
+    rank: "Top 1 performing school",
+    board: [
+      "4th Place: Rose Angeli M. Bartolome",
+      "5th Place: Adrianne Tan-Gatue",
+      "7th Place: Louraine Dynne Z. Dela Cruz",
+    ],
+  },
+  {
+    date: "August 2018",
+    rate: "67.51%",
+    plm: "96.15%",
+    rank: "Top 1 performing school",
+    board: [
+      "2nd Place: Rose Ann B. Solde",
+      "3rd Place: Exequiel Amiel V. Ramirez",
+      "4th Place: Shaina Marie P. Marbella",
+      "6th Place: Immah Marie R. Pineda",
+    ],
+  },
+  {
+    date: "August 2017",
+    rate: "62.80%",
+    plm: "88.61%",
+    rank: "Top 2 perfoming school",
+    board: [
+      "2nd Place: Venice Camille B. Patricio",
+      "4th Place: Renier king C. Llantada",
+      "6th Place: Riana Aime P. Conde",
+      "7th Place: Lissie Marie R. De Luna",
+      "8th Place: Jiechelle Renz M. Salvador",
+      "9th Place: Ma. Jocelda F. Abella",
+    ],
+  },
+  {
+    date: "August 2016",
+    rate: "68.06%",
+    plm: "100%",
+    rank: "Top 1 performing school",
+    board: [
+      "6th Place: Elysha Jane D. Rosales",
+      "8th Place: Krystle V. Hermogenes",
+    ],
+  },
+  {
+    date: "August 2015",
+    rate: "62.94%",
+    plm: "94.23%",
+    rank: "Top 1 performing school",
+    board: [
+      "3rd Place: Kristine Joy R. De Castro",
+      "4th Place: Arianne Kim L. Cleto",
+    ],
+  },
+];
+
+// CS Table Columns Headers
+export const CScolumns = [
+  { key: "alumni", header: "ALUMNI" },
+  {
+    key: "achievements",
+    header: "ACHIEVEMENTS",
+    useBullets: true,
+    textAlign: "left",
+  },
+];
+
+// CS Table contents
+export const CSelements = [
+  {
+    alumni: "Alex A. Tardaguila, RCh (BS Chem, 1998; CS faculty 2001 -2016)",
+    achievements: [
+      "Recipient of University of Liverpool's In Memoriam tribute called Alex Tardaguila Memorial Lectureship Award to honor his contributions to Science",
+    ],
+  },
+  {
+    alumni: "Ana Nualla, RCh (BS Chem, 2012)",
+    achievements: [
+      "Champion, World Dance Sport Federation Southeast Asia Open Standard 2019; 30th Southeast Asian Games Dance Athlete – Standard Discipline Event",
+    ],
+  },
+  {
+    alumni: "Acd. Rhodora V. Azanza (BS Botany, 1972)",
+    achievements: [
+      "National Academy of Science and Technology (NAST) President, 2019",
+      "Vice Chairperson of UNESCO-Intergovernmental Oceanographic Commission (IOC) Panel on Harmful Algal Blooms (IPHAB) and Leader of IOC’s Harmful Algal Blooms in Southeast Asia (HABSEA) Portal and e-learning",
+      "2015 Pantas Award for Most Outstanding Scientist by the Philippine Council for Agriculture, Aquatic and Natural Resources Research and Development (PCAARRD) of the Department of Science and Technology (DOST)",
+      "2014 DOST Outstanding Research and Development Award for Applied Research/Julian A. Banzon Medal",
+      "Known as The Red Tide Lady",
+      "First female dean of the University of the Philippines (UP) Diliman, College of Science (2000-2006)",
+    ],
+  },
+  {
+    alumni:
+      "John Rafael N. Granada, RCh (BS Chem, 2011; CS faculty) and Sandra Mei Branzuela, RCh (BS Chem, 2018)",
+    achievements: [
+      "CHAMPION – National and Regional",
+      "DOST Research and Inventions Contests and Exhibits 2018 – Outstanding Student Creative Research (SIBOL) Category",
+    ],
+  },
+  {
+    alumni:
+      "Matthew Brinez, Xaileen Dimaano, Jean Marke Flores (BS Biology, 2018)",
+    achievements: [
+      "2nd Runner-up, National Intercollegiate Genetics Quiz Contest 2017 (UPLB)",
+    ],
+  },
+  {
+    alumni:
+      "Rea Alexis Dolores, (BS Psych, 2018), Julian Caspe, (BS Psych, 2018), and Ma. Katrina Quijano (BS Psych, 4th year)",
+    achievements: [
+      "2nd Place, 2018 National Inter-School Psychology Quiz Competition (ISPQC)",
+    ],
+  },
+  {
+    alumni: "Pierce Earl Andrei Hesarza (BS Psych, 2nd year)",
+    achievements: [
+      "2nd Runner-up, 2018 Pambansang Samahan ng Sikolohiyang Pilipino (SPP) – Spoken Word Poetry",
+    ],
+  },
+];
+
 //CAUP
 export const timelineItems = [
   {
@@ -964,8 +1107,8 @@ export const PHAccordionItems = [
     hasBullets: true,
   },
   {
-    value: "How to apply: (NEW! Ref.: College of Medicine)",
-    title: "How to apply: (NEW! Ref.: College of Medicine)",
+    value: "How to apply: (NEW! Ref. : College of Medicine)",
+    title: "How to apply: (NEW! Ref. : College of Medicine)",
     hasBullets: true,
     orderedList: true,
     content: [

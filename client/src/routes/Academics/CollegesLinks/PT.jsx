@@ -5,10 +5,14 @@ import CMSAccordion from "../../../Components/Accordion";
 import CMSCard from "../../../Components/Card";
 import CMSTimeline from "../../../Components/Timeline";
 import BusinessCard from "../../../Components/BusinessCard";
+import CustomTable from "../../../Components/customTable";
+import ExtraAccordion from "../../../Components/extraAccordion";
 import {
   CPTAccordionItems,
   CPTtimelineItems,
   CPTBusinessCardData,
+  columns,
+  elements,
 } from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
@@ -99,6 +103,14 @@ function PT({ selectedSublink }) {
         }}
       >
         <CMSTimeline title="HISTORY" items={CPTtimelineItems} />
+      </div>
+      <div>
+        <ExtraAccordion
+          title="Board Examination Performance"
+          content="The college has repeatedly garnered a 100% or above the national passing rate in the Physical Therapist board exam, producing two to multiple topnotchers per exam."
+        >
+          <CustomTable columns={columns} data={elements} />
+        </ExtraAccordion>
       </div>
       <div>
         <BusinessCard {...CPTBusinessCardData} />

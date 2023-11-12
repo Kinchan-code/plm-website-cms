@@ -6,18 +6,26 @@ function CMSAccordion({ items }) {
     <List.Item key={key}>
       {bullet.title && <Text fw="bold">{bullet.title}</Text>}
       {bullet.text && <Text ta="justify">{bullet.text}</Text>}
-      {bullet.hasBullets && renderBullets(bullet.content, bullet.orderedList)}
+      {bullet.hasBullets ? (
+        renderBullets(bullet.content, bullet.orderedList)
+      ) : (
+        <Text ta="justify">{bullet.content && bullet.content[0]?.text}</Text>
+      )}
     </List.Item>
   );
 
   const renderBullets = (bullets, orderedList) => (
     <List p="md" type={orderedList ? "ordered" : "unordered"}>
-      {bullets.map((bullet, index) => renderBullet(bullet, index))}
+      {bullets.map((bullet, index) => (
+        <React.Fragment key={index}>
+          {renderBullet(bullet, index)}
+        </React.Fragment>
+      ))}
     </List>
   );
 
   return (
-    <Accordion variant="separated" radius="md">
+    <Accordion radius="md">
       {items.map((item) => (
         <Accordion.Item key={item.value} value={item.value}>
           <Accordion.Control>

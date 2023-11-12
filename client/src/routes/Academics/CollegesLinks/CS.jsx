@@ -3,7 +3,14 @@ import { Space, Text, Box, Divider, Button } from "@mantine/core";
 import Introduction from "../../../Components/Introduction";
 import CMSAccordion from "../../../Components/Accordion";
 import BusinessCard from "../../../Components/BusinessCard";
-import { CSAccordionItems, CSBusinessCardData } from "../links";
+import CustomTable from "../../../Components/customTable";
+import ExtraAccordion from "../../../Components/extraAccordion";
+import {
+  CSAccordionItems,
+  CSBusinessCardData,
+  CScolumns,
+  CSelements,
+} from "../links";
 import pic from "../Images/crs.png";
 import { useNavigate } from "react-router-dom";
 
@@ -33,8 +40,17 @@ and MS in Mathematics Education."
 proposed separation in 2002. By 2015, it offered the programs BS Psychology, MA Psychology, 
 and MS in Mathematics Education."
       />
-      <div style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem", marginBottom: "-2rem" }}>
         <CMSAccordion items={CSAccordionItems} />
+      </div>
+      <div>
+        <ExtraAccordion
+          title="Outstanding Alumni"
+          content="Graduates from the College of Science have made a name for themselves in their respective fields.
+          Here are some of them:"
+        >
+          <CustomTable columns={CScolumns} data={CSelements} />
+        </ExtraAccordion>
       </div>
       <div>
         <BusinessCard {...CSBusinessCardData} />
