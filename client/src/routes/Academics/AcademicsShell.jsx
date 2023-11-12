@@ -6,6 +6,7 @@ import {
   Grid,
   ScrollArea,
   Container,
+  AppShell,
 } from "@mantine/core";
 import Footer from "../../Components/Footer";
 import Navigation from "../../Components/Navigation";
@@ -77,7 +78,16 @@ function AcademicsShell() {
           </Text>
         </div>
       </div>
-      <div style={{ backgroundColor: "#fff", width: "100%", zIndex: "2" }}>
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          flexDirection: "column",
+          backgroundColor: "#fff",
+          width: "100%",
+          zIndex: "1",
+        }}
+      >
         <div
           ref={academicsTextRef}
           style={{
