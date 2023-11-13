@@ -2,11 +2,11 @@ export const menuItems = [
   {
     text: "ABOUT",
     items: [
-      { text: "University Profile", link: "/about/university-profile" },
-      { text: "Administration", link: "/about/administration" },
-      { text: "Pride Hall", link: "/about/pride-hall" },
-      { text: "Outcome-Based Education (OBE)", link: "/about/obe" },
-      { text: "Contact", link: "/about/contact" },
+      { text: "University Profile", link: "/about" },
+      { text: "Administration", link: "/about" },
+      { text: "Pride Hall", link: "/about" },
+      { text: "Outcome-Based Education (OBE)", link: "/about" },
+      { text: "Contact", link: "/about" },
     ],
   },
   {

@@ -43,6 +43,10 @@ function Menus({ color, fsize, fweight, onMenuItemClick }) {
     navigate("/academics/" + subLink); // Navigate to the AcademicShell route with the specific sublink
   };
 
+  const navigateToAbout = (subLink) => {
+    navigate("/about/" + subLink); // Navigate to the AboutShell route with the specific sublink
+  };
+
   return (
     <div>
       {menuItems.map((menuItem, index) => (
@@ -70,6 +74,32 @@ function Menus({ color, fsize, fweight, onMenuItemClick }) {
               </Text>
             </Button>
           </Menu.Target>
+          <Menu.Dropdown>
+            {menuItem.items &&
+              menuItem.items.map((item, itemIndex) => (
+                <Menu.Item
+                  key={itemIndex}
+                  onClick={() => {
+                    // navigate(item.link);
+                    // toggleMenu(index);
+                    if (menuItem.text === "University Profile") {
+                      navigateToAbout("university-profile"); // Handle the "UnivProfile" click
+                    } else {
+                      navigate(item.link);
+                    }
+                    toggleMenu(index);
+                  }}
+                >
+                  <Text
+                    className={hoveredItem === itemIndex ? "item" : "item-out"}
+                    onMouseEnter={() => handleMouseEnter(itemIndex)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {item.text}
+                  </Text>
+                </Menu.Item>
+              ))}
+          </Menu.Dropdown>
           <Menu.Dropdown>
             {menuItem.items &&
               menuItem.items.map((item, itemIndex) => (

@@ -1,28 +1,34 @@
 import React from "react";
-import { Button, Text } from "@mantine/core";
+import { Image, Text, Box, Divider } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import { texts } from "./links";
+import pic from "./Images/UnivProfile.png";
 
-function UniversityProfile() {
+function UniversityProfile({ selectedLink }) {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>University Profile</Text>
-      <Button
-        onClick={() => {
-          navigate("/");
+    <Box style={{ fontFamily: "Open Sans, sans serif" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
         }}
       >
-        Back
-      </Button>
-    </div>
+        <Text size="1.5rem" fw="bold" p="xs">
+          {selectedLink}
+        </Text>
+      </div>
+      <Divider c="#eeee" size="md" />
+      <div>
+        <Image maw={1000} src={pic} p="md" />
+        {texts.map((text, index) => (
+          <Text key={index} p="xs" ta="justify">
+            {text.content}
+          </Text>
+        ))}
+      </div>
+    </Box>
   );
 }
 

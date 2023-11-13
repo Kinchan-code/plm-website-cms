@@ -2,6 +2,7 @@
 import { lazy } from "react";
 
 const Home = lazy(() => import("./routes/Home"));
+const AboutShell = lazy(() => import("./routes/About/AboutShell"));
 const Administration = lazy(() => import("./routes/About/Administration"));
 const Contact = lazy(() => import("./routes/About/Contact"));
 const OBE = lazy(() => import("./routes/About/OBE"));
@@ -50,6 +51,7 @@ const Test2 = lazy(() => import("./routes/Test2"));
 
 export const AllLinks = [
   { component: Home, path: "/" },
+  { component: AboutShell, path: "/about" },
   { component: Administration, path: "/about/administration" },
   { component: Contact, path: "/about/contact" },
   { component: OBE, path: "/about/obe" },
