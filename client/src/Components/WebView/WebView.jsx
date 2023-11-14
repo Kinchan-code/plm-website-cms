@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   AppShell,
   Button,
@@ -12,6 +12,7 @@ import {
   ActionIcon,
   Transition,
   rem,
+  createStyles,
 } from "@mantine/core";
 import {
   IconSquareRoundedArrowUpFilled,
@@ -25,28 +26,86 @@ import Announcements from "../AnnouncementsLinks";
 import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
 
+const useStyles = createStyles(() => ({
+  // Header is divided by two sides. Top and Bottom to put the links accordingly
+  // CSS for Top side Header when Transparent
+  HeaderTransparentTop: {
+    background: "rgba(0, 0, 0, 0.5)",
+    "& .menu-text:hover": {
+      color: "#d5a106",
+      transition: "0.3s ease-in-out",
+    },
+  },
+  // CSS for Top side Header when Solid
+  HeaderSolidTop: {
+    backgroundColor: "#fff",
+    "& .menu-text:hover": {
+      color: "#d5a106",
+      transition: "0.3s ease-in-out",
+    },
+    boxShadow: "0 4px 4px rgba(0, 0, 0, 0.2)",
+    zIndex: 1,
+  },
+  // CSS for Bottom side Header when Transparent
+  HeaderTransparentBot: {
+    background:
+      "linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0))",
+    "& .menu-text:hover": {
+      color: "#d5a106",
+      transition: "0.3s ease-in-out",
+    },
+  },
+  // CSS for Bottom side Header when Solid
+  HeaderSolidBot: {
+    backgroundColor: "#f9f8f8",
+    "& .menu-text:hover": {
+      color: "#d5a106",
+      transition: "0.3s ease-in-out",
+    },
+  },
+}));
+
 function WebView() {
+  const { classes } = useStyles();
+  const [navBackgroundTop, setNavBackgroundTop] = useState(
+    "HeaderTransparentTop"
+  );
+  const [navBackgroundBot, setNavBackgroundBot] = useState(
+    "HeaderTransparentBot"
+  );
+  const [isHeaderBotVisible, setHeaderBotVisible] = useState(true);
+  const navRefTop = useRef(navBackgroundTop);
+  navRefTop.current = navBackgroundTop;
+  const navRefBot = useRef(navBackgroundBot);
+  navRefBot.current = navBackgroundBot;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDivPosition = targetDivRef.current.offsetTop - 100;
+      const show = window.scrollY > targetDivPosition;
+
+      if (show) {
+        setNavBackgroundTop("HeaderSolidTop");
+        setHeaderBotVisible(false);
+      } else {
+        setNavBackgroundTop("HeaderTransparentTop");
+        setHeaderBotVisible(true);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   //routing
   const navigate = useNavigate();
   // This are the effects that are used on this page
   const [scroll, scrollTo] = useWindowScroll();
-  const [containerHidden, setContainerHidden] = useState(false);
 
-  // This is used to hide fixed text in the middle to avoid it showing on the bottom pages
-  useEffect(() => {
-    function handleScroll() {
-      const scrollThreshold = 600;
-      if (window.scrollY >= scrollThreshold) {
-        setContainerHidden(true);
-      } else {
-        setContainerHidden(false);
-      }
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // This scroll effect will get triggered when you click the explore more button
+  const targetDivRef = useRef(null);
 
   // This are the images used in this page I put it in a single file to avoid many imports
   const {
@@ -83,13 +142,6 @@ function WebView() {
     <Image src={Logo} />,
   ];
   const theme = useMantineTheme();
-  // This scroll effect will get triggered when you click the explore more button
-  const handleScrollTo = () => {
-    window.scrollTo({
-      top: 650,
-      behavior: "smooth",
-    });
-  };
 
   return (
     // Main shell
@@ -107,7 +159,19 @@ function WebView() {
           },
         }}
         // Header that is imported on another file
-        header={<WebHeader />}
+        header={
+          <WebHeader
+            topStyle={classes[navRefTop.current]}
+            botStyle={classes[navRefBot.current]}
+            menuColor={
+              navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"
+            }
+            searchColor={
+              navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"
+            }
+            isHeaderBotVisible={isHeaderBotVisible}
+          />
+        }
       >
         {/* Main Container */}
         <div
@@ -126,11 +190,7 @@ function WebView() {
           >
             {/* The Big Texts in the middle */}
             <div style={{ alignItems: "center" }}>
-              <Container
-                id="myContainer"
-                className={containerHidden ? "hidden-container" : ""}
-                style={{ marginLeft: "-0.5rem" }}
-              >
+              <Container id="myContainer" style={{ marginLeft: "-0.5rem" }}>
                 <Text
                   fz="4rem"
                   fw="bold"
@@ -180,7 +240,14 @@ function WebView() {
                       c="#022f76"
                       radius="lg"
                       rightIcon={<IconHandClick size="1.5rem" />}
-                      onClick={handleScrollTo}
+                      onClick={() => {
+                        // Scroll to the top of the target div
+
+                        window.scrollTo({
+                          top: targetDivRef.current.offsetTop - 50,
+                          behavior: "smooth",
+                        });
+                      }}
                       style={{ backgroundColor: "#f9f8f8" }}
                     >
                       <Text fw="bold" fz="lg">
@@ -195,6 +262,7 @@ function WebView() {
         </div>
         {/* Main contents of the page */}
         <div
+          ref={targetDivRef}
           style={{
             width: "100%",
             backgroundColor: "#efefef",

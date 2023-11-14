@@ -4,7 +4,7 @@ import Menus from "./Menus";
 import SearchBar from "./Searchbar";
 import logo from "../assets/PLMLogotext.png";
 
-function Nav({ color, style }) {
+function Nav({ color, style, sColor }) {
   return (
     <div>
       <nav className="nav" style={style}>
@@ -14,7 +14,7 @@ function Nav({ color, style }) {
             alignItems: "center",
             justifyContent: "space-between",
             marginLeft: "2rem",
-            marginRight: "2rem",
+            marginRight: "3rem",
           }}
         >
           <Image
@@ -23,11 +23,16 @@ function Nav({ color, style }) {
             src={logo}
             style={{ padding: "0.5rem" }}
           />
-          <Menus color={color} fsize="md" />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div>
+              <Menus color={color} fsize="md" />
+            </div>
+            <div style={{ marginLeft: "1rem" }}>
+              <SearchBar c={sColor} />
+            </div>
+          </div>
         </div>
       </nav>
-      {/* Add a placeholder element to prevent content from jumping */}
-      {/* <div style={{ height: "30vh" }}></div> */}
     </div>
   );
 }

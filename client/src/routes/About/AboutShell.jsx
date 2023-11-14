@@ -60,6 +60,7 @@ function About() {
         }}
         backgroundColor
         color={isSolidBackground ? "color.0" : "color.9"}
+        sColor={isSolidBackground ? "color.0" : "color.9"}
       />
       <div className="Header">
         <div
