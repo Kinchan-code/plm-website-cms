@@ -143,13 +143,38 @@ function About() {
             </Grid.Col>
             <Grid.Col span={18}>
               <ScrollArea h={1000} type="never">
-               
+                {" "}
+                <Container>
+                  {/* Render content based on the selected link */}
+                  {links.map((link) => {
+                    if (link.label === selectedLink) {
+                      if (selectedSublink) {
+                        const sublinkComponent = link.subLinks.find(
+                          (sublink) => sublink.label === selectedSublink
+                        )?.component;
+
+                        if (sublinkComponent) {
+                          return React.createElement(sublinkComponent, {
+                            selectedLink,
+                            selectedSublink,
+                          });
+                        }
+                      } else {
+                        return React.createElement(link.component, {
+                          selectedLink,
+                          selectedSublink,
+                        });
+                      }
+                    }
+                    return null;
+                  })}
+                </Container>
               </ScrollArea>
             </Grid.Col>
           </Grid>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

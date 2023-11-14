@@ -172,8 +172,8 @@ function AcademicsShell() {
             </Grid.Col>
           </Grid>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
