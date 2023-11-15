@@ -1,6 +1,6 @@
 import React from "react";
-import { Image, Text, Box, Divider, List } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
+import { Image, Text, Box, Divider, Grid } from "@mantine/core";
+import PLMLogo from "../../../assets/PLMLogo.png";
 
 
 function SealAndSymbols({ selectedSublink }) {
@@ -20,6 +20,16 @@ function SealAndSymbols({ selectedSublink }) {
       </div>
       <Divider c="#eeee" size="md" />
 
+      
+      <Grid
+        columns={40}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+      <Grid.Col span={20}>
       <div style={{ padding: ".5rem" }}>
         <Text p="xs">
         When a new president is inducted in the university, he or she receives two precious 
@@ -48,6 +58,11 @@ pursuing public interest and national development.</Text>
           <Text>The Mace symbolizes the authority of the president, the source of his power to 
 administer the university.</Text>
       </div>
+      </Grid.Col>
+      <Grid.Col span={20}>
+      <Image src={PLMLogo} p="md" />
+      </Grid.Col>
+      </Grid>
 
       <div style={{ padding: "1rem" }}>
           <Text>It was presented first to Dr. Benito F. Reyes, the first PLM president, by then-Mayor  Antonio J. Villegas on February 10, 1968. It has 

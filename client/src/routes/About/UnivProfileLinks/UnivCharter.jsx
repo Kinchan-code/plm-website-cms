@@ -1,10 +1,22 @@
-import React from "react";
-import { Image, Text, Box, Divider, List } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
+import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import PDF from "../../../Components/PDF";
 
 
 function Charter({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
+  const pdfIframeRef = useRef(null);
+
+  const download = () => {
+    const iframe = pdfIframeRef.current;
+    if (iframe) {
+      const pdfURL = iframe.getAttribute("src");
+      const anchor = document.createElement("a");
+      anchor.href = pdfURL;
+      anchor.download = "University_Calendar_SY_2022-2023.pdf";
+      anchor.click();
+    }
+  };
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
       <div
@@ -20,12 +32,6 @@ function Charter({ selectedSublink }) {
       </div>
       <Divider c="#eeee" size="md" />
 
-      <div>
-        <Text fz="xl" fw="bold" p="md">
-        PICTURE ITO HA!
-        </Text>
-      </div>
-
       <div style={{ padding: ".5rem" }}>
         <Text p="xs">
         Republic Act No. 4196 or “An Act Authorizing the City of Manila to Establish and Operate the University of City of Manila”, 
@@ -39,9 +45,22 @@ the university.</Text>
       </div>
 
       <div>
-        <Text fz="xl" fw="bold" p="md">
-        PDF HOLDER ITO HA! ++ BUtton
-        </Text>
+        <PDF
+          src="https://plm.edu.ph/images/downloads/University_Calendar_SY_2022-2023_page-0001.pdf"
+          title="PDF Viewer"
+          ref={pdfIframeRef}
+        />
+      </div>
+      <div style={{ padding: "1rem" }}>
+        <Button
+          radius="md"
+          className="button"
+          c="black"
+          uppercase
+          onClick={download}
+        >
+          <Text>Download</Text>
+        </Button>
       </div>
     </Box>
   );

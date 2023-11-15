@@ -1,10 +1,23 @@
-import React from "react";
-import { Image, Text, Box, Divider, List } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
+import { Text, Box, Divider, Button } from "@mantine/core";
+import PDF from "../../../Components/PDF";
+
 
 
 function UnivCode({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
+  const pdfIframeRef = useRef(null);
+
+  const download = () => {
+    const iframe = pdfIframeRef.current;
+    if (iframe) {
+      const pdfURL = iframe.getAttribute("src");
+      const anchor = document.createElement("a");
+      anchor.href = pdfURL;
+      anchor.download = "PLM-University-Code-Of-2005.pdf";
+      anchor.click();
+    }
+  };
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
       <div
@@ -33,9 +46,22 @@ adopted as the continuing, operative University Code and that said Code is, in i
       </div>
 
       <div>
-        <Text fz="xl" fw="bold" p="md">
-        PDF HOLDER ITO HA! ++ BUtton
-        </Text>
+        <PDF
+          src="https://www.plm.edu.ph/images/downloads/plm-university-code-of-2005.pdf"
+          title="PDF Viewer"
+          ref={pdfIframeRef}
+        />
+      </div>
+      <div style={{ padding: "1rem" }}>
+        <Button
+          radius="md"
+          className="button"
+          c="black"
+          uppercase
+          onClick={download}
+        >
+          <Text>Download</Text>
+        </Button>
       </div>
     </Box>
   );

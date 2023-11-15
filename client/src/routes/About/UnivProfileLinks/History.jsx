@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, Box, Divider, List } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
+import plmhistory from "../Images/plm_history.png";
 
 
 function History({ selectedSublink }) {
@@ -36,12 +36,8 @@ function History({ selectedSublink }) {
 University. The Board's committee that spearheaded and allocated funds for the creation of the city university, in support of Mayor 
 Lacson's educational program, was chaired by  then-Councilor Ernesto M. Maceda.</Text>
       </div>
-
-      <div>
-        <Text fz="xl" fw="bold" p="md">
-          SUMN PIC
-        </Text>
-      </div>
+      
+      <Image src={plmhistory} p="md" />
 
       <div style={{ padding: "1rem" }}>
           <Text>Mayor Lacson suddenly passed away while in office and before the fulfillment of his dream university. His then-Vice-Mayor, Antonio 

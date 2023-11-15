@@ -1,4 +1,5 @@
 
+
 import AcadThrusts from "./UnivProfileLinks/AcadThrusts";
 import Facilities from "./UnivProfileLinks/Facilities";
 import History from "./UnivProfileLinks/History";
@@ -124,3 +125,4 @@ export const texts = [
         order: 1,
       },
   ];
+
