@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/userdata',[UserDataController::class,'index'])->name('userdata.index');
 Route::get('/userdata/create',[UserDataController::class,'create'])->name('userdata.create');
-Route::post('/userdata',[UserDataController::class,'storeUser'])->name('userdata.storeUser');
+Route::post('/userdata',[UserDataController::class,'store'])->name('userdata.store');

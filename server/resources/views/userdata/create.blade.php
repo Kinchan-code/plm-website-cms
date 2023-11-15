@@ -7,18 +7,20 @@
 </head>
 <body>
     <h1>Create UserData</h1>
-    <div>index</div>
-    
-    <div>
-    <form action="{{route('userdata.storeUser')}}" method="post">
+
+    <form method="post" action="{{route('userdata.store')}}" >
         @csrf
         @method('post')
-        <div>
+       
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
 
             <label for="user_type">User Type:</label>
-            <input type="text" id="type" name="usertype" required><br>
+                <select id="user_type" name="user_type" required>
+                    <option value="moderator">Moderator</option>
+                    <option value="admin">Admin</option>
+                    
+                </select><br>
 
             <label for="email">Email: </label>
             <input type="email" id="email" name="email" required><br>
@@ -29,8 +31,6 @@
             <label for="description">Description: </label>
             <textarea id="description" name="description" rows="4" cols="50"> </textarea><br>
 
-            <label for="createdBy">Created By: </label>
-            <input type="text" id="createdBy" name="createdBy"><br>
 
             <label for="createdOn">Created On: </label>
             <input type="datetime-local" id="createdOn" name="createdOn"><br>
@@ -41,6 +41,6 @@
             <input type="submit" value="Submit">
         </div>
     </form>
-    </div>
+    
 </body>
 </html>

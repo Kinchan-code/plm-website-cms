@@ -15,7 +15,6 @@ class userData extends Model
         'email',
         'password',
         'description',
-        'createdBy',
         'createdOn',
         'lastUpdate'
     ];

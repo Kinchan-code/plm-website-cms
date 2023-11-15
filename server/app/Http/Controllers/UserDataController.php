@@ -15,22 +15,20 @@ class UserDataController extends Controller
         return view('userdata.create');
     }
 
-    public function storeUser(Request $resquest){
-       $data = request->validate([
-        'name' => 'required'|String ,
-        'user_type' => 'required',
-        'email' => 'required'|Email,
-        'password' => 'required'|Password,
-        'description'=> 'required'|String,
-        'createdBy'=> 'required',
-        'createdOn'=> 'required',
-        'lastUpdate'=> 'required',
-       ]);
+    public function store(Request $request){
+        $data = $request->validate([
+            'name' => 'required|string',
+            'user_type' => 'required|in:admin,moderator',
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+            'description' => 'required|string',
+            'createdOn' => 'required|date|date_format:m/d/Y',
+            'lastUpdate' => 'required|date|date_format:m/d/Y',
+            
+        ]);
 
-       $newUser = userData::create($data);
+        $newuserData = userData::create($data);
 
-       return redirect(route('userdata.index'));
+        return redirect(route('userdata.index'));
     }
-    
-    
 }

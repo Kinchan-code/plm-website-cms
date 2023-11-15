@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Container, Text } from "@mantine/core";
+import Login from "../Login";
 
 const elements = [
   { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
@@ -62,6 +63,7 @@ function Test() {
         </thead>
         <tbody>{rows}</tbody>
       </Table>
+      <Login />
     </Container>
   );
 }
