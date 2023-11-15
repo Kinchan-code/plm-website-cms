@@ -133,7 +133,7 @@ function About() {
             <Grid.Col span={6}>
               <Container>
                 <Navigation
-                  title="ACADEMICS"
+                  title="ABOUT"
                   links={links}
                   onLinkClick={handleLinkClick}
                   onSublinkClick={handleSublinkClick}
