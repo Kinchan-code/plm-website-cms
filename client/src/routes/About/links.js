@@ -1,4 +1,3 @@
-
 import AcadThrusts from "./UnivProfileLinks/AcadThrusts";
 import Facilities from "./UnivProfileLinks/Facilities";
 import History from "./UnivProfileLinks/History";
@@ -23,15 +22,14 @@ import BEP from "./PrideHallLinks/BEP";
 import Contact from "./Contact";
 import UniversityProfile from "./UniversityProfile";
 
-
 export const texts = [
   {
     content:
-    "Pamantasan ng Lungsod ng Maynila (PLM) is the first and only chartered and autonomous university funded by a city government. It was created by the Congress of the Philippines by virtue of Republic Act No. 4196 or “An Act Authorizing the City of Manila to Establish and Operate the University of City of Manila” on June 19, 1965."
+      "Pamantasan ng Lungsod ng Maynila (PLM) is the first and only chartered and autonomous university funded by a city government. It was created by the Congress of the Philippines by virtue of Republic Act No. 4196 or “An Act Authorizing the City of Manila to Establish and Operate the University of City of Manila” on June 19, 1965.",
   },
   {
     content:
-    "The university first opened its gates on July 17, 1967 to 556 first-year students at its campus in the historic Intramuros district, which served as the seat of power during the Spanish occupation. Currently, about 10,000 graduate and post-graduate students grace its halls to receive PLM’s quality education."
+      "The university first opened its gates on July 17, 1967 to 556 first-year students at its campus in the historic Intramuros district, which served as the seat of power during the Spanish occupation. Currently, about 10,000 graduate and post-graduate students grace its halls to receive PLM’s quality education.",
   },
   {
     content:
@@ -47,80 +45,115 @@ export const texts = [
   },
 ];
 
-
-  export const links = [
-    {
-      label: "University Profile",
-      link: "/university-profile",
-      component: UniversityProfile,
-      order: 1,
-      subLinks: [
-        {
-          label: "Vision and Mission",
-          link: "/vision-and-mission",
-          component: VM,
-        },
-        { label: "Seal and Symbols", link: "/seal-and-symbols", component: SealAndSymbols },
-        { label: "History", link: "/history", component: History },
-        { label: "University Hymn", link: "/university-hymn", component: UnivHymn },
-        {
-          label: "University Charter",
-          link: "/university-charter",
-          component: UnivCharter,
-        },
-        { label: "University Code", link: "/university-code", component: UnivCode },
-        { label: "University Map", link: "/university-map", component: UnivMap },
-        { label: "Academic Thrusts", link: "/academic-thrusts", component: AcadThrusts },
-        { label: "Facilities", link: "/facilities", component: Facilities },
-      ],
-    },
-    {
-      label: "Outcomes-Based Education (OBE)",
-      link: "/obe",
-      component: OBE,
-      order: 1,
-    },
-    {
-      label: "Administration",
-      link: "/administration",
-      component: Administration,
-      order: 1,
-      subLinks: [
-        {
-          label: "Board of Regents",
-          link: "/board-of-regents",
-          component: BoardOfRegents,
-        },
-        { label: "The President", link: "/the-president", component: ThePresident },
-        { label: "Vice President and Assistant Vice President", link: "/vice-president-and-assistant-vice-president", component: VPAndAVP },
-        { label: "Directors and Chiefs", link: "/directors-and-chiefs", component: DirectorsAndChiefs },
-        {
-          label: "Deans",
-          link: "/deans",
-          component: Deans,
-        },
-        { label: "Organizational Chart", link: "/organizational-chart", component: OrgChart },
-        { label: "Presidential Support Staff", link: "/presidential-support-staff", component: PresidentialSupportStaff },
-      ],
-    },
-    {
-      label: "Pride Hall",
-      link: "/pride-hall",
-      component: PrideHall,
-      order: 1,
-      subLinks: [
-        {
-          label: "Board Exam Passers",
-          link: "/board-exam-passers",
-          component: BEP,
-        },
-        { label: "Awards", link: "/awards", component: Awards },
-      ]
-    },
-    {
-        label: "Contacts",
-        link: "/contacts",
-        component: Contact,
-        order: 1,
+export const links = [
+  {
+    label: "University Profile",
+    link: "/university-profile",
+    component: UniversityProfile,
+    order: 1,
+    subLinks: [
+      {
+        label: "Vision and Mission",
+        link: "/vision-and-mission",
+        component: VM,
       },
-  ];
+      {
+        label: "Seal and Symbols",
+        link: "/seal-and-symbols",
+        component: SealAndSymbols,
+      },
+      { label: "History", link: "/history", component: History },
+      {
+        label: "University Hymn",
+        link: "/university-hymn",
+        component: UnivHymn,
+      },
+      {
+        label: "University Charter",
+        link: "/university-charter",
+        component: UnivCharter,
+      },
+      {
+        label: "University Code",
+        link: "/university-code",
+        component: UnivCode,
+      },
+      { label: "University Map", link: "/university-map", component: UnivMap },
+      {
+        label: "Academic Thrusts",
+        link: "/academic-thrusts",
+        component: AcadThrusts,
+      },
+      { label: "Facilities", link: "/facilities", component: Facilities },
+    ],
+  },
+  {
+    label: "Outcomes-Based Education (OBE)",
+    link: "/obe",
+    component: OBE,
+    order: 1,
+  },
+  {
+    label: "Administration",
+    link: "/administration",
+    component: Administration,
+    order: 1,
+    subLinks: [
+      {
+        label: "Board of Regents",
+        link: "/board-of-regents",
+        component: BoardOfRegents,
+      },
+      {
+        label: "The President",
+        link: "/the-president",
+        component: ThePresident,
+      },
+      {
+        label: "Vice President and Assistant Vice President",
+        link: "/vice-president-and-assistant-vice-president",
+        component: VPAndAVP,
+      },
+      {
+        label: "Directors and Chiefs",
+        link: "/directors-and-chiefs",
+        component: DirectorsAndChiefs,
+      },
+      {
+        label: "Deans",
+        link: "/deans",
+        component: Deans,
+      },
+      {
+        label: "Organizational Chart",
+        link: "/organizational-chart",
+        component: OrgChart,
+      },
+      {
+        label: "Presidential Support Staff",
+        link: "/presidential-support-staff",
+        component: PresidentialSupportStaff,
+      },
+    ],
+  },
+  {
+    label: "Pride Hall",
+    link: "/pride-hall",
+    component: PrideHall,
+    order: 1,
+    subLinks: [
+      {
+        label: "Board Exam Passers",
+        link: "/board-exam-passers",
+        component: BEP,
+      },
+      { label: "Awards", link: "/awards", component: Awards },
+    ],
+  },
+  {
+    label: "Contacts",
+    link: "/contacts",
+    component: Contact,
+    order: 1,
+  },
+];

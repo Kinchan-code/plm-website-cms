@@ -3,9 +3,9 @@ export const menuItems = [
     text: "ABOUT",
     items: [
       { text: "University Profile", link: "/about" },
+      { text: "Outcome-Based Education (OBE)", link: "/about" },
       { text: "Administration", link: "/about" },
       { text: "Pride Hall", link: "/about" },
-      { text: "Outcome-Based Education (OBE)", link: "/about" },
       { text: "Contact", link: "/about" },
     ],
   },
