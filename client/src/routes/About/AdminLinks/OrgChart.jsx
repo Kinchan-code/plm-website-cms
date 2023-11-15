@@ -1,5 +1,6 @@
 import React from "react";
-import { Space, Text, Box, Divider, Grid, List } from "@mantine/core";
+import { Image, Text, Box, Divider, Grid, List } from "@mantine/core";
+import plmorg from "../Images/orgchart.jpg";
 
 function OrgChart({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
@@ -18,7 +19,9 @@ function OrgChart({ selectedSublink }) {
       </div>
       <Divider c="#eeee" size="md" />
 
-      <div></div>
+      <div>
+      <Image src={plmorg} p="md" />
+      </div>
     </Box>
   );
 }
