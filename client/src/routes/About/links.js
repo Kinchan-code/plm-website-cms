@@ -96,7 +96,6 @@ export const links = [
   {
     label: "Administration",
     link: "/administration",
-    component: Administration,
     order: 1,
     subLinks: [
       {
@@ -139,7 +138,6 @@ export const links = [
   {
     label: "Pride Hall",
     link: "/pride-hall",
-    component: PrideHall,
     order: 1,
     subLinks: [
       {

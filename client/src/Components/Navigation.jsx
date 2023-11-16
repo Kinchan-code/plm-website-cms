@@ -50,9 +50,27 @@ function Navigation({ links, onLinkClick, onSublinkClick, title }) {
   const [activeSublink, setActiveSublink] = useState(null);
 
   const handleLinkClick = (index) => {
+    // setActive(index);
+    // setActiveSublink(null);
+    // onLinkClick(links[index].label);
+    const currentLink = links[index];
+
+    if (
+      !currentLink.component &&
+      currentLink.subLinks &&
+      currentLink.subLinks.length > 0
+    ) {
+      // Main link does not have a component, set the first sublink as active
+      const firstSublinkLabel = currentLink.subLinks[0].label;
+      setActiveSublink(firstSublinkLabel);
+      onSublinkClick(firstSublinkLabel);
+    } else {
+      // Main link has a component or no sublinks, reset the selected sublink
+      setActiveSublink(null);
+    }
+
     setActive(index);
-    setActiveSublink(null);
-    onLinkClick(links[index].label);
+    onLinkClick(currentLink.label);
   };
 
   const handleSublinkClick = (sublinkLabel) => {

@@ -15,7 +15,6 @@ import News from "../../../Components/News";
 import { newsLinks } from "../links";
 
 function Awards({ selectedSublink }) {
-  const title = selectedSublink.toUpperCase();
   return (
     <Box style={{ fontFamily: "Open Sans, sans serif" }}>
       <div

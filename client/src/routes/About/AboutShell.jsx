@@ -6,7 +6,6 @@ import {
   Grid,
   ScrollArea,
   Container,
-  AppShell,
 } from "@mantine/core";
 import Footer from "../../Components/Footer";
 import Navigation from "../../Components/Navigation";
@@ -19,7 +18,15 @@ function About() {
 
   const handleLinkClick = (link) => {
     setSelectedLink(link);
-    setSelectedSublink(null); // Reset selected sublink when changing main links
+    if (!link.component && link.subLinks && link.subLinks.length > 0) {
+      // Main link does not have a component, set the first sublink as active
+      const firstSublink = link.subLinks[0];
+      setSelectedSublink(firstSublink.label);
+      handleSublinkClick(firstSublink); // Trigger a click on the first sublink
+    } else {
+      // Main link has a component or no sublinks, reset the selected sublink
+      setSelectedSublink(null);
+    }
   };
 
   const handleSublinkClick = (sublink) => {
@@ -48,6 +55,10 @@ function About() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // const getFirstSublinkWithComponent = (mainLink) => {
+  //   return mainLink.subLinks.find((sublink) => sublink.component)?.component;
+  // };
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -144,27 +155,55 @@ function About() {
             </Grid.Col>
             <Grid.Col span={18}>
               <ScrollArea h={1000} type="never">
-                {" "}
                 <Container>
                   {/* Render content based on the selected link */}
                   {links.map((link) => {
                     if (link.label === selectedLink) {
                       if (selectedSublink) {
-                        const sublinkComponent = link.subLinks.find(
+                        const sublink = link.subLinks.find(
                           (sublink) => sublink.label === selectedSublink
-                        )?.component;
+                        );
 
-                        if (sublinkComponent) {
-                          return React.createElement(sublinkComponent, {
-                            selectedLink,
-                            selectedSublink,
-                          });
+                        if (sublink && sublink.component) {
+                          const SublinkComponent = sublink.component;
+                          return (
+                            <SublinkComponent
+                              selectedLink={selectedLink}
+                              selectedSublink={selectedSublink}
+                            />
+                          );
+                        } else {
+                          console.error(
+                            `Component not found for sublink: ${selectedSublink}`
+                          );
+                          // Handle the case when the component is not found, you can add an error message or a default action
+                          return null;
                         }
-                      } else {
-                        return React.createElement(link.component, {
-                          selectedLink,
-                          selectedSublink,
-                        });
+                      } else if (link.component) {
+                        // Render the component of the main link
+                        const MainLinkComponent = link.component;
+                        return (
+                          <MainLinkComponent selectedLink={selectedLink} />
+                        );
+                      } else if (link.subLinks && link.subLinks.length > 0) {
+                        // Main link does not have a component, render the first sublink and its component
+                        const firstSublink = link.subLinks[0];
+                        const FirstSublinkComponent = firstSublink.component;
+
+                        if (FirstSublinkComponent) {
+                          return (
+                            <FirstSublinkComponent
+                              selectedLink={selectedLink}
+                              selectedSublink={firstSublink.label}
+                            />
+                          );
+                        } else {
+                          console.error(
+                            `Component not found for sublink: ${firstSublink.label}`
+                          );
+                          // Handle the case when the component is not found, you can add an error message or a default action
+                          return null;
+                        }
                       }
                     }
                     return null;

@@ -50,6 +50,9 @@ export const menuItems = [
         text: "Theses and Dissertation",
         link: "/research/theses-and-dissertation",
       },
+      {
+        text: "Login",
+      },
     ],
   },
   {
