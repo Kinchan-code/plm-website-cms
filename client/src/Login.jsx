@@ -8,7 +8,7 @@ const msalConfig = {
     clientId: "b15ddaac-9e6c-43c0-9175-e3af26ea8a7b",
     authority:
       "https://login.microsoftonline.com/c83f55a7-7fe8-4934-b759-09926430aef0",
-    redirectUri: "http://localhost:5173/", // Redirect URI configured in Azure AD
+    redirectUri: "http://localhost:5173/admin/Home.jsx", // Redirect URI configured in Azure AD
   },
 };
 
