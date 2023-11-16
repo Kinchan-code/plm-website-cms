@@ -1,8 +1,16 @@
 import React from "react";
-import { Image, Text, Box, Divider } from "@mantine/core";
+import { Text, Box, Divider } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
-import { texts } from "./links";
-import pic from "./Images/UnivProfile.png";
+import ExtraAccordion from "../../Components/extraAccordion";
+import CustomTable from "../../Components/customTable";
+import {
+  administrativeTable,
+  collegesTable,
+  officesTable,
+  administrativeElements,
+  collegesElements,
+  officesElements,
+} from "./links";
 
 function Contacts({ selectedLink }) {
   const navigate = useNavigate();
@@ -21,14 +29,33 @@ function Contacts({ selectedLink }) {
       </div>
       <Divider c="#eeee" size="md" />
       <div>
-        <Image maw={1000} src={pic} p="md" />
-        
-          <Text  p="xs" ta="justify">
-          We highly prioritize transparent communication with our students, parents, and the broader community. If you have any inquiries, 
-issues, or would like to gain further insight into our school, please feel free to contact us. You can easily reach out to us by utilizing 
-the contact details supplied below.
-          </Text>
-      
+        <Text p="xs" fz="lg" ta="justify">
+          We highly prioritize transparent communication with our students,
+          parents, and the broader community. If you have any inquiries, issues,
+          or would like to gain further insight into our school, please feel
+          free to contact us. You can easily reach out to us by utilizing the
+          contact details supplied below.
+        </Text>
+      </div>
+      <div>
+        <div>
+          <ExtraAccordion title="Administrative Offices">
+            <CustomTable
+              columns={administrativeTable}
+              data={administrativeElements}
+            />
+          </ExtraAccordion>
+        </div>
+        <div style={{ marginTop: "-2rem" }}>
+          <ExtraAccordion title="Colleges">
+            <CustomTable columns={collegesTable} data={collegesElements} />
+          </ExtraAccordion>
+        </div>
+        <div style={{ marginTop: "-2rem" }}>
+          <ExtraAccordion title="University Offices">
+            <CustomTable columns={officesTable} data={officesElements} />
+          </ExtraAccordion>
+        </div>
       </div>
     </Box>
   );

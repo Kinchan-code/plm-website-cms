@@ -75,7 +75,7 @@ function About() {
           <Divider size="md" color="#FFC60B" orientation="vertical" />
           <Space w="sm" />
           <Text c="#fff" fw="bold" fz="3rem">
-            UNIVERSITY PROFILE
+            ABOUT PLM
           </Text>
         </div>
       </div>
@@ -133,7 +133,7 @@ function About() {
             <Grid.Col span={6}>
               <Container>
                 <Navigation
-                  title="ABOUT"
+                  title={selectedLink}
                   links={links}
                   onLinkClick={handleLinkClick}
                   onSublinkClick={handleSublinkClick}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, Box, Divider } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import DownloadButton from "../../Components/DownloadButton";
 import { texts } from "./links";
 import pic from "./Images/UnivProfile.png";
 
@@ -22,12 +23,8 @@ function OBE({ selectedLink }) {
       <Divider c="#eeee" size="md" />
       <div>
         <Image maw={1000} src={pic} p="md" />
-        
-          <Text  p="xs" ta="justify">
-            PICTURE NG OBE TO HA!
-          </Text>
-      
       </div>
+      <div></div>
     </Box>
   );
 }

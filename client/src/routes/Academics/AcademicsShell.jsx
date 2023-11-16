@@ -133,7 +133,7 @@ function AcademicsShell() {
             <Grid.Col span={6}>
               <Container>
                 <Navigation
-                  title="ACADEMICS"
+                  title={selectedLink}
                   links={links}
                   onLinkClick={handleLinkClick}
                   onSublinkClick={handleSublinkClick}
