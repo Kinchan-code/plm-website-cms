@@ -1,6 +1,11 @@
 import React from "react";
-import { Text, Box, Divider, Grid, List } from "@mantine/core";
-import Card from "../../../Components/Card";
+import { Text, Box, Divider, Image, Card, Grid } from "@mantine/core";
+import C_F_C_C from "../Images/C_F_C_C.jpg";
+import E_A_L from "../Images/E_A_L.jpg";
+import J_N from "../Images/J_N.jpg";
+import R_P_M from "../Images/R_P_M.jpg";
+import R_R from "../Images/R_R.jpg";
+import W_G from "../Images/W_G.jpg";
 
 function BoardOfRegents({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
@@ -38,6 +43,240 @@ them expertise that would help PLM realize its goals.</Text>
           <Text>The Chairperson of the Board and the University President are elected from among the regents themselves. The Chairperson 
 presides over all the meetings of the Board, while the University President serves as its ex-officio Vice-Chair.</Text>
       </div>
+      
+      <Grid
+        columns={30}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          
+        }}
+      >
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={J_N}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+        
+        <div style={{textAlign: "center"}}>
+          <Text  fw={"bold"} size="lg" mt="md" color="#006699">
+            ATTY. JOSE NGAW
+          </Text>
+
+          <Text mt="xs" size="sm">
+            Chairperson
+          </Text>
+        </div>
+        
+        </Card>
+      </Grid.Col>
+    </Grid>
+
+    <Grid
+        columns={30}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          
+        }}
+      >
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={E_A_L}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+
+      <div style={{textAlign: "center"}}>
+          <Text fw={"bold"} size="lg" mt="md" color="#006699">
+            PROF. EMMANUEL A. LEYCO
+          </Text>
+
+          <Text mt="xs" size="sm" style={{marginBottom:"-11px", marginTop:"-.5px"}}>
+            University President and Vice Chairman
+          </Text>
+        </div>
+        </Card>
+      </Grid.Col>
+
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={W_G}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+
+      <div style={{textAlign: "center"}}>
+          <Text fw={"bold"} size="lg" mt="md" color="#006699">
+            WILMA V. GALVANTE
+          </Text>
+
+          <Text mt="xs" size="sm">
+            Member (Alumni Regent)
+          </Text>
+        </div>
+        </Card>
+      </Grid.Col>
+
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={R_P_M}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+
+      <div style={{textAlign: "center"}}>
+          <Text fw={"bold"} size="lg" mt="md" color="#006699">
+            ATTY. RELSON P. MORAL
+          </Text>
+
+          <Text mt="xs" size="sm">
+            Member (Faculty Regent)
+          </Text>
+        </div>
+        </Card>
+      </Grid.Col>
+    </Grid>
+
+    <Grid
+        columns={30}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          
+        }}
+      >
+
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={C_F_C_C}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+
+      <div style={{textAlign: "center"}}>
+          <Text fw={"bold"} size="lg" mt="md" color="#006699" style={{marginBottom:"-12px", marginTop:"10px"}}>
+            ATTY. CARLO FLORENDO C. CASTRO
+          </Text>
+
+          <Text mt="xs" size="sm" style={{marginBottom:"-9px"}}>
+            University and Board Secretary
+          </Text>
+        </div>
+        </Card>
+      </Grid.Col>
+
+      <Grid.Col span={10}>
+        <Card
+        shadow="sm"
+        padding="xl"
+        component="a"
+        
+        target="_blank"
+      >
+        <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
+        <Image
+          src={R_R}
+          alt="No way!"
+          style={{
+            width: '70%', // Set the width to 100%
+            height: '50%', // Set the height to 100%
+            objectFit: 'cover', // Crop the image to cover the container
+            transform: 'scale(1.5)', // Zoom the image permanently
+            transformOrigin: 'top left', // Set the origin of the transformation to the top
+          }}
+        />
+      </Card.Section>
+
+      <div style={{textAlign: "center"}}>
+          <Text fw={"bold"} size="lg" mt="md" color="#006699">
+            DR. RITA E. RIDDLE
+          </Text>
+
+          <Text mt="xs" size="sm" style={{marginBottom:"-11px", marginTop:"-.5px"}}>
+            Superintendent, DCS-Manila and Ex-officio Member
+          </Text>
+        </div>
+        </Card>
+      </Grid.Col>
+    </Grid>
+
 
       <div>
         <Text fz="xl" fw="bold" p="md">
