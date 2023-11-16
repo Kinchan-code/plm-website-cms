@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Image } from "@mantine/core";
 import Menus from "./Menus";
 import SearchBar from "./Searchbar";
 import logo from "../assets/PLMLogotext.png";
+import { useNavigate } from "react-router-dom";
 
 function Nav({ color, style, sColor }) {
+  const navigate = useNavigate();
   return (
     <div>
       <nav className="nav" style={style}>
@@ -22,6 +24,9 @@ function Nav({ color, style, sColor }) {
             p="0.5rem"
             src={logo}
             style={{ padding: "0.5rem" }}
+            onClick={() => {
+              navigate("/");
+            }}
           />
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
