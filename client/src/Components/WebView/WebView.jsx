@@ -14,10 +14,7 @@ import {
   rem,
   createStyles,
 } from "@mantine/core";
-import {
-  IconSquareRoundedArrowUpFilled,
-  IconHandClick,
-} from "@tabler/icons-react";
+import { IconSquareRoundedArrowUpFilled, IconHandClick } from "@tabler/icons-react";
 import { useWindowScroll } from "@mantine/hooks";
 import WebHeader from "./WebHeader";
 import Slideshow from "../Slideshow";
@@ -67,12 +64,8 @@ const useStyles = createStyles(() => ({
 
 function WebView() {
   const { classes } = useStyles();
-  const [navBackgroundTop, setNavBackgroundTop] = useState(
-    "HeaderTransparentTop"
-  );
-  const [navBackgroundBot, setNavBackgroundBot] = useState(
-    "HeaderTransparentBot"
-  );
+  const [navBackgroundTop, setNavBackgroundTop] = useState("HeaderTransparentTop");
+  const [navBackgroundBot, setNavBackgroundBot] = useState("HeaderTransparentBot");
   const [isHeaderBotVisible, setHeaderBotVisible] = useState(true);
   const navRefTop = useRef(navBackgroundTop);
   navRefTop.current = navBackgroundTop;
@@ -152,10 +145,7 @@ function WebView() {
           padding: "0",
           margin: "0",
           main: {
-            background:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
+            background: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
           },
         }}
         // Header that is imported on another file
@@ -163,12 +153,8 @@ function WebView() {
           <WebHeader
             topStyle={classes[navRefTop.current]}
             botStyle={classes[navRefBot.current]}
-            menuColor={
-              navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"
-            }
-            searchColor={
-              navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"
-            }
+            menuColor={navBackgroundTop === "HeaderSolidTop" ? "#022f76" : "#fff"}
+            searchColor={navBackgroundTop === "HeaderSolidTop" ? "#000" : "#fff"}
             isHeaderBotVisible={isHeaderBotVisible}
           />
         }
@@ -212,8 +198,7 @@ function WebView() {
                     marginBottom: "-2rem",
                   }}
                 >
-                  The Philippines' first and only chartered autonomous local
-                  university.
+                  The Philippines' first and only chartered autonomous local university.
                 </Text>
                 <div style={{ display: "flex", gap: "2rem" }}>
                   <div style={{ paddingLeft: "3rem" }}>
@@ -243,7 +228,7 @@ function WebView() {
                       onClick={() => {
                         // Scroll to the top of the target div
 
-                        window.scrollTo({
+                        document.body.scrollTo({
                           top: targetDivRef.current.offsetTop - 50,
                           behavior: "smooth",
                         });
@@ -348,10 +333,9 @@ function WebView() {
               <Image maw={250} src={seal} p="md" />
               {/* Text about the seal */}
               <Text fz="lg" p="md" c="#fff" ta="justify">
-                PLM is compliant with the Anti-Red Tape Act (ARTA), as validated
-                by the Civil Service Commission-Malacañan Palace. Pursuant to
-                the Philippine Government’s Transparency Principle, our
-                Transparency Coordinating Council, created through
+                PLM is compliant with the Anti-Red Tape Act (ARTA), as validated by the Civil
+                Service Commission-Malacañan Palace. Pursuant to the Philippine Government’s
+                Transparency Principle, our Transparency Coordinating Council, created through
                 Administrative Order No. 2013-12. Read our {""}
                 <Text
                   span
@@ -363,8 +347,8 @@ function WebView() {
                 >
                   Citizen's Charter here.
                 </Text>
-                {""} In case of complaints, please submit proof or any
-                supporting documents through this {""}
+                {""} In case of complaints, please submit proof or any supporting documents through
+                this {""}
                 <Text span fw="bold" style={{ cursor: "pointer" }}>
                   link
                 </Text>
@@ -426,11 +410,7 @@ function WebView() {
         </div>
         {/* For the Go to Top buttom function */}
         <Affix position={{ bottom: rem(20), right: rem(20) }}>
-          <Transition
-            transition="slide-up"
-            duration={100}
-            mounted={scroll.y > 0}
-          >
+          <Transition transition="slide-up" duration={100} mounted={scroll.y > 0}>
             {(transitionStyles) => (
               <ActionIcon
                 c="#022f76"
