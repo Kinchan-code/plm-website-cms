@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, Text, Box, Divider, List } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
+import { Image, Text, Box, Divider } from "@mantine/core";
 
 
 function UnivMap({ selectedSublink }) {

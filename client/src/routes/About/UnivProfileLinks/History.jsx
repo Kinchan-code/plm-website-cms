@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, Box, Divider, List } from "@mantine/core";
+import { Image, Text, Box, Divider } from "@mantine/core";
 import plmhistory from "../Images/plm_history.png";
 
 

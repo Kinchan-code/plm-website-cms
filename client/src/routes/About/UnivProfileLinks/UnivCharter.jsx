@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Image, Text, Box, Divider, Button } from "@mantine/core";
+import { Text, Box, Divider, Button } from "@mantine/core";
 import PDF from "../../../Components/PDF";
 
 

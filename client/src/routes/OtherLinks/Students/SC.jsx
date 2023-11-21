@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Text } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
-function Students() {
+function SC() {
   const navigate = useNavigate();
   return (
     <div
@@ -14,7 +14,7 @@ function Students() {
         alignItems: "center",
       }}
     >
-      <Text>Students</Text>
+      <Text>Partners</Text>
       <Button
         onClick={() => {
           navigate("/");
@@ -26,4 +26,4 @@ function Students() {
   );
 }
 
-export default Students;
+export default SC;

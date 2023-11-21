@@ -28,7 +28,15 @@ const PressRelease = lazy(() => import("./routes/News/PressRelease"));
 const SpecialReports = lazy(() => import("./routes/News/SpecialReports"));
 const Theses = lazy(() => import("./routes/Research/Theses"));
 const Downloads = lazy(() => import("./routes/Downloads"));
-const Students = lazy(() => import("./routes/OtherLinks/Students"));
+const Students = lazy(() => import("./routes/OtherLinks/Students/Students"));
+const CRS = lazy(() => import("./routes/OtherLinks/Students/CRS"));
+const NSTP = lazy(() => import("./routes/OtherLinks/Students/NSTP"));
+const SC = lazy(() => import("./routes/OtherLinks/Students/SC"));
+const SFE = lazy(() => import("./routes/OtherLinks/Students/SFE"));
+const SO = lazy(() => import("./routes/OtherLinks/Students/SO"));
+const StudentManual = lazy(() => import("./routes/OtherLinks/Students/StudentManual"));
+const StudentServices = lazy(() => import("./routes/OtherLinks/Students/StudentServices"));
+const Tuition = lazy(() => import("./routes/OtherLinks/Students/Tuition"));
 const Faculty = lazy(() => import("./routes/OtherLinks/Faculty"));
 const Alumni = lazy(() => import("./routes/OtherLinks/Alumni"));
 const Partners = lazy(() => import("./routes/OtherLinks/Partners"));
@@ -76,6 +84,15 @@ export const AllLinks = [
   { component: Theses, path: "/research/theses-and-dissertation" },
   { component: Downloads, path: "/downloads" },
   { component: Students, path: "/students" },
+  { component: CRS, path: "/computerized-registration-system" },
+  { component: NSTP, path: "/national-training-service-program" },
+  { component: SC, path: "/student-council" },
+  { component: SFE, path: "/students-faculty-evalutation-system" },
+  { component: SO, path: "/student-organization" },
+  { component: StudentManual, path: "/computerized-registration-system" },
+  { component: StudentServices, path: "/student-services" },
+  { component: Tuition, path: "/computerized-registration-system" },
+
   { component: Faculty, path: "/faculty" },
   { component: Alumni, path: "/alumni" },
   { component: Partners, path: "/partners" },
