@@ -228,7 +228,7 @@ function WebView() {
                       onClick={() => {
                         // Scroll to the top of the target div
 
-                        document.body.scrollTo({
+                        window.scrollTo({
                           top: targetDivRef.current.offsetTop - 50,
                           behavior: "smooth",
                         });
