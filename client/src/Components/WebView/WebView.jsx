@@ -227,7 +227,6 @@ function WebView() {
                       rightIcon={<IconHandClick size="1.5rem" />}
                       onClick={() => {
                         // Scroll to the top of the target div
-
                         window.scrollTo({
                           top: targetDivRef.current.offsetTop - 50,
                           behavior: "smooth",
@@ -253,6 +252,7 @@ function WebView() {
             backgroundColor: "#efefef",
             position: "absolute",
             zIndex: "1",
+            overflow: "auto",
           }}
         >
           {/* Announcements and Press Realeases */}
