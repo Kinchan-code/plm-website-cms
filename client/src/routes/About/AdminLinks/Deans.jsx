@@ -1,6 +1,17 @@
 import React from "react";
 import { List, Text, Box, Divider, Grid, Image, Card, Space } from "@mantine/core";
 import DUMMY from "../Images/DUMMY.png";
+import JA_Cruz from "../Images/JA_Cruz.jpg";
+import J_Romero from "../Images/J_Romero.jpg";
+import J_Tallara from "../Images/J_Tallara.jpg";
+import D_Cortez from "../Images/D_Cortez.jpg";
+import M_SDomingo from "../Images/M_SDomingo.jpg";
+import JH_Hofilena from "../Images/JH_Hofilena.jpg";
+import DP_Ramos from "../Images/DP_Ramos.jpg";
+import A_Magpantay from "../Images/A_Magpantay.jpg";
+import A_Atienza from "../Images/A_Atienza.jpg";
+import N_Gocuyo from "../Images/N_Gocuyo.jpg";
+import P_Rio from "../Images/P_Rio.jpg";
 
 function Deans({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
@@ -43,7 +54,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={JA_Cruz}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -113,7 +124,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={J_Romero}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -180,7 +191,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={J_Tallara}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -247,7 +258,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={D_Cortez}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -390,7 +401,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={M_SDomingo}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -466,7 +477,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={JH_Hofilena}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -621,7 +632,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={DP_Ramos}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -697,7 +708,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={A_Magpantay}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -758,7 +769,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={A_Atienza}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -889,7 +900,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={N_Gocuyo}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -956,7 +967,7 @@ function Deans({ selectedSublink }) {
       <Grid.Col span={10}>
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={P_Rio}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%

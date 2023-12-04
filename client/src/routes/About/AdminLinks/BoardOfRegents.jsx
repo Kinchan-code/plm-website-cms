@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, Box, Divider, Image, Card, Grid } from "@mantine/core";
-import C_F_C_C from "../Images/C_F_C_C.jpg";
-import E_A_L from "../Images/E_A_L.jpg";
-import J_N from "../Images/J_N.jpg";
-import R_P_M from "../Images/R_P_M.jpg";
-import R_R from "../Images/R_R.jpg";
-import W_G from "../Images/W_G.jpg";
+import ES_Serapio from "../Images/ES_Serapio.jpg";
+import univ_president from "../Images/univ_president.jpg";
+import W_Galvante from "../Images/W_Galvante.jpg";
+import JBP_Juanson from "../Images/JBP_Juanson.jpg";
+import R_Riddle from "../Images/R_Riddle.jpg";
+import CFC_Castro from "../Images/CFC_Castro.jpg";
 
 function BoardOfRegents({ selectedSublink }) {
   return (
@@ -65,21 +65,21 @@ function BoardOfRegents({ selectedSublink }) {
           <Card shadow="sm" padding="xl" component="a" target="_blank">
             <Card.Section style={{ position: "relative", overflow: "hidden" }}>
               <Image
-                src={J_N}
+                src={ES_Serapio}
                 alt="No way!"
                 style={{
-                  width: "70%", // Set the width to 100%
-                  height: "50%", // Set the height to 100%
-                  objectFit: "cover", // Crop the image to cover the container
-                  transform: "scale(1.5)", // Zoom the image permanently
-                  transformOrigin: "top left", // Set the origin of the transformation to the top
+                  width: "70%", 
+                  height: "50%", 
+                  objectFit: "cover", 
+                  transform: "scale(1.5)", 
+                  transformOrigin: "top left", 
                 }}
               />
             </Card.Section>
 
             <div style={{ textAlign: "center" }}>
               <Text fw={"bold"} size="lg" mt="md" color="#006699">
-                ATTY. JOSE NGAW
+                ATTY. EDWARD S. SERAPIO
               </Text>
 
               <Text mt="xs" size="sm">
@@ -101,7 +101,7 @@ function BoardOfRegents({ selectedSublink }) {
           <Card shadow="sm" padding="xl" component="a" target="_blank">
             <Card.Section style={{ position: "relative", overflow: "hidden" }}>
               <Image
-                src={E_A_L}
+                src={univ_president}
                 alt="No way!"
                 style={{
                   width: "70%", // Set the width to 100%
@@ -115,7 +115,7 @@ function BoardOfRegents({ selectedSublink }) {
 
             <div style={{ textAlign: "center" }}>
               <Text fw={"bold"} size="lg" mt="md" color="#006699">
-                PROF. EMMANUEL A. LEYCO
+              ATTY. DOMINGO REYES JR.
               </Text>
 
               <Text
@@ -133,7 +133,7 @@ function BoardOfRegents({ selectedSublink }) {
           <Card shadow="sm" padding="xl" component="a" target="_blank">
             <Card.Section style={{ position: "relative", overflow: "hidden" }}>
               <Image
-                src={W_G}
+                src={W_Galvante}
                 alt="No way!"
                 style={{
                   width: "70%", // Set the width to 100%
@@ -161,7 +161,7 @@ function BoardOfRegents({ selectedSublink }) {
           <Card shadow="sm" padding="xl" component="a" target="_blank">
             <Card.Section style={{ position: "relative", overflow: "hidden" }}>
               <Image
-                src={R_P_M}
+                src={JBP_Juanson}
                 alt="No way!"
                 style={{
                   width: "70%", // Set the width to 100%
@@ -175,7 +175,7 @@ function BoardOfRegents({ selectedSublink }) {
 
             <div style={{ textAlign: "center" }}>
               <Text fw={"bold"} size="lg" mt="md" color="#006699">
-                ATTY. RELSON P. MORAL
+              DR. JOSEPH BERLIN P. JUANSON
               </Text>
 
               <Text mt="xs" size="sm">
@@ -197,7 +197,39 @@ function BoardOfRegents({ selectedSublink }) {
           <Card shadow="sm" padding="xl" component="a" target="_blank">
             <Card.Section style={{ position: "relative", overflow: "hidden" }}>
               <Image
-                src={C_F_C_C}
+                src={R_Riddle}
+                alt="No way!"
+                style={{
+                  width: "70%", // Set the width to 100%
+                  height: "50%", // Set the height to 100%
+                  objectFit: "cover", // Crop the image to cover the container
+                  transform: "scale(1.5)", // Zoom the image permanently
+                  transformOrigin: "top left", // Set the origin of the transformation to the top
+                }}
+              />
+            </Card.Section>
+
+            <div style={{ textAlign: "center" }}>
+              <Text fw={"bold"} size="lg" mt="md" color="#006699">
+                DR. RITA E. RIDDLE
+              </Text>
+
+              <Text
+                mt="xs"
+                size="sm"
+                style={{ marginBottom: "-11px", marginTop: "-.5px" }}
+              >
+                Superintendent, DCS-Manila and Ex-officio Member
+              </Text>
+            </div>
+          </Card>
+        </Grid.Col>
+        
+        <Grid.Col span={10}>
+          <Card shadow="sm" padding="xl" component="a" target="_blank">
+            <Card.Section style={{ position: "relative", overflow: "hidden" }}>
+              <Image
+                src={CFC_Castro}
                 alt="No way!"
                 style={{
                   width: "70%", // Set the width to 100%
@@ -222,38 +254,6 @@ function BoardOfRegents({ selectedSublink }) {
 
               <Text mt="xs" size="sm" style={{ marginBottom: "-9px" }}>
                 University and Board Secretary
-              </Text>
-            </div>
-          </Card>
-        </Grid.Col>
-
-        <Grid.Col span={10}>
-          <Card shadow="sm" padding="xl" component="a" target="_blank">
-            <Card.Section style={{ position: "relative", overflow: "hidden" }}>
-              <Image
-                src={R_R}
-                alt="No way!"
-                style={{
-                  width: "70%", // Set the width to 100%
-                  height: "50%", // Set the height to 100%
-                  objectFit: "cover", // Crop the image to cover the container
-                  transform: "scale(1.5)", // Zoom the image permanently
-                  transformOrigin: "top left", // Set the origin of the transformation to the top
-                }}
-              />
-            </Card.Section>
-
-            <div style={{ textAlign: "center" }}>
-              <Text fw={"bold"} size="lg" mt="md" color="#006699">
-                DR. RITA E. RIDDLE
-              </Text>
-
-              <Text
-                mt="xs"
-                size="sm"
-                style={{ marginBottom: "-11px", marginTop: "-.5px" }}
-              >
-                Superintendent, DCS-Manila and Ex-officio Member
               </Text>
             </div>
           </Card>

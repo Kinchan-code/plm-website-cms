@@ -1,14 +1,15 @@
 import React from "react";
 import { Text, Box, Divider, Grid, Image, Card, Space } from "@mantine/core";
-import C_R from "../Images/C_R.jpg";
-import A_M from "../Images/A_M.jpg";
-import K_L_L from "../Images/K_L_L.jpg";
-import P_J_A_G from "../Images/P_J_A_G.jpg";
-import D_M_C from "../Images/D_M_C.jpg";
-import D_C_M from "../Images/D_C_M.jpg";
-import M from "../Images/M.jpg";
-import H_D_N from "../Images/H_D_N.jpg";
-import R_P_M from "../Images/R_P_M.jpg";
+import C_Rondaris from "../Images/C_Rondaris.jpg";
+import AS_Malunes from "../Images/AS_Malunes.jpg";
+import K_Leyson from "../Images/K_Leyson.jpg";
+import PJ_Glido from "../Images/PJ_Glido.jpg";
+import DM_Cortez from "../Images/DM_Cortez.jpg";
+import D_Mendez from "../Images/D_Mendez.jpg";
+import K_Mata from "../Images/K_Mata.jpg";
+import H_Nunez from "../Images/H_Nunez.jpg";
+import R_Moral from "../Images/R_Moral.jpg";
+import N_Gocuyo from "../Images/N_Gocuyo.jpg";
 import DUMMY from "../Images/DUMMY.png";
 
 
@@ -48,7 +49,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={C_R}
+          src={C_Rondaris}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -92,7 +93,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={DUMMY}
+          src={N_Gocuyo}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -106,11 +107,11 @@ function VPAndAVP({ selectedSublink }) {
 
       <div style={{textAlign: "center"}}>
           <Text fw={"bold"} size="lg" mt="md" color="#006699">
-            LALAINE A. ISIP
+          NOEMI C. GOCUYO
           </Text>
 
           <Text mt="xs" size="sm" style={{marginBottom:"-11px", marginTop:"-.5px"}}>
-            Vice President for Academic Affairs and Chairperson of GAD-Technical Working Group
+            OIC, Vice President for Academic Affairs
           </Text>
         </div>
         </Card>
@@ -126,7 +127,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={A_M}
+          src={AS_Malunes}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -160,7 +161,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={K_L_L}
+          src={K_Leyson}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -204,7 +205,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={D_M_C}
+          src={DM_Cortez}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -238,7 +239,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={R_P_M}
+          src={R_Moral}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -272,7 +273,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={H_D_N}
+          src={H_Nunez}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -316,7 +317,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={P_J_A_G}
+          src={PJ_Glido}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -350,7 +351,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={M}
+          src={K_Mata}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%
@@ -384,7 +385,7 @@ function VPAndAVP({ selectedSublink }) {
       >
         <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
         <Image
-          src={D_C_M}
+          src={D_Mendez}
           alt="No way!"
           style={{
             width: '70%', // Set the width to 100%

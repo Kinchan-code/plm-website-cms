@@ -1,21 +1,21 @@
 import React from "react";
 import { Space, Text, Box, Divider, Grid, Image, Card } from "@mantine/core";
-import M_C_B from "../Images/M_C_B.jpg";
-import L_A_Z from "../Images/L_A_Z.jpg";
-import A_M_S_B from "../Images/A_M_S_B.jpg";
-import E_D_M from "../Images/E_D_M.jpg";
-import E_E from "../Images/E_E.jpg";
-import V_A_D_C from "../Images/V_A_D_C.jpg";
-import M_B_P from "../Images/M_B_P.jpg";
-import M_J_S_B from "../Images/M_J_S_B.jpg";
-import H_P_R_G from "../Images/H_P_R_G.jpg";
-import G_M_M from "../Images/G_M_M.jpg";
-import C_T_S from "../Images/C_T_S.jpg";
-import M_A_B_M from "../Images/M_A_B_M.jpg";
-import N_E_L from "../Images/N_E_L.jpg";
-import M from "../Images/M.jpg";
+import MC_Blanco from "../Images/MC_Blanco.jpg";
+import LA_Zafra from "../Images/LA_Zafra.jpg";
+import AM_Bonoan from "../Images/AM_Bonoan.jpg";
+import ED_Marcelo from "../Images/ED_Marcelo.jpg";
+import E_Espero from "../Images/E_Espero.jpg";
+import V_DCruz from "../Images/V_DCruz.jpg";
+import M_Peralta from "../Images/M_Peralta.jpg";
+import MJ_Bonifacio from "../Images/MJ_Bonifacio.jpg";
+import HP_Galan from "../Images/HP_Galan.jpg";
+import G_Mauricio from "../Images/G_Mauricio.jpg";
+import C_Sarip from "../Images/C_Sarip.jpg";
+import MA_Mariano from "../Images/MA_Mariano.jpg";
+import N_Laurente from "../Images/N_Laurente.jpg";
+import K_Mata from "../Images/K_Mata.jpg";
 import DUMMY from "../Images/DUMMY.png";
-import H_D_N from "../Images/H_D_N.jpg";
+import H_Nunez from "../Images/H_Nunez.jpg";
 
 function DirectorsAndChiefs({ selectedSublink }) {
   const title = selectedSublink.toUpperCase();
@@ -92,7 +92,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={M_C_B}
+              src={MC_Blanco}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -126,7 +126,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={A_M_S_B}
+              src={AM_Bonoan}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -169,7 +169,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={H_P_R_G}
+              src={HP_Galan}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -222,7 +222,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={M}
+              src={K_Mata}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -256,7 +256,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={E_D_M}
+              src={ED_Marcelo}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -290,7 +290,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={M_B_P}
+              src={M_Peralta}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -334,7 +334,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={G_M_M}
+              src={G_Mauricio}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -368,7 +368,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={M_J_S_B}
+              src={MJ_Bonifacio}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -402,7 +402,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={V_A_D_C}
+              src={V_DCruz}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -445,7 +445,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={L_A_Z}
+              src={LA_Zafra}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -537,7 +537,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={E_E}
+              src={E_Espero}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -587,7 +587,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={H_D_N}
+              src={H_Nunez}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -621,7 +621,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={M_A_B_M}
+              src={MA_Mariano}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -655,7 +655,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={C_T_S}
+              src={C_Sarip}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
@@ -706,7 +706,7 @@ function DirectorsAndChiefs({ selectedSublink }) {
           >
             <Card.Section style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src={N_E_L}
+              src={N_Laurente}
               alt="No way!"
               style={{
                 width: '70%', // Set the width to 100%
