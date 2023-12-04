@@ -27,7 +27,7 @@ brightest, and most compassionate:
       </div>
 
       <div style={{ padding: "1rem" }}>
-        <List >
+        <List style={{listStyle: "none"}}>
           <List.Item>
             <Text>1. Education is a right and an equalizer</Text>
           </List.Item>

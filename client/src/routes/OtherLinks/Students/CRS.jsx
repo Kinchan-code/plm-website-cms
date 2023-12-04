@@ -5,8 +5,6 @@ import {
   Box,
   Divider,
   SimpleGrid,
-  List,
-  Space,
   Tooltip,
 } from "@mantine/core";
 import { useNavigate } from "react-router-dom";

@@ -103,3 +103,90 @@ export const orgs = [
   { name: "santelmo", image: santelmo },
   { name: "tugon", image: tugon },
 ];
+
+export const accordionItems = [
+  {
+    value: "PLM Business School Student Council",
+    title: "PLM Business School Student Council",
+    content: [
+      {
+        text: "Phone: 0917 503 1785",
+      },
+      {
+        text: "Email: plm.cbgm@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/PLMBSSC",
+      },
+    ],
+  },
+  {
+    value: "College of Architecture and Urban Planning Student Council",
+    title: "College of Architecture and Urban Planning Student Council",
+    content: [
+      {
+        text: "Phone: 0919 563 2274",
+      },
+      {
+        text: "Email: caupscofficial@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/CAUPStudentCouncil/",
+      },
+    ],
+  },
+  {
+    value: "PLM College of Medicine Student Council",
+    title: "PLM College of Medicine Student Council",
+    content: [
+      {
+        text: "Email: plm.cmsc@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/plm.medisina",
+      },
+    ],
+  },
+  {
+    value: "PLM College of Nursing Student Council",
+    title: "PLM College of Nursing Student Council",
+    content: [
+      {
+        text: "Phone: 0927 879 0466",
+      },
+      {
+        text: "Email: plmcnsc@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/plmcnsc/",
+      },
+    ],
+  },
+  {
+    value: "PLM College of Science Student Council",
+    title: "PLM College of Science Student Council",
+    content: [
+      {
+        text: "Email: csscplm@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/CSsharks",
+      },
+    ],
+  },
+  {
+    value: "PLM COllege of Humanities, Arts, and Social Sciences Student Council",
+    title: "PLM COllege of Humanities, Arts, and Social Sciences Student Council",
+    content: [
+      {
+        text: "Phone: 0905 588 6224",
+      },
+      {
+        text: "Email: chassscplm@gmail.com",
+      },
+      {
+        text: "Facebook: https://www.facebook.com/plmchasssc",
+      },
+    ],
+  },
+];

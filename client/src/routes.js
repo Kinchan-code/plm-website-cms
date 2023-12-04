@@ -40,7 +40,11 @@ const Tuition = lazy(() => import("./routes/OtherLinks/Students/Tuition"));
 const Faculty = lazy(() => import("./routes/OtherLinks/Faculty"));
 const Alumni = lazy(() => import("./routes/OtherLinks/Alumni"));
 const Partners = lazy(() => import("./routes/OtherLinks/Partners"));
-const Community = lazy(() => import("./routes/OtherLinks/Community"));
+const Community = lazy(() => import("./routes/OtherLinks/Community/Community"));
+const Campus = lazy(() => import("./routes/OtherLinks/Community/Campus"));
+const Events = lazy(() => import("./routes/OtherLinks/Community/Events"));
+const IV = lazy(() => import("./routes/OtherLinks/Community/IV"));
+const Sports = lazy(() => import("./routes/OtherLinks/Community/Sports"));
 const PLMEmail = lazy(() => import("./routes/OtherLinks/PLMEmail"));
 const ContactUs = lazy(() => import("./routes/FooterRoutes/ContactUs"));
 const Careers = lazy(() => import("./routes/FooterRoutes/Careers"));
@@ -97,6 +101,10 @@ export const AllLinks = [
   { component: Alumni, path: "/alumni" },
   { component: Partners, path: "/partners" },
   { component: Community, path: "/community" },
+  { component: Campus, path: "/campus" },
+  { component: Events, path: "/events" },
+  { component: IV, path: "/immigrant-and-visa" },
+  { component: Sports, path: "/sports" },
   { component: PLMEmail, path: "/plm-email-login" },
   { component: ContactUs, path: "/contact-us" },
   { component: Careers, path: "/careers" },
